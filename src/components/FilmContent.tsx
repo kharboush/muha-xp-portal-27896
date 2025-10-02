@@ -1,11 +1,43 @@
-import ovanesImg from '@/assets/ovanes.jpg';
-import oliImg from '@/assets/oli.jpg';
-import mayorImg from '@/assets/mayor.jpg';
-import butcherImg from '@/assets/butcher.jpg';
+import { User } from 'lucide-react';
 
 const FilmContent = () => {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
+      {/* Video Player */}
+      <section>
+        <div className="bg-black border-4 border-gray-400 rounded-sm p-1" style={{
+          boxShadow: 'inset 0 0 0 1px #000, 0 2px 4px rgba(0,0,0,0.3)'
+        }}>
+          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-1 flex items-center justify-between text-xs">
+            <span className="font-bold">Media Player</span>
+            <div className="flex gap-1">
+              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
+              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
+              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
+            </div>
+          </div>
+          <div className="aspect-video bg-black">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-2 flex items-center gap-2 text-xs">
+            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">▶</button>
+            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">■</button>
+            <div className="flex-1 bg-gray-500 h-2 rounded-full overflow-hidden">
+              <div className="bg-blue-600 h-full w-0" />
+            </div>
+            <span className="text-gray-700">00:00 / 00:00</span>
+          </div>
+        </div>
+      </section>
+
       {/* Header */}
       <div className="text-center border-b-2 border-blue-600 pb-6">
         <h1 className="text-5xl font-bold text-blue-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -41,39 +73,6 @@ const FilmContent = () => {
         </div>
       </section>
 
-      {/* Video Player */}
-      <section>
-        <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-gray-300">
-          Watch Trailer
-        </h2>
-        <div className="bg-black border-4 border-gray-400 rounded-sm p-1" style={{
-          boxShadow: 'inset 0 0 0 1px #000, 0 2px 4px rgba(0,0,0,0.3)'
-        }}>
-          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-1 flex items-center justify-between text-xs">
-            <span className="font-bold">Windows Media Player</span>
-            <div className="flex gap-1">
-              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-            </div>
-          </div>
-          <div className="aspect-video bg-black flex items-center justify-center text-white">
-            <div className="text-center">
-              <div className="text-6xl mb-2">▶</div>
-              <p className="text-sm">Trailer Coming Soon</p>
-            </div>
-          </div>
-          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-2 flex items-center gap-2 text-xs">
-            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">▶</button>
-            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">■</button>
-            <div className="flex-1 bg-gray-500 h-2 rounded-full overflow-hidden">
-              <div className="bg-blue-600 h-full w-0" />
-            </div>
-            <span className="text-gray-700">00:00 / 00:00</span>
-          </div>
-        </div>
-      </section>
-
       {/* Main Characters */}
       <section>
         <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-gray-300">
@@ -82,8 +81,8 @@ const FilmContent = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Ovanes */}
           <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-            <div className="bg-white border border-gray-400 p-2 mb-2">
-              <img src={ovanesImg} alt="Ovanеs" className="w-full h-auto" />
+            <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
+              <User className="w-24 h-24 text-gray-400" />
             </div>
             <div className="space-y-1 text-sm">
               <div className="bg-blue-600 text-white px-2 py-1 font-bold">Ovanеs (30)</div>
@@ -103,8 +102,8 @@ const FilmContent = () => {
 
           {/* Oli */}
           <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-            <div className="bg-white border border-gray-400 p-2 mb-2">
-              <img src={oliImg} alt="Oli" className="w-full h-auto" />
+            <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
+              <User className="w-24 h-24 text-gray-400" />
             </div>
             <div className="space-y-1 text-sm">
               <div className="bg-blue-600 text-white px-2 py-1 font-bold">Oli (21)</div>
@@ -124,8 +123,8 @@ const FilmContent = () => {
 
           {/* Mayor */}
           <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-            <div className="bg-white border border-gray-400 p-2 mb-2">
-              <img src={mayorImg} alt="The Mayor" className="w-full h-auto" />
+            <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
+              <User className="w-24 h-24 text-gray-400" />
             </div>
             <div className="space-y-1 text-sm">
               <div className="bg-blue-600 text-white px-2 py-1 font-bold">The Mayor (50)</div>
@@ -144,8 +143,8 @@ const FilmContent = () => {
 
           {/* Butcher */}
           <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-            <div className="bg-white border border-gray-400 p-2 mb-2">
-              <img src={butcherImg} alt="The Butcher" className="w-full h-auto" />
+            <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
+              <User className="w-24 h-24 text-gray-400" />
             </div>
             <div className="space-y-1 text-sm">
               <div className="bg-blue-600 text-white px-2 py-1 font-bold">The Butcher</div>

@@ -12,9 +12,9 @@ const IEWindow = ({ children }: IEWindowProps) => {
       <div className="xp-titlebar">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 bg-blue-600 rounded-sm flex items-center justify-center text-white text-xs font-bold">
-            e
+            W
           </div>
-          <span>MUHA - Internet Explorer</span>
+          <span>MUHA - Web Browser</span>
         </div>
         <div className="flex items-center gap-1">
           <button className="w-5 h-5 flex items-center justify-center hover:bg-blue-600 rounded-sm">

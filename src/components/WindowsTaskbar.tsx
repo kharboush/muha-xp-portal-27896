@@ -29,9 +29,9 @@ const WindowsTaskbar = () => {
           className="h-8 px-3 flex items-center gap-2 bg-white/10 border border-white/20 rounded-sm"
         >
           <div className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center text-white text-xs font-bold">
-            e
+            W
           </div>
-          <span className="text-white text-xs font-semibold">MUHA - Internet Explorer</span>
+          <span className="text-white text-xs font-semibold">MUHA - Web Browser</span>
         </div>
       </div>
 
