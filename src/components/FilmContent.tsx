@@ -1,3 +1,8 @@
+import ovanesImg from '@/assets/ovanes.jpg';
+import oliImg from '@/assets/oli.jpg';
+import mayorImg from '@/assets/mayor.jpg';
+import butcherImg from '@/assets/butcher.jpg';
+
 const FilmContent = () => {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
@@ -36,40 +41,124 @@ const FilmContent = () => {
         </div>
       </section>
 
+      {/* Video Player */}
+      <section>
+        <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-gray-300">
+          Watch Trailer
+        </h2>
+        <div className="bg-black border-4 border-gray-400 rounded-sm p-1" style={{
+          boxShadow: 'inset 0 0 0 1px #000, 0 2px 4px rgba(0,0,0,0.3)'
+        }}>
+          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-1 flex items-center justify-between text-xs">
+            <span className="font-bold">Windows Media Player</span>
+            <div className="flex gap-1">
+              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
+              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
+              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
+            </div>
+          </div>
+          <div className="aspect-video bg-black flex items-center justify-center text-white">
+            <div className="text-center">
+              <div className="text-6xl mb-2">▶</div>
+              <p className="text-sm">Trailer Coming Soon</p>
+            </div>
+          </div>
+          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-2 flex items-center gap-2 text-xs">
+            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">▶</button>
+            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">■</button>
+            <div className="flex-1 bg-gray-500 h-2 rounded-full overflow-hidden">
+              <div className="bg-blue-600 h-full w-0" />
+            </div>
+            <span className="text-gray-700">00:00 / 00:00</span>
+          </div>
+        </div>
+      </section>
+
       {/* Main Characters */}
       <section>
         <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-gray-300">
           Main Characters
         </h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-bold text-lg">Ovanеs (30)</h3>
-            <p className="text-base leading-relaxed">
-              A solitary butcher shop worker who spends his time making fly traps and waiting for 
-              the internet to connect. He dreams of driving away from the village and seeks 
-              companionship through the screen.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Ovanes */}
+          <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
+            <div className="bg-white border border-gray-400 p-2 mb-2">
+              <img src={ovanesImg} alt="Ovanеs" className="w-full h-auto" />
+            </div>
+            <div className="space-y-1 text-sm">
+              <div className="bg-blue-600 text-white px-2 py-1 font-bold">Ovanеs (30)</div>
+              <div className="bg-white border border-gray-400 p-2">
+                <p className="text-xs leading-relaxed">
+                  A solitary butcher shop worker who spends his time making fly traps and waiting for 
+                  the internet to connect. He dreams of driving away from the village and seeks 
+                  companionship through the screen.
+                </p>
+              </div>
+              <div className="flex gap-1 text-xs">
+                <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
+                <span className="bg-yellow-400 px-2 py-0.5">Online</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="font-bold text-lg">Oli (21)</h3>
-            <p className="text-base leading-relaxed">
-              The mayor's daughter, who sneaks access to her father's computer to escape the 
-              suffocating confines of village life. Her mother is absent, and the computer room 
-              stays locked.
-            </p>
+
+          {/* Oli */}
+          <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
+            <div className="bg-white border border-gray-400 p-2 mb-2">
+              <img src={oliImg} alt="Oli" className="w-full h-auto" />
+            </div>
+            <div className="space-y-1 text-sm">
+              <div className="bg-blue-600 text-white px-2 py-1 font-bold">Oli (21)</div>
+              <div className="bg-white border border-gray-400 p-2">
+                <p className="text-xs leading-relaxed">
+                  The mayor's daughter, who sneaks access to her father's computer to escape the 
+                  suffocating confines of village life. Her mother is absent, and the computer room 
+                  stays locked.
+                </p>
+              </div>
+              <div className="flex gap-1 text-xs">
+                <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
+                <span className="bg-yellow-400 px-2 py-0.5">Online</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="font-bold text-lg">The Mayor/Oli's Father (50)</h3>
-            <p className="text-base leading-relaxed">
-              A man who guards the computer with a key hidden in a piggy bank. He watches his 
-              daughter from a distance and keeps certain doors locked.
-            </p>
+
+          {/* Mayor */}
+          <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
+            <div className="bg-white border border-gray-400 p-2 mb-2">
+              <img src={mayorImg} alt="The Mayor" className="w-full h-auto" />
+            </div>
+            <div className="space-y-1 text-sm">
+              <div className="bg-blue-600 text-white px-2 py-1 font-bold">The Mayor (50)</div>
+              <div className="bg-white border border-gray-400 p-2">
+                <p className="text-xs leading-relaxed">
+                  A man who guards the computer with a key hidden in a piggy bank. He watches his 
+                  daughter from a distance and keeps certain doors locked.
+                </p>
+              </div>
+              <div className="flex gap-1 text-xs">
+                <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
+                <span className="bg-red-500 text-white px-2 py-0.5">Offline</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="font-bold text-lg">The Butcher</h3>
-            <p className="text-base leading-relaxed">
-              Ovanеs's employer, who uses the office computer when his employee isn't watching.
-            </p>
+
+          {/* Butcher */}
+          <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
+            <div className="bg-white border border-gray-400 p-2 mb-2">
+              <img src={butcherImg} alt="The Butcher" className="w-full h-auto" />
+            </div>
+            <div className="space-y-1 text-sm">
+              <div className="bg-blue-600 text-white px-2 py-1 font-bold">The Butcher</div>
+              <div className="bg-white border border-gray-400 p-2">
+                <p className="text-xs leading-relaxed">
+                  Ovanеs's employer, who uses the office computer when his employee isn't watching.
+                </p>
+              </div>
+              <div className="flex gap-1 text-xs">
+                <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
+                <span className="bg-gray-400 px-2 py-0.5">Away</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

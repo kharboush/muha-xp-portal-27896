@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#5A9FD4] via-[#7BB4E6] to-[#78A9D8] p-8 pb-16">
       {/* Desktop Icons (optional decoration) */}
-      <div className="absolute top-4 left-4 space-y-4">
+      <div className="absolute top-4 left-4 space-y-4 z-0">
         <div className="flex flex-col items-center gap-1 p-2 rounded hover:bg-blue-400/20 cursor-pointer transition-colors">
           <div className="w-12 h-12 bg-yellow-400 rounded border-2 border-yellow-600 flex items-center justify-center">
             <span className="text-2xl">📁</span>
@@ -34,7 +34,7 @@ const Index = () => {
       </div>
 
       {/* Main Window */}
-      <div className="pt-8">
+      <div className="pt-8 relative z-10">
         <IEWindow>
           <FilmContent />
         </IEWindow>
