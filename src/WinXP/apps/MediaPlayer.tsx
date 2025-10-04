@@ -105,7 +105,7 @@ const Container = styled.div`
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  background: linear-gradient(to bottom, #0c59b9 0%, #1c77d4 50%, #0c59b9 100%);
+  background: linear-gradient(to bottom, #ece9d8 0%, #d4d0c8 100%);
 
   .mp__toolbar {
     position: relative;
@@ -148,8 +148,7 @@ const Container = styled.div`
   .mp__video {
     flex: 1;
     background: #000;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #999;
     margin-bottom: 8px;
   }
 
