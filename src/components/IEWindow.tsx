@@ -1,5 +1,5 @@
 import { X, Minus, Square, ChevronUp, ChevronDown } from 'lucide-react';
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useRef, useState, useEffect } from 'react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 interface IEWindowProps {
@@ -11,6 +11,11 @@ const IEWindow = ({ children }: IEWindowProps) => {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const windowRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (amount: number) => {
     if (viewportRef.current) {
@@ -43,10 +48,53 @@ const IEWindow = ({ children }: IEWindowProps) => {
     setIsScrollingDown(false);
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y,
+    });
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y,
+      });
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, dragStart]);
+
   return (
-    <div className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg">
+    <div 
+      ref={windowRef}
+      className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg"
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        cursor: isDragging ? 'grabbing' : 'default',
+      }}
+    >
       {/* Title Bar */}
-      <div className="xp-titlebar flex items-center justify-between p-2">
+      <div 
+        className="xp-titlebar flex items-center justify-between p-2 cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={handleMouseDown}
+      >
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-blue-600 text-sm font-bold shadow-sm">
             W
