@@ -148,7 +148,6 @@ const Container = styled.div`
     flex: 1;
     background: #000;
     border: 1px solid #999;
-    margin-bottom: 8px;
   }
 
   .mp__controls {
