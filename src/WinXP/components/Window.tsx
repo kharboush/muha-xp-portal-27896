@@ -49,6 +49,15 @@ const Window = memo(function Window(props: WindowProps) {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const dragRef = useRef<HTMLDivElement>(null);
 
+  // Keep internal state in sync with incoming props
+  useEffect(() => {
+    setSize({ width, height });
+  }, [width, height]);
+
+  useEffect(() => {
+    setPosition({ x, y });
+  }, [x, y]);
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (maximized) return;
     onFocus(id);
