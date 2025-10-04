@@ -1,8 +1,11 @@
 import WindowsTaskbar from "@/components/WindowsTaskbar";
 import IEWindow from "@/components/IEWindow";
 import FilmContent from "@/components/FilmContent";
+import { useState } from "react";
 
 const Index = () => {
+  const [isMinimized, setIsMinimized] = useState(false);
+
   return (
     <div className="h-screen overflow-hidden bg-gradient-to-br from-[#5A9FD4] via-[#7BB4E6] to-[#78A9D8] flex flex-col">
       {/* Desktop Icons (optional decoration) */}
@@ -35,13 +38,19 @@ const Index = () => {
 
       {/* Main Window */}
       <div className="flex-1 relative z-10 flex items-center justify-center overflow-hidden pb-12">
-        <IEWindow>
+        <IEWindow 
+          isMinimized={isMinimized}
+          onMinimize={() => setIsMinimized(true)}
+        >
           <FilmContent />
         </IEWindow>
       </div>
 
       {/* Taskbar */}
-      <WindowsTaskbar />
+      <WindowsTaskbar 
+        onTaskbarClick={() => setIsMinimized(!isMinimized)}
+        isMinimized={isMinimized}
+      />
     </div>
   );
 };

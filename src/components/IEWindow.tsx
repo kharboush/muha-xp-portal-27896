@@ -4,9 +4,11 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 interface IEWindowProps {
   children: ReactNode;
+  isMinimized?: boolean;
+  onMinimize?: () => void;
 }
 
-const IEWindow = ({ children }: IEWindowProps) => {
+const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
@@ -81,6 +83,10 @@ const IEWindow = ({ children }: IEWindowProps) => {
     };
   }, [isDragging, dragStart]);
 
+  if (isMinimized) {
+    return null;
+  }
+
   return (
     <div 
       ref={windowRef}
@@ -101,7 +107,10 @@ const IEWindow = ({ children }: IEWindowProps) => {
           <span className="font-bold text-sm">MUHA - Web Browser</span>
         </div>
         <div className="flex items-center gap-1">
-          <button className="w-[28px] h-[28px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
+          <button 
+            onClick={onMinimize}
+            className="w-[28px] h-[28px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors"
+          >
             <Minus className="w-4 h-4 text-white" strokeWidth={3} />
           </button>
           <button className="w-[28px] h-[28px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">

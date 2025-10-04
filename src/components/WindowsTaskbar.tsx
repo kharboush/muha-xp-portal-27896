@@ -1,4 +1,9 @@
-const WindowsTaskbar = () => {
+interface WindowsTaskbarProps {
+  onTaskbarClick?: () => void;
+  isMinimized?: boolean;
+}
+
+const WindowsTaskbar = ({ onTaskbarClick, isMinimized }: WindowsTaskbarProps) => {
   const currentTime = new Date().toLocaleTimeString('en-US', { 
     hour: 'numeric', 
     minute: '2-digit',
@@ -25,14 +30,19 @@ const WindowsTaskbar = () => {
 
       {/* Taskbar Items Area */}
       <div className="flex-1 flex items-center gap-1 ml-2 h-full">
-        <div 
-          className="h-8 px-3 flex items-center gap-2 bg-white/10 border border-white/20 rounded-sm"
+        <button 
+          onClick={onTaskbarClick}
+          className={`h-8 px-3 flex items-center gap-2 rounded-sm transition-all ${
+            isMinimized 
+              ? 'bg-white/10 border border-white/20' 
+              : 'bg-white/20 border-2 border-white/40 shadow-inner'
+          }`}
         >
           <div className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center text-white text-xs font-bold">
             W
           </div>
           <span className="text-white text-xs font-semibold">MUHA - Web Browser</span>
-        </div>
+        </button>
       </div>
 
       {/* System Tray */}
