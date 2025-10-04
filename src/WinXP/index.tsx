@@ -30,7 +30,7 @@ const initialState: State = {
       id: 0,
       component: appSettings.InternetExplorer.component,
       title: appSettings.InternetExplorer.title,
-      icon: appSettings.InternetExplorer.icon,
+      icon: appSettings.InternetExplorer.headerIcon,
       width: appSettings.InternetExplorer.width,
       height: appSettings.InternetExplorer.height,
       x: appSettings.InternetExplorer.x,
@@ -85,7 +85,7 @@ function reducer(state: State, action: Action): State {
         id: state.nextWindowId,
         component: appConfig.component,
         title: appConfig.title,
-        icon: appConfig.icon,
+        icon: appConfig.headerIcon,
         width: appConfig.width,
         height: appConfig.height,
         x: appConfig.x + (state.nextWindowId * 30), // Cascade windows

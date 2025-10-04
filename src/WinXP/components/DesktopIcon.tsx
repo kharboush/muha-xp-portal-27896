@@ -80,13 +80,18 @@ const StyledIcon = styled(DesktopIcon)`
   &__img__container {
     width: 32px;
     height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     filter: ${({ isFocused }) =>
       isFocused ? 'drop-shadow(0 0 3px blue)' : ''};
   }
   
   &__img {
-    width: 32px;
-    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    width: auto;
+    height: auto;
     opacity: ${({ isFocused }) => (isFocused ? 0.7 : 1)};
   }
 `;

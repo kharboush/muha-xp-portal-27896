@@ -53,29 +53,26 @@ export default function Taskbar({ windows, focusedWindowId, onWindowClick, onSta
     return () => clearInterval(timer);
   }, [time]);
 
-  const startButtonSvg = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="30"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0" y1="0" x2="0" y2="1"%3E%3Cstop offset="0%25" stop-color="%2358ab57"/%3E%3Cstop offset="50%25" stop-color="%233d8e3c"/%3E%3Cstop offset="100%25" stop-color="%232d7d2c"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="120" height="30" fill="url(%23g)" rx="3"/%3E%3Ctext x="35" y="19" fill="white" font-family="Tahoma" font-size="14" font-weight="bold"%3Estart%3C/text%3E%3Cpath d="M8,8 L8,22 L22,22 L22,8 Z" fill="none" stroke="white" stroke-width="1.5"/%3E%3Cpath d="M8,15 L15,8 L22,15" fill="none" stroke="white" stroke-width="1.5"/%3E%3C/svg%3E';
-
   return (
     <Container>
       <div className="footer__items left">
         <img
-          src={startButtonSvg}
+          src="/icons/start.png"
           alt="start"
           className="footer__start"
           onMouseDown={onStartClick}
         />
         {windows.map(
-          app =>
-            !app.minimized && (
-              <TaskbarWindow
-                key={app.id}
-                id={app.id}
-                icon={app.icon}
-                title={app.title}
-                onMouseDown={onWindowClick}
-                isFocus={focusedWindowId === app.id}
-              />
-            ),
+          app => (
+            <TaskbarWindow
+              key={app.id}
+              id={app.id}
+              icon={app.icon}
+              title={app.title}
+              onMouseDown={onWindowClick}
+              isFocus={focusedWindowId === app.id}
+            />
+          ),
         )}
       </div>
 
