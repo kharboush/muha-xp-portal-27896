@@ -7,7 +7,7 @@ interface IEWindowProps {
 
 const IEWindow = ({ children }: IEWindowProps) => {
   return (
-    <div className="xp-window w-full max-w-4xl mx-auto flex flex-col max-h-[85vh] overflow-hidden rounded-lg">
+    <div className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] overflow-hidden rounded-lg">
       {/* Title Bar */}
       <div className="xp-titlebar flex items-center justify-between p-2">
         <div className="flex items-center gap-3">

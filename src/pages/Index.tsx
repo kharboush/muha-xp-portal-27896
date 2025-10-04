@@ -4,7 +4,7 @@ import FilmContent from "@/components/FilmContent";
 
 const Index = () => {
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-br from-[#5A9FD4] via-[#7BB4E6] to-[#78A9D8] p-8 flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-to-br from-[#5A9FD4] via-[#7BB4E6] to-[#78A9D8] p-3 flex flex-col">
       {/* Desktop Icons (optional decoration) */}
       <div className="absolute top-4 left-4 space-y-4 z-0">
         <div className="flex flex-col items-center gap-1 p-2 rounded hover:bg-blue-400/20 cursor-pointer transition-colors">
@@ -34,7 +34,7 @@ const Index = () => {
       </div>
 
       {/* Main Window */}
-      <div className="flex-1 relative z-10 flex items-center justify-center overflow-hidden pb-20">
+      <div className="flex-1 relative z-10 flex items-center justify-center overflow-hidden pb-12">
         <IEWindow>
           <FilmContent />
         </IEWindow>
