@@ -31,6 +31,13 @@ const ieWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
 const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
 const ieY = Math.floor((availableHeight - ieHeight) / 2);
 
+// Calculate Media Player dimensions
+const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.9), 900);
+const mpWidth = maxMPWidth;
+const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100; // +100 for controls and menu
+const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
+const mpY = Math.floor((availableHeight - mpHeight) / 2);
+
 const initialState: State = {
   windows: [
     // Auto-open IE with MUHA content
@@ -48,10 +55,25 @@ const initialState: State = {
       maximized: false,
       resizable: appSettings.InternetExplorer.resizable,
     },
+    // Auto-open Media Player on top
+    {
+      id: 1,
+      component: appSettings.MediaPlayer.component,
+      title: appSettings.MediaPlayer.title,
+      icon: appSettings.MediaPlayer.headerIcon,
+      width: mpWidth,
+      height: mpHeight,
+      x: mpX,
+      y: mpY,
+      zIndex: 2,
+      minimized: false,
+      maximized: false,
+      resizable: appSettings.MediaPlayer.resizable,
+    },
   ],
-  nextWindowId: 1,
-  nextZIndex: 2,
-  focusedWindowId: 0,
+  nextWindowId: 2,
+  nextZIndex: 3,
+  focusedWindowId: 1,
   focusedIconId: null,
 };
 
@@ -235,29 +257,52 @@ const IconsContainer = styled.div`
 export default function WinXP() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Handle window resize to update IE dimensions
+  // Handle window resize to update IE and Media Player dimensions
   useEffect(() => {
     const handleResize = () => {
       const ieWindow = state.windows.find(w => w.title === appSettings.InternetExplorer.title);
-      if (!ieWindow || ieWindow.maximized) return;
+      const mpWindow = state.windows.find(w => w.title === appSettings.MediaPlayer.title);
+      
+      if (ieWindow && !ieWindow.maximized) {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
+        const ieHeight = Math.floor(availableHeight * 0.9);
+        const ieWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
+        const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
+        const ieY = Math.floor((availableHeight - ieHeight) / 2);
 
-      const taskbarHeight = 30;
-      const availableHeight = window.innerHeight - taskbarHeight;
-      const ieHeight = Math.floor(availableHeight * 0.9);
-      const ieWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
-      const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
-      const ieY = Math.floor((availableHeight - ieHeight) / 2);
+        dispatch({
+          type: 'UPDATE_WINDOW_SIZE' as any,
+          payload: {
+            id: ieWindow.id,
+            width: ieWidth,
+            height: ieHeight,
+            x: ieX,
+            y: ieY,
+          },
+        });
+      }
 
-      dispatch({
-        type: 'UPDATE_WINDOW_SIZE' as any,
-        payload: {
-          id: ieWindow.id,
-          width: ieWidth,
-          height: ieHeight,
-          x: ieX,
-          y: ieY,
-        },
-      });
+      if (mpWindow && !mpWindow.maximized) {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
+        const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.9), 900);
+        const mpWidth = maxMPWidth;
+        const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100;
+        const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
+        const mpY = Math.floor((availableHeight - mpHeight) / 2);
+
+        dispatch({
+          type: 'UPDATE_WINDOW_SIZE' as any,
+          payload: {
+            id: mpWindow.id,
+            width: mpWidth,
+            height: mpHeight,
+            x: mpX,
+            y: mpY,
+          },
+        });
+      }
     };
 
     window.addEventListener('resize', handleResize);

@@ -17,16 +17,11 @@ const MuhaFilm = () => {
                 <div className="w-4 h-4 bg-gray-500 rounded-sm" />
               </div>
             </div>
-            <div className="aspect-video bg-black">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="aspect-video bg-gray-800 flex items-center justify-center">
+              <div className="text-center text-gray-400">
+                <div className="text-6xl mb-2">▶</div>
+                <div className="text-sm">Video Player</div>
+              </div>
             </div>
             <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-2 flex items-center gap-2 text-xs">
               <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">▶</button>
