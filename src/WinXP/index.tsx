@@ -31,12 +31,12 @@ const ieWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
 const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
 const ieY = Math.floor((availableHeight - ieHeight) / 2);
 
-// Calculate Media Player dimensions
-const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.9), 900);
+// Calculate Media Player dimensions - wider and at the top
+const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.98), 960);
 const mpWidth = maxMPWidth;
 const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100; // +100 for controls and menu
 const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
-const mpY = Math.floor((availableHeight - mpHeight) / 2);
+const mpY = 10; // Position near top of screen
 
 const initialState: State = {
   windows: [
@@ -118,15 +118,13 @@ function reducer(state: State, action: Action): State {
       let windowY = appConfig.y;
       
       if (action.payload === 'MediaPlayer') {
-        const taskbarHeight = 30;
-        const availableHeight = window.innerHeight - taskbarHeight;
-        const maxWidth = Math.min(Math.floor(window.innerWidth * 0.9), 900);
+        const maxWidth = Math.min(Math.floor(window.innerWidth * 0.98), 960);
         
         // 16:9 aspect ratio for video
         windowWidth = maxWidth;
         windowHeight = Math.floor((maxWidth * 9) / 16) + 100; // +100 for controls and menu
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
-        windowY = Math.floor((availableHeight - windowHeight) / 2);
+        windowY = 10; // Position near top of screen
       }
 
       // Create new window
@@ -284,13 +282,11 @@ export default function WinXP() {
       }
 
       if (mpWindow && !mpWindow.maximized) {
-        const taskbarHeight = 30;
-        const availableHeight = window.innerHeight - taskbarHeight;
-        const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.9), 900);
+        const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.98), 960);
         const mpWidth = maxMPWidth;
         const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100;
         const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
-        const mpY = Math.floor((availableHeight - mpHeight) / 2);
+        const mpY = 10; // Position near top of screen
 
         dispatch({
           type: 'UPDATE_WINDOW_SIZE' as any,
