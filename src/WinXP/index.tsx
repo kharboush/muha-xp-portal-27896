@@ -1,4 +1,4 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import Window from './components/Window';
 import DesktopIcon from './components/DesktopIcon';
@@ -63,7 +63,8 @@ type Action =
   | { type: typeof MINIMIZE_APP; payload: number }
   | { type: typeof TOGGLE_MAXIMIZE_APP; payload: number }
   | { type: typeof FOCUS_ICON; payload: string }
-  | { type: typeof FOCUS_DESKTOP };
+  | { type: typeof FOCUS_DESKTOP }
+  | { type: 'UPDATE_WINDOW_SIZE'; payload: { id: number; width: number; height: number; x: number; y: number } };
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -170,6 +171,22 @@ function reducer(state: State, action: Action): State {
         focusedIconId: null,
       };
 
+    case 'UPDATE_WINDOW_SIZE':
+      return {
+        ...state,
+        windows: state.windows.map((w) =>
+          w.id === action.payload.id
+            ? {
+                ...w,
+                width: action.payload.width,
+                height: action.payload.height,
+                x: action.payload.x,
+                y: action.payload.y,
+              }
+            : w
+        ),
+      };
+
     default:
       return state;
   }
@@ -200,6 +217,36 @@ const IconsContainer = styled.div`
 
 export default function WinXP() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Handle window resize to update IE dimensions
+  useEffect(() => {
+    const handleResize = () => {
+      const ieWindow = state.windows.find(w => w.title === 'Internet Explorer');
+      if (!ieWindow || ieWindow.maximized) return;
+
+      const taskbarHeight = 30;
+      const availableHeight = window.innerHeight - taskbarHeight;
+      const ieHeight = Math.floor(availableHeight * 0.9);
+      const maxIeWidth = 800;
+      const ieWidth = Math.min(maxIeWidth, window.innerWidth - 40);
+      const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
+      const ieY = Math.floor((availableHeight - ieHeight) / 2);
+
+      dispatch({
+        type: 'UPDATE_WINDOW_SIZE' as any,
+        payload: {
+          id: ieWindow.id,
+          width: ieWidth,
+          height: ieHeight,
+          x: ieX,
+          y: ieY,
+        },
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [state.windows]);
 
   const handleOpenApp = useCallback((appKey: string) => {
     // Only allow Internet Explorer to open
