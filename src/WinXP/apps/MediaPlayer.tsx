@@ -13,6 +13,7 @@ function MediaPlayer() {
   // Default YouTube video - can be changed to any video ID
   const videoId = 'dQw4w9WgXcQ';
   const playerRef = useRef<any>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [apiReady, setApiReady] = useState(false);
 
@@ -54,6 +55,16 @@ function MediaPlayer() {
     }
   };
 
+  const toggleFullscreen = () => {
+    if (iframeRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        iframeRef.current.requestFullscreen();
+      }
+    }
+  };
+
   return (
     <Container>
       {/* Menu bar */}
@@ -71,6 +82,7 @@ function MediaPlayer() {
       <div className="mp__content">
         <div className="mp__video">
           <iframe
+            ref={iframeRef}
             id="youtube-player"
             width="100%"
             height="100%"
@@ -84,6 +96,9 @@ function MediaPlayer() {
         <div className="mp__controls">
           <button className="mp__control_btn" onClick={togglePlayPause}>
             {isPlaying ? '⏸' : '▶'}
+          </button>
+          <button className="mp__control_btn" onClick={toggleFullscreen}>
+            ⛶
           </button>
         </div>
       </div>

@@ -89,16 +89,34 @@ function reducer(state: State, action: Action): State {
         };
       }
 
+      // Calculate responsive dimensions for Media Player
+      let windowWidth = appConfig.width;
+      let windowHeight = appConfig.height;
+      let windowX = appConfig.x;
+      let windowY = appConfig.y;
+      
+      if (action.payload === 'MediaPlayer') {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
+        const maxWidth = Math.min(Math.floor(window.innerWidth * 0.9), 900);
+        
+        // 16:9 aspect ratio for video
+        windowWidth = maxWidth;
+        windowHeight = Math.floor((maxWidth * 9) / 16) + 100; // +100 for controls and menu
+        windowX = Math.floor((window.innerWidth - windowWidth) / 2);
+        windowY = Math.floor((availableHeight - windowHeight) / 2);
+      }
+
       // Create new window
       const newWindow: AppWindow = {
         id: state.nextWindowId,
         component: appConfig.component,
         title: appConfig.title,
         icon: appConfig.headerIcon,
-        width: appConfig.width,
-        height: appConfig.height,
-        x: appConfig.x + (state.nextWindowId * 30), // Cascade windows
-        y: appConfig.y + (state.nextWindowId * 30),
+        width: windowWidth,
+        height: windowHeight,
+        x: windowX,
+        y: windowY,
         zIndex: state.nextZIndex,
         minimized: false,
         maximized: false,
