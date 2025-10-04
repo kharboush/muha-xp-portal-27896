@@ -107,6 +107,7 @@ All colors MUST be HSL.
   .xp-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #ECE9D8 #F5F5F5;
+    scrollbar-gutter: stable both-edges;
   }
   
   .xp-scrollbar::-webkit-scrollbar {
