@@ -7,7 +7,7 @@ interface IEWindowProps {
 
 const IEWindow = ({ children }: IEWindowProps) => {
   return (
-    <div className="xp-window w-full max-w-4xl mx-auto">
+    <div className="xp-window w-full max-w-4xl mx-auto flex flex-col max-h-[85vh]">
       {/* Title Bar */}
       <div className="xp-titlebar">
         <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ const IEWindow = ({ children }: IEWindowProps) => {
       </div>
 
       {/* Content Area */}
-      <div className="bg-white p-8 min-h-[600px] overflow-auto">
+      <div className="bg-white p-8 overflow-y-auto flex-1">
         {children}
       </div>
 
