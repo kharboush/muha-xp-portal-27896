@@ -220,7 +220,7 @@ export default function WinXP() {
   // Handle window resize to update IE dimensions
   useEffect(() => {
     const handleResize = () => {
-      const ieWindow = state.windows.find(w => w.title === 'Internet Explorer');
+      const ieWindow = state.windows.find(w => w.title === appSettings.InternetExplorer.title);
       if (!ieWindow || ieWindow.maximized) return;
 
       const taskbarHeight = 30;
@@ -247,8 +247,7 @@ export default function WinXP() {
   }, [state.windows]);
 
   const handleOpenApp = useCallback((appKey: string) => {
-    // Only allow Internet Explorer to open
-    if (appKey === 'InternetExplorer') {
+    if (appSettings[appKey]) {
       dispatch({ type: ADD_APP, payload: appKey });
     }
   }, []);
