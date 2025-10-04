@@ -9,22 +9,22 @@ const IEWindow = ({ children }: IEWindowProps) => {
   return (
     <div className="xp-window w-full max-w-4xl mx-auto flex flex-col max-h-[85vh]">
       {/* Title Bar */}
-      <div className="xp-titlebar">
+      <div className="xp-titlebar h-8 flex items-center justify-between px-2">
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 bg-blue-600 rounded-sm flex items-center justify-center text-white text-xs font-bold">
+          <div className="w-5 h-5 bg-blue-600 rounded-sm flex items-center justify-center text-white text-xs font-bold shadow-sm">
             W
           </div>
-          <span>MUHA - Web Browser</span>
+          <span className="font-bold text-sm">MUHA - Web Browser</span>
         </div>
-        <div className="flex items-center gap-1">
-          <button className="w-5 h-5 flex items-center justify-center hover:bg-blue-600 rounded-sm">
-            <Minus className="w-3 h-3" />
+        <div className="flex items-center gap-[2px]">
+          <button className="xp-control-button group">
+            <Minus className="w-3 h-3 text-gray-800 group-hover:text-white" strokeWidth={2.5} />
           </button>
-          <button className="w-5 h-5 flex items-center justify-center hover:bg-blue-600 rounded-sm">
-            <Square className="w-3 h-3" />
+          <button className="xp-control-button group">
+            <Square className="w-[10px] h-[10px] text-gray-800 group-hover:text-white" strokeWidth={2.5} />
           </button>
-          <button className="w-5 h-5 flex items-center justify-center hover:bg-red-600 rounded-sm">
-            <X className="w-3 h-3" />
+          <button className="xp-control-button xp-close-button group">
+            <X className="w-3 h-3 text-gray-800 group-hover:text-white" strokeWidth={2.5} />
           </button>
         </div>
       </div>
