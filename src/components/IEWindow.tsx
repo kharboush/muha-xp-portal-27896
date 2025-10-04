@@ -14,7 +14,7 @@ const IEWindow = ({ children }: IEWindowProps) => {
           <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-blue-600 text-lg font-bold shadow-sm">
             W
           </div>
-          <span className="font-bold text-lg">MUHA - Web Browser</span>
+          <span className="font-bold text-sm">MUHA - Web Browser</span>
         </div>
         <div className="flex items-center gap-1">
           <button className="w-[28px] h-[28px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
