@@ -86,11 +86,22 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
 
   useEffect(() => {
     if (isMinimized !== undefined) {
-      setIsAnimating(true);
-      const timer = setTimeout(() => {
-        setIsAnimating(false);
-      }, 300);
-      return () => clearTimeout(timer);
+      if (isMinimized) {
+        // Start animation before hiding
+        setIsAnimating(true);
+        const timer = setTimeout(() => {
+          setIsAnimating(false);
+        }, 300);
+        return () => clearTimeout(timer);
+      } else {
+        // Show immediately and animate
+        setIsAnimating(true);
+        requestAnimationFrame(() => {
+          const timer = setTimeout(() => {
+            setIsAnimating(false);
+          }, 300);
+        });
+      }
     }
   }, [isMinimized]);
 
@@ -101,13 +112,19 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
   return (
     <div 
       ref={windowRef}
-      className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg transition-all duration-300 ease-in-out"
       style={{
-        transform: `translate(${position.x}px, ${position.y}px) scale(${isMinimized ? 0.8 : 1})`,
-        opacity: isMinimized ? 0 : 1,
-        transformOrigin: 'bottom center',
+        transform: `translate(${position.x}px, ${position.y}px)`,
       }}
     >
+      <div
+        className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg transition-all duration-300 ease-in-out"
+        style={{
+          transform: `scale(${isMinimized ? 0.3 : 1}) translateY(${isMinimized ? '100px' : '0px'})`,
+          opacity: isMinimized ? 0 : 1,
+          transformOrigin: 'bottom left',
+          filter: isMinimized ? 'blur(4px)' : 'blur(0px)',
+        }}
+      >
       {/* Title Bar */}
       <div 
         className="xp-titlebar flex items-center justify-between p-2 select-none"
@@ -202,12 +219,18 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
       </div>
 
       {/* Status Bar */}
-      <div className="bg-[#ECE9D8] border-t border-[#919B9C] px-2 py-1 flex items-center justify-between text-xs">
-        <span>Done</span>
-        <div className="flex items-center gap-4">
-          <span>Internet</span>
-          <div className="w-4 h-4 border border-gray-500" />
+      <div className="bg-[linear-gradient(to_bottom,#ece9d8,#e3dfc5)] border-t-2 border-white flex items-center px-2 py-1 text-xs">
+        <div className="flex items-center gap-2 flex-1">
+          <div className="w-4 h-4 border border-[#919B9C] bg-white" />
+          <span className="text-[#000000]">Done</span>
         </div>
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 flex items-center justify-center">
+            <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-green-600" />
+          </div>
+          <span className="text-[#000000]">My Computer</span>
+        </div>
+      </div>
       </div>
     </div>
   );
