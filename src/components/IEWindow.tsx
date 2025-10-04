@@ -56,7 +56,7 @@ const IEWindow = ({ children }: IEWindowProps) => {
       </div>
 
       {/* Content Area */}
-      <div className="bg-white p-8 overflow-y-auto flex-1 xp-scrollbar">
+      <div className="bg-white p-8 overflow-y-scroll flex-1 xp-scrollbar">
         {children}
       </div>
 

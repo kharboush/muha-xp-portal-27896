@@ -104,8 +104,14 @@ All colors MUST be HSL.
   }
 
   /* XP Scrollbar */
+  .xp-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ECE9D8 #F5F5F5;
+  }
+  
   .xp-scrollbar::-webkit-scrollbar {
-    width: 16px;
+    width: 17px;
+    display: block;
   }
 
   .xp-scrollbar::-webkit-scrollbar-track {
