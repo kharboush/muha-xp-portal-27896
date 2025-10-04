@@ -23,11 +23,12 @@ interface State {
   focusedIconId: string | null;
 }
 
-// Calculate IE window dimensions: 90% height, centered
+// Calculate IE window dimensions: 90% height, responsive width, centered
 const taskbarHeight = 30;
 const availableHeight = window.innerHeight - taskbarHeight;
 const ieHeight = Math.floor(availableHeight * 0.9);
-const ieWidth = appSettings.InternetExplorer.width;
+const maxIeWidth = appSettings.InternetExplorer.width;
+const ieWidth = Math.min(maxIeWidth, window.innerWidth - 40); // 40px margin on sides
 const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
 const ieY = Math.floor((availableHeight - ieHeight) / 2);
 
