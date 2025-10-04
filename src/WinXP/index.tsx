@@ -201,7 +201,10 @@ export default function WinXP() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleOpenApp = useCallback((appKey: string) => {
-    dispatch({ type: ADD_APP, payload: appKey });
+    // Only allow Internet Explorer to open
+    if (appKey === 'InternetExplorer') {
+      dispatch({ type: ADD_APP, payload: appKey });
+    }
   }, []);
 
   const handleCloseWindow = useCallback((id: number) => {
