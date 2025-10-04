@@ -7,24 +7,24 @@ interface IEWindowProps {
 
 const IEWindow = ({ children }: IEWindowProps) => {
   return (
-    <div className="xp-window w-full max-w-4xl mx-auto flex flex-col max-h-[85vh]">
+    <div className="xp-window w-full max-w-4xl mx-auto flex flex-col max-h-[85vh] overflow-hidden rounded-lg">
       {/* Title Bar */}
-      <div className="xp-titlebar h-8 flex items-center justify-between px-2">
+      <div className="xp-titlebar h-[30px] flex items-center justify-between px-2">
         <div className="flex items-center gap-2">
-          <div className="w-5 h-5 bg-blue-600 rounded-sm flex items-center justify-center text-white text-xs font-bold shadow-sm">
+          <div className="w-5 h-5 bg-white rounded-sm flex items-center justify-center text-blue-600 text-xs font-bold shadow-sm">
             W
           </div>
           <span className="font-bold text-sm">MUHA - Web Browser</span>
         </div>
         <div className="flex items-center gap-[2px]">
-          <button className="xp-control-button group">
-            <Minus className="w-3 h-3 text-gray-800 group-hover:text-white" strokeWidth={2.5} />
+          <button className="w-[21px] h-[21px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
+            <Minus className="w-3 h-3 text-white" strokeWidth={3} />
           </button>
-          <button className="xp-control-button group">
-            <Square className="w-[10px] h-[10px] text-gray-800 group-hover:text-white" strokeWidth={2.5} />
+          <button className="w-[21px] h-[21px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
+            <Square className="w-[10px] h-[10px] text-white" strokeWidth={3} />
           </button>
-          <button className="xp-control-button xp-close-button group">
-            <X className="w-3 h-3 text-gray-800 group-hover:text-white" strokeWidth={2.5} />
+          <button className="w-[21px] h-[21px] flex items-center justify-center bg-[#E81500] hover:bg-[#FF3A14] active:bg-[#C40000] border border-[#8B0000] rounded-sm transition-colors">
+            <X className="w-3 h-3 text-white" strokeWidth={3} />
           </button>
         </div>
       </div>
