@@ -54,8 +54,8 @@ export const appSettings: Record<string, AppConfig> = {
   MediaPlayer: {
     component: MediaPlayer,
     title: 'Media Player',
-    icon: '/icons/volume.png',
-    headerIcon: '/icons/volume.png',
+    icon: '/icons/wmp-32.png',
+    headerIcon: '/icons/wmp-16.png',
     width: 800,
     height: 500,
     x: 200,
@@ -92,7 +92,7 @@ export const desktopIcons = [
   {
     id: 'mediaplayer',
     title: 'Media Player',
-    icon: '/icons/volume.png',
+    icon: '/icons/wmp-32.png',
     appKey: 'MediaPlayer',
   },
 ];
