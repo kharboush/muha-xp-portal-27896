@@ -87,12 +87,11 @@ const IEWindow = ({ children }: IEWindowProps) => {
       className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg"
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
-        cursor: isDragging ? 'grabbing' : 'default',
       }}
     >
       {/* Title Bar */}
       <div 
-        className="xp-titlebar flex items-center justify-between p-2 cursor-grab active:cursor-grabbing select-none"
+        className="xp-titlebar flex items-center justify-between p-2 select-none"
         onMouseDown={handleMouseDown}
       >
         <div className="flex items-center gap-3">
