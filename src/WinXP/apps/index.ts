@@ -66,10 +66,10 @@ export const appSettings: Record<string, AppConfig> = {
 
 export const desktopIcons = [
   {
-    id: 'ie',
-    title: 'Internet Browser',
-    icon: '/icons/ie.png',
-    appKey: 'InternetExplorer',
+    id: 'computer',
+    title: 'My Computer',
+    icon: '/icons/computer-32.png',
+    appKey: 'MyComputer',
   },
   {
     id: 'notepad',
@@ -78,21 +78,21 @@ export const desktopIcons = [
     appKey: 'Notepad',
   },
   {
-    id: 'computer',
-    title: 'My Computer',
-    icon: '/icons/computer-32.png',
-    appKey: 'MyComputer',
+    id: 'mediaplayer',
+    title: 'Media Player',
+    icon: '/icons/wmp-32.png',
+    appKey: 'MediaPlayer',
+  },
+  {
+    id: 'ie',
+    title: 'Internet Browser',
+    icon: '/icons/ie.png',
+    appKey: 'InternetExplorer',
   },
   {
     id: 'mirc',
     title: 'mIRC',
     icon: '/icons/mirc-32.png',
     appKey: 'mIRC',
-  },
-  {
-    id: 'mediaplayer',
-    title: 'Media Player',
-    icon: '/icons/wmp-32.png',
-    appKey: 'MediaPlayer',
   },
 ];
