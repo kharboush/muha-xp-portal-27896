@@ -88,8 +88,8 @@ function reducer(state: State, action: Action): State {
         icon: appConfig.icon,
         width: appConfig.width,
         height: appConfig.height,
-        x: appConfig.x,
-        y: appConfig.y,
+        x: appConfig.x + (state.nextWindowId * 30), // Cascade windows
+        y: appConfig.y + (state.nextWindowId * 30),
         zIndex: state.nextZIndex,
         minimized: false,
         maximized: false,
@@ -166,21 +166,26 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const Desktop = styled.div`
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(180deg, #5a9fd4 0%, #7bb4e6 50%, #78a9d8 100%);
-  position: relative;
+const Container = styled.div`
+  font-family: Tahoma, 'Noto Sans TC', sans-serif;
+  height: 100%;
   overflow: hidden;
+  position: relative;
+  background: url(https://i.imgur.com/Zk6TR5k.jpg) no-repeat center center fixed;
+  background-size: cover;
+  
+  *:not(input):not(textarea) {
+    user-select: none;
+  }
 `;
 
 const IconsContainer = styled.div`
   position: absolute;
-  top: 8px;
-  left: 8px;
+  margin-top: 10px;
+  margin-left: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 75px);
-  gap: 8px;
+  grid-template-columns: 70px;
+  gap: 0;
   z-index: 1;
 `;
 
@@ -217,12 +222,23 @@ export default function WinXP() {
     }
   }, []);
 
+  const handleWindowClick = useCallback((id: number) => {
+    if (state.focusedWindowId === id) {
+      // If already focused, minimize
+      handleMinimizeWindow(id);
+    } else {
+      // Otherwise focus
+      handleFocusWindow(id);
+    }
+  }, [state.focusedWindowId, handleMinimizeWindow, handleFocusWindow]);
+
   return (
-    <Desktop onMouseDown={handleDesktopClick}>
+    <Container onMouseDown={handleDesktopClick}>
       <IconsContainer>
         {desktopIcons.map((icon) => (
           <DesktopIcon
             key={icon.id}
+            id={icon.id}
             icon={icon.icon}
             title={icon.title}
             isFocused={state.focusedIconId === icon.id}
@@ -247,9 +263,9 @@ export default function WinXP() {
       <Taskbar
         windows={state.windows}
         focusedWindowId={state.focusedWindowId}
-        onWindowClick={handleFocusWindow}
+        onWindowClick={handleWindowClick}
         onStartClick={() => {}}
       />
-    </Desktop>
+    </Container>
   );
 }

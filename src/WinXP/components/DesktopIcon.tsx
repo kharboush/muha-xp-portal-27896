@@ -1,56 +1,94 @@
 import styled from 'styled-components';
-import { FC } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface DesktopIconProps {
+  id: string;
   icon: string;
   title: string;
   onDoubleClick: () => void;
   onFocus: () => void;
   isFocused: boolean;
+  className?: string;
 }
 
-const Container = styled.div<{ $focused: boolean }>`
-  width: 75px;
-  padding: 4px;
+function DesktopIcon({ id, icon, title, onDoubleClick, onFocus, isFocused, className }: DesktopIconProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  function _onMouseDown() {
+    onFocus();
+  }
+
+  function _onDoubleClick() {
+    onDoubleClick();
+  }
+
+  return (
+    <div
+      className={className}
+      onMouseDown={_onMouseDown}
+      onDoubleClick={_onDoubleClick}
+      ref={ref}
+    >
+      <div className={`${className}__img__container`}>
+        <img src={icon} alt={title} className={`${className}__img`} />
+      </div>
+      <div className={`${className}__text__container`}>
+        <div className={`${className}__text`}>{title}</div>
+      </div>
+    </div>
+  );
+}
+
+const StyledIcon = styled(DesktopIcon)`
+  width: 70px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  user-select: none;
   
-  background: ${props => props.$focused ? 'rgba(49, 104, 213, 0.5)' : 'transparent'};
-  border: 1px solid ${props => props.$focused ? 'rgba(49, 104, 213, 0.8)' : 'transparent'};
+  &__text__container {
+    width: 100%;
+    font-size: 11px;
+    color: white;
+    text-shadow: 0 1px 1px black;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      display: block;
+      flex-grow: 1;
+    }
+    
+    &:after {
+      content: '';
+      display: block;
+      flex-grow: 1;
+    }
+  }
   
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
+  &__text {
+    padding: 0 3px 2px;
+    background-color: ${({ isFocused }) =>
+      isFocused ? '#0b61ff' : 'transparent'};
+    text-align: center;
+    flex-shrink: 1;
+  }
+  
+  &__img__container {
+    width: 32px;
+    height: 32px;
+    filter: ${({ isFocused }) =>
+      isFocused ? 'drop-shadow(0 0 3px blue)' : ''};
+  }
+  
+  &__img {
+    width: 32px;
+    height: 32px;
+    opacity: ${({ isFocused }) => (isFocused ? 0.7 : 1)};
   }
 `;
 
-const IconImage = styled.img`
-  width: 32px;
-  height: 32px;
-  margin-bottom: 4px;
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
-`;
-
-const IconTitle = styled.div`
-  color: white;
-  font-size: 11px;
-  text-align: center;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-  word-wrap: break-word;
-  width: 100%;
-`;
-
-export default function DesktopIcon({ icon, title, onDoubleClick, onFocus, isFocused }: DesktopIconProps) {
-  return (
-    <Container
-      $focused={isFocused}
-      onMouseDown={onFocus}
-      onDoubleClick={onDoubleClick}
-    >
-      <IconImage src={icon} alt={title} />
-      <IconTitle>{title}</IconTitle>
-    </Container>
-  );
-}
+export default StyledIcon;

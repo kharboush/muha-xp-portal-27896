@@ -1,6 +1,5 @@
-import { useRef, useState, useEffect, ComponentType } from 'react';
+import { useRef, useState, useEffect, ComponentType, memo } from 'react';
 import styled from 'styled-components';
-import { X, Minimize2, Maximize2 } from 'lucide-react';
 
 interface WindowProps {
   id: number;
@@ -20,87 +19,10 @@ interface WindowProps {
   onMinimize: (id: number) => void;
   onMaximize: (id: number) => void;
   isFocused: boolean;
+  className?: string;
 }
 
-const Container = styled.div<{ $show: boolean; $maximized: boolean; $zIndex: number }>`
-  position: absolute;
-  display: ${props => props.$show ? 'flex' : 'none'};
-  flex-direction: column;
-  background: #ece9d8;
-  border: 3px solid;
-  border-color: ${props => props.$zIndex > 0 ? '#0054e3 #0054e3 #0a0a0a #0a0a0a' : '#808080'};
-  box-shadow: ${props => props.$zIndex > 0 ? '4px 4px 10px rgba(0,0,0,0.5)' : '2px 2px 5px rgba(0,0,0,0.3)'};
-  z-index: ${props => props.$zIndex};
-  
-  ${props => props.$maximized ? `
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: calc(100% - 40px) !important;
-  ` : ''}
-`;
-
-const TitleBar = styled.div<{ $active: boolean }>`
-  height: 30px;
-  background: ${props => props.$active 
-    ? 'linear-gradient(180deg, #0997FF 0%, #0058EE 4%, #0044DD 6%, #0040DD 92%, #0055EE 96%, #0E8BFF 100%)'
-    : 'linear-gradient(180deg, #7A96DF 0%, #5A7ACE 50%, #3A5AAD 100%)'};
-  display: flex;
-  align-items: center;
-  padding: 0 4px;
-  cursor: move;
-  user-select: none;
-`;
-
-const TitleIcon = styled.img`
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-`;
-
-const Title = styled.div`
-  flex: 1;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-`;
-
-const TitleButtons = styled.div`
-  display: flex;
-  gap: 2px;
-`;
-
-const TitleButton = styled.button`
-  width: 21px;
-  height: 21px;
-  background: linear-gradient(180deg, #dedad2 0%, #c4c0b8 100%);
-  border: 1px solid;
-  border-color: #ffffff #000000 #000000 #ffffff;
-  display: flex;
-  align-items: center;
-  justify-center;
-  cursor: pointer;
-  padding: 0;
-  
-  &:active {
-    background: linear-gradient(180deg, #c4c0b8 0%, #dedad2 100%);
-    border-color: #000000 #ffffff #ffffff #000000;
-  }
-  
-  svg {
-    width: 12px;
-    height: 12px;
-  }
-`;
-
-const ContentArea = styled.div`
-  flex: 1;
-  overflow: hidden;
-  background: white;
-`;
-
-export default function Window(props: WindowProps) {
+const Window = memo(function Window(props: WindowProps) {
   const {
     id,
     title,
@@ -109,22 +31,22 @@ export default function Window(props: WindowProps) {
     height,
     x,
     y,
-    zIndex,
-    minimized,
     maximized,
+    resizable,
     component: Component,
     onFocus,
     onClose,
     onMinimize,
     onMaximize,
-    isFocused
+    isFocused,
+    className
   } = props;
 
   const [position, setPosition] = useState({ x, y });
   const [size, setSize] = useState({ width, height });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
+  const dragRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (maximized) return;
@@ -134,6 +56,11 @@ export default function Window(props: WindowProps) {
       x: e.clientX - position.x,
       y: e.clientY - position.y
     });
+  };
+
+  const handleDoubleClickHeader = (e: React.MouseEvent) => {
+    if (e.target !== dragRef.current) return;
+    if (resizable) onMaximize(id);
   };
 
   useEffect(() => {
@@ -159,38 +86,194 @@ export default function Window(props: WindowProps) {
     }
   }, [isDragging, dragStart, maximized]);
 
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  let finalWidth, finalHeight, finalX, finalY;
+  if (maximized) {
+    finalWidth = windowWidth + 6;
+    finalHeight = windowHeight - 24;
+    finalX = -3;
+    finalY = -3;
+  } else {
+    finalWidth = size.width;
+    finalHeight = size.height;
+    finalX = position.x;
+    finalY = position.y;
+  }
+
   return (
-    <Container
-      ref={containerRef}
-      $show={!minimized}
-      $maximized={maximized}
-      $zIndex={zIndex}
-      style={!maximized ? {
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        width: `${size.width}px`,
-        height: `${size.height}px`
-      } : undefined}
+    <div
+      className={className}
       onMouseDown={() => onFocus(id)}
+      style={{
+        transform: `translate(${finalX}px,${finalY}px)`,
+        width: finalWidth ? `${finalWidth}px` : 'auto',
+        height: finalHeight ? `${finalHeight}px` : 'auto',
+        zIndex: props.zIndex,
+      }}
     >
-      <TitleBar $active={isFocused} onMouseDown={handleMouseDown}>
-        {icon && <TitleIcon src={icon} alt="" />}
-        <Title>{title}</Title>
-        <TitleButtons>
-          <TitleButton onClick={(e) => { e.stopPropagation(); onMinimize(id); }}>
-            <Minimize2 />
-          </TitleButton>
-          <TitleButton onClick={(e) => { e.stopPropagation(); onMaximize(id); }}>
-            <Maximize2 />
-          </TitleButton>
-          <TitleButton onClick={(e) => { e.stopPropagation(); onClose(id); }}>
-            <X />
-          </TitleButton>
-        </TitleButtons>
-      </TitleBar>
-      <ContentArea>
+      <div className="header__bg" />
+      <header
+        className="app__header"
+        ref={dragRef}
+        onMouseDown={handleMouseDown}
+        onDoubleClick={handleDoubleClickHeader}
+      >
+        <img
+          onDoubleClick={() => onClose(id)}
+          src={icon}
+          alt={title}
+          className="app__header__icon"
+          draggable={false}
+        />
+        <div className="app__header__title">{title}</div>
+        <div className="app__header__buttons">
+          <button className="app__header__button minimize" onClick={(e) => { e.stopPropagation(); onMinimize(id); }}>
+            <span>_</span>
+          </button>
+          {resizable && (
+            <button className="app__header__button maximize" onClick={(e) => { e.stopPropagation(); onMaximize(id); }}>
+              <span>{maximized ? '❐' : '□'}</span>
+            </button>
+          )}
+          <button className="app__header__button close" onClick={(e) => { e.stopPropagation(); onClose(id); }}>
+            <span>×</span>
+          </button>
+        </div>
+      </header>
+      <div className="app__content">
         <Component onClose={() => onClose(id)} />
-      </ContentArea>
-    </Container>
+      </div>
+    </div>
   );
-}
+});
+
+const StyledWindow = styled(Window)`
+  display: flex;
+  position: absolute;
+  padding: 3px;
+  background-color: ${({ isFocused }) => (isFocused ? '#0831d9' : '#6582f5')};
+  flex-direction: column;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  
+  .header__bg {
+    background: ${({ isFocused }) =>
+      isFocused
+        ? 'linear-gradient(to bottom,#0058ee 0%,#3593ff 4%,#288eff 6%,#127dff 8%,#036ffc 10%,#0262ee 14%,#0057e5 20%,#0054e3 24%,#0055eb 56%,#005bf5 66%,#026afe 76%,#0062ef 86%,#0052d6 92%,#0040ab 94%,#003092 100%)'
+        : 'linear-gradient(to bottom, #7697e7 0%,#7e9ee3 3%,#94afe8 6%,#97b4e9 8%,#82a5e4 14%,#7c9fe2 17%,#7996de 25%,#7b99e1 56%,#82a9e9 81%,#80a5e7 89%,#7b96e1 94%,#7a93df 97%,#abbae3 100%)'};
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 28px;
+    pointer-events: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .header__bg:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    opacity: ${({ isFocused }) => (isFocused ? 1 : 0.3)};
+    background: linear-gradient(to right, #1638e6 0%, transparent 100%);
+    top: 0;
+    bottom: 0;
+    width: 15px;
+  }
+  
+  .header__bg:after {
+    content: '';
+    opacity: ${({ isFocused }) => (isFocused ? 1 : 0.4)};
+    display: block;
+    position: absolute;
+    right: 0;
+    background: linear-gradient(to left, #1638e6 0%, transparent 100%);
+    top: 0;
+    bottom: 0;
+    width: 15px;
+  }
+  
+  .app__header {
+    display: flex;
+    height: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Noto Sans';
+    text-shadow: 1px 1px #000;
+    color: white;
+    position: absolute;
+    left: 3px;
+    right: 3px;
+    align-items: center;
+    cursor: move;
+  }
+  
+  .app__header__icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 1px;
+    margin-right: 3px;
+  }
+  
+  .app__header__title {
+    flex: 1;
+    pointer-events: none;
+    padding-right: 5px;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .app__header__buttons {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .app__header__button {
+    width: 21px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #efe9de 0%, #ebe3d5 50%, #dcd1bc 100%);
+    border: 1px solid;
+    border-color: #fcfaf7 #8a8378 #8a8378 #fcfaf7;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1;
+    color: #000;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    
+    span {
+      margin-top: -2px;
+    }
+    
+    &:hover {
+      background: linear-gradient(to bottom, #fbf4eb 0%, #f7edd9 50%, #e8d8be 100%);
+    }
+    
+    &:active {
+      background: linear-gradient(to bottom, #dad0be 0%, #d5c9b2 50%, #beb19a 100%);
+      border-color: #8a8378 #fcfaf7 #fcfaf7 #8a8378;
+    }
+  }
+  
+  .app__content {
+    flex: 1;
+    position: relative;
+    margin-top: 25px;
+    height: calc(100% - 25px);
+  }
+`;
+
+export default StyledWindow;
