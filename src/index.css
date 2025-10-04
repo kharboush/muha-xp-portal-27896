@@ -2,53 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Windows XP Luna Theme Colors */
-    --background: 210 100% 88%; /* XP Desktop Blue */
+    --background: 0 0% 100%;
     --foreground: 0 0% 0%;
-
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
-
-    /* XP Blue Gradient */
-    --primary: 214 100% 45%; /* XP Blue */
+    --primary: 214 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 214 100% 35%;
-
-    /* XP Window Chrome */
     --secondary: 0 0% 85%;
     --secondary-foreground: 0 0% 0%;
-
     --muted: 0 0% 93%;
     --muted-foreground: 0 0% 40%;
-
-    --accent: 39 100% 50%; /* XP Orange/Yellow accent */
+    --accent: 39 100% 50%;
     --accent-foreground: 0 0% 0%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 0 0% 63%;
     --input: 0 0% 100%;
     --ring: 214 100% 45%;
-
-    --radius: 0px; /* XP has sharp corners */
-
-    /* XP Taskbar */
-    --taskbar-start: 101 54% 44%;
-    --taskbar-end: 214 100% 45%;
-    
-    /* Window shadows */
-    --window-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    --button-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.1), inset 1px 1px 0 rgba(255, 255, 255, 0.9);
+    --radius: 0px;
   }
 }
 
@@ -59,77 +34,9 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Tahoma', 'Verdana', sans-serif;
-  }
-}
-
-@layer components {
-  .xp-window {
-    @apply border-2 border-[#0054E3];
-    background: transparent;
-    border-radius: 8px;
-    box-shadow: var(--window-shadow);
-    overflow: hidden;
-  }
-
-  .xp-titlebar {
-    background: linear-gradient(180deg, #0997FF 0%, #0058EE 4%, #0044DD 6%, #0042DD 8%, #0040DD 88%, #0055EE 92%, #0E8BFF 96%, #139AFF 100%);
-    color: white;
-    font-weight: bold;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
-  }
-
-  .xp-button {
-    @apply px-3 py-1 bg-gradient-to-b from-white to-[#ECE9D8] border border-[#003C74] rounded-sm text-xs font-bold;
-    box-shadow: var(--button-shadow);
-  }
-
-  .xp-button:hover {
-    @apply from-[#FFF6D9] to-[#F7E9BB];
-  }
-
-  .xp-button:active {
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
-  }
-
-  .xp-start-button {
-    @apply h-8 px-3 flex items-center gap-2 rounded-r-lg text-white font-bold text-sm shadow-lg;
-    background: linear-gradient(180deg, #5EAB5C 0%, #3D903C 50%, #2E7D2C 100%);
-  }
-
-  .xp-start-button:hover {
-    background: linear-gradient(180deg, #6FBF6D 0%, #4DA54B 50%, #3E8E3C 100%);
-  }
-
-  /* Custom Radix ScrollArea styling for XP look */
-  .xp-scroll-area {
-    --scrollbar-size: 17px;
   }
   
-  .xp-scrollbar-custom {
-    display: flex !important;
-    touch-action: none;
-    user-select: none;
-    padding: 17px 0 !important;
-  }
-  
-  .xp-scrollbar-custom > div {
-    position: relative;
-    flex: 1;
-    background: linear-gradient(90deg, #F3F1EA 0%, #ECE9D8 50%, #DDD9C3 100%);
-    border: 1px solid #ACA899;
-    border-radius: 0 !important;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  }
-  
-  .xp-scrollbar-custom > div:hover {
-    background: linear-gradient(90deg, #F5F3EC 0%, #EEE9D8 50%, #E0DCC5 100%);
-  }
-  
-  .xp-scrollbar-custom > div:active {
-    background: linear-gradient(90deg, #D5D1BB 0%, #C8C4AE 50%, #BBB7A1 100%);
+  #root {
+    height: 100%;
   }
 }
