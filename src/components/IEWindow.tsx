@@ -9,22 +9,22 @@ const IEWindow = ({ children }: IEWindowProps) => {
   return (
     <div className="xp-window w-full max-w-4xl mx-auto flex flex-col max-h-[85vh] overflow-hidden rounded-lg">
       {/* Title Bar */}
-      <div className="xp-titlebar h-[30px] flex items-center justify-between px-2">
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 bg-white rounded-sm flex items-center justify-center text-blue-600 text-xs font-bold shadow-sm">
+      <div className="xp-titlebar h-[64px] flex items-center justify-between px-4">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-blue-600 text-lg font-bold shadow-sm">
             W
           </div>
-          <span className="font-bold text-sm">MUHA - Web Browser</span>
+          <span className="font-bold text-lg">MUHA - Web Browser</span>
         </div>
-        <div className="flex items-center gap-[2px]">
-          <button className="w-[21px] h-[21px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
-            <Minus className="w-3 h-3 text-white" strokeWidth={3} />
+        <div className="flex items-center gap-1">
+          <button className="w-[28px] h-[28px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
+            <Minus className="w-4 h-4 text-white" strokeWidth={3} />
           </button>
-          <button className="w-[21px] h-[21px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
-            <Square className="w-[10px] h-[10px] text-white" strokeWidth={3} />
+          <button className="w-[28px] h-[28px] flex items-center justify-center bg-[#2D6AE1] hover:bg-[#4C8AFF] active:bg-[#1E4BA0] border border-[#1A3C7D] rounded-sm transition-colors">
+            <Square className="w-[14px] h-[14px] text-white" strokeWidth={3} />
           </button>
-          <button className="w-[21px] h-[21px] flex items-center justify-center bg-[#E81500] hover:bg-[#FF3A14] active:bg-[#C40000] border border-[#8B0000] rounded-sm transition-colors">
-            <X className="w-3 h-3 text-white" strokeWidth={3} />
+          <button className="w-[28px] h-[28px] flex items-center justify-center bg-[#E81500] hover:bg-[#FF3A14] active:bg-[#C40000] border border-[#8B0000] rounded-sm transition-colors">
+            <X className="w-4 h-4 text-white" strokeWidth={3} />
           </button>
         </div>
       </div>

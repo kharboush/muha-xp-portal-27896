@@ -65,7 +65,8 @@ All colors MUST be HSL.
 
 @layer components {
   .xp-window {
-    @apply bg-card border-2 border-[#0054E3];
+    @apply border-2 border-[#0054E3];
+    background: #ECE9D8;
     border-radius: 8px;
     box-shadow: var(--window-shadow);
     overflow: hidden;
