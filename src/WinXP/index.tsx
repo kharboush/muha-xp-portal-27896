@@ -36,7 +36,7 @@ const maxMPWidth = Math.min(Math.floor(window.innerWidth * 0.98), 960);
 const mpWidth = maxMPWidth;
 const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100; // +100 for controls and menu
 const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
-const mpY = 50; // Position slightly below top of screen
+const mpY = 60; // Position slightly below top of screen
 
 const initialState: State = {
   windows: [
@@ -124,7 +124,7 @@ function reducer(state: State, action: Action): State {
         windowWidth = maxWidth;
         windowHeight = Math.floor((maxWidth * 9) / 16) + 100; // +100 for controls and menu
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
-        windowY = 50; // Position slightly below top of screen
+        windowY = 60; // Position slightly below top of screen
       }
 
       // Create new window
@@ -286,7 +286,7 @@ export default function WinXP() {
         const mpWidth = maxMPWidth;
         const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100;
         const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
-        const mpY = 50; // Position slightly below top of screen
+        const mpY = 60; // Position slightly below top of screen
 
         dispatch({
           type: 'UPDATE_WINDOW_SIZE' as any,
