@@ -115,7 +115,6 @@ const Container = styled.div`
   .ie__menu__item {
     padding: 2px 8px;
     font-size: 11px;
-    cursor: pointer;
     
     &:hover {
       background: #3168d5;
@@ -138,7 +137,6 @@ const Container = styled.div`
     align-items: center;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 3px;
-    cursor: pointer;
     
     &:hover {
       border: 1px solid rgba(0, 0, 0, 0.1);
@@ -231,7 +229,6 @@ const Container = styled.div`
       height: 15px;
       right: 1px;
       position: absolute;
-      cursor: pointer;
       
       &:hover {
         filter: brightness(1.1);
@@ -254,7 +251,6 @@ const Container = styled.div`
     padding: 0 18px 0 5px;
     height: 100%;
     position: relative;
-    cursor: pointer;
     
     &__img {
       height: 95%;

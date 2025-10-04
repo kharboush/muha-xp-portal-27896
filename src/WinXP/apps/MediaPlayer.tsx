@@ -143,7 +143,6 @@ const Container = styled.div`
   .mp__menu__item {
     padding: 2px 8px;
     font-size: 11px;
-    cursor: pointer;
     color: #000;
     
     &:hover {
@@ -178,7 +177,6 @@ const Container = styled.div`
     border-radius: 3px;
     padding: 4px 12px;
     font-size: 16px;
-    cursor: pointer;
     min-width: 40px;
     
     &:hover {

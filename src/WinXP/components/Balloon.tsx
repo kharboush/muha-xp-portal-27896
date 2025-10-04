@@ -140,7 +140,6 @@ const Div = styled.div<{ show: boolean }>`
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     background-color: transparent;
-    cursor: pointer;
 
     &:before {
       content: '';

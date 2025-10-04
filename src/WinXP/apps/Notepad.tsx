@@ -19,7 +19,6 @@ const MenuBar = styled.div`
 
 const MenuItem = styled.div`
   padding: 2px 8px;
-  cursor: pointer;
   &:hover {
     background: #3168d5;
     color: white;

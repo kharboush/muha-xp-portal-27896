@@ -54,7 +54,6 @@ export default styled(HeaderButtons)`
     border: 1px solid #fff;
     border-radius: 3px;
     background: transparent;
-    cursor: pointer;
     
     &:hover {
       filter: brightness(120%);

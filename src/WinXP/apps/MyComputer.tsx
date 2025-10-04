@@ -25,7 +25,6 @@ const DriveIcon = styled.div`
   align-items: center;
   width: 100px;
   margin: 10px;
-  cursor: pointer;
   padding: 8px;
   
   &:hover {

@@ -216,7 +216,6 @@ const StyledWindow = styled(Window)`
     left: 3px;
     right: 3px;
     align-items: center;
-    cursor: move;
   }
   
   .app__header__icon {

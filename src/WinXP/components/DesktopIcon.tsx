@@ -45,7 +45,6 @@ const StyledIcon = styled(DesktopIcon)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
   
   &__text__container {
     width: 100%;

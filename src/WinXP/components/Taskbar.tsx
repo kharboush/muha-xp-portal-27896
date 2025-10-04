@@ -155,7 +155,6 @@ const Container = styled.footer`
     height: 100%;
     margin-right: 10px;
     position: relative;
-    cursor: pointer;
     
     &:hover {
       filter: brightness(105%);
@@ -182,7 +181,6 @@ const Container = styled.footer`
     position: relative;
     display: flex;
     align-items: center;
-    cursor: pointer;
     margin-right: 4px;
   }
   
