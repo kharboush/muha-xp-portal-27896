@@ -6,32 +6,7 @@ const MuhaFilm = () => {
       <div className="max-w-3xl mx-auto space-y-8">
         {/* Video Player */}
         <section>
-          <div className="bg-black border-4 border-gray-400 rounded-sm p-1" style={{
-            boxShadow: 'inset 0 0 0 1px #000, 0 2px 4px rgba(0,0,0,0.3)'
-          }}>
-            <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-1 flex items-center justify-between text-xs">
-              <span className="font-bold">Media Player</span>
-              <div className="flex gap-1">
-                <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-                <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-                <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-              </div>
-            </div>
-            <div className="aspect-video bg-gray-800 flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <div className="text-6xl mb-2">▶</div>
-                <div className="text-sm">Video Player</div>
-              </div>
-            </div>
-            <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-2 flex items-center gap-2 text-xs">
-              <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">▶</button>
-              <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">■</button>
-              <div className="flex-1 bg-gray-500 h-2 rounded-full overflow-hidden">
-                <div className="bg-blue-600 h-full w-0" />
-              </div>
-              <span className="text-gray-700">00:00 / 00:00</span>
-            </div>
-          </div>
+          <div className="aspect-video bg-gray-400"></div>
         </section>
 
         {/* Header */}
