@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Balloon from './Balloon';
 import { AppWindow } from '../types';
 
 interface TaskbarProps {
@@ -77,6 +78,12 @@ export default function Taskbar({ windows, focusedWindowId, onWindowClick, onSta
       </div>
 
       <div className="footer__items right">
+        <img className="footer__icon" src="/icons/volume.png" alt="volume" />
+        <img className="footer__icon" src="/icons/usb.png" alt="usb" />
+        <img className="footer__icon" src="/icons/antivirus.png" alt="antivirus" />
+        <div style={{ position: 'relative', width: 0, height: 0 }}>
+          <Balloon />
+        </div>
         <div className="footer__time">{time}</div>
       </div>
     </Container>
