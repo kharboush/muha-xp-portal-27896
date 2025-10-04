@@ -11,7 +11,7 @@ const IEWindow = ({ children }: IEWindowProps) => {
       {/* Title Bar */}
       <div className="xp-titlebar h-[64px] flex items-center justify-between px-2">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-blue-600 text-lg font-bold shadow-sm">
+          <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 text-lg font-bold shadow-sm">
             W
           </div>
           <span className="font-bold text-sm">MUHA - Web Browser</span>
