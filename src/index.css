@@ -102,4 +102,56 @@ All colors MUST be HSL.
   .xp-start-button:hover {
     background: linear-gradient(180deg, #6FBF6D 0%, #4DA54B 50%, #3E8E3C 100%);
   }
+
+  /* XP Scrollbar */
+  .xp-scrollbar::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-track {
+    background: #ECE9D8;
+    border-left: 1px solid #DEDAD0;
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #F3F1EA 0%, #ECE9D8 50%, #DDD9C3 100%);
+    border: 1px solid #ACA899;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #F5F3EC 0%, #EEE9D8 50%, #E0DCC5 100%);
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(90deg, #D5D1BB 0%, #C8C4AE 50%, #BBB7A1 100%);
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-button {
+    background: linear-gradient(180deg, #FFFFFF 0%, #ECE9D8 100%);
+    border: 1px solid #ACA899;
+    height: 16px;
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-button:hover {
+    background: linear-gradient(180deg, #FFF 0%, #F0EDE0 100%);
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-button:active {
+    background: linear-gradient(180deg, #E8E5D7 0%, #DEDAD0 100%);
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M8 5l-4 5h8z' fill='%23000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+
+  .xp-scrollbar::-webkit-scrollbar-button:vertical:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M8 11l-4-5h8z' fill='%23000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
 }
