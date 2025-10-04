@@ -122,7 +122,7 @@ const IEWindow = ({ children }: IEWindowProps) => {
         
         {/* Down Arrow Button */}
         <button
-          className={`absolute bottom-[22px] right-0 w-[17px] h-[17px] bg-[#ECE9D8] border border-[#919B9C] flex items-center justify-center z-20 hover:bg-[#D8D5C8] active:bg-[#C0BDB0] ${isScrollingDown ? 'bg-[#C0BDB0]' : ''}`}
+          className={`absolute bottom-0 right-0 w-[17px] h-[17px] bg-[#ECE9D8] border border-[#919B9C] flex items-center justify-center z-20 hover:bg-[#D8D5C8] active:bg-[#C0BDB0] ${isScrollingDown ? 'bg-[#C0BDB0]' : ''}`}
           onMouseDown={() => startScrolling('down')}
           onMouseUp={stopScrolling}
           onMouseLeave={stopScrolling}
