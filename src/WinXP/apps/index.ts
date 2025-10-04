@@ -71,4 +71,10 @@ export const desktopIcons = [
     icon: '/icons/computer-32.png',
     appKey: 'MyComputer',
   },
+  {
+    id: 'mirc',
+    title: 'mIRC',
+    icon: '/icons/mirc-32.png',
+    appKey: 'mIRC',
+  },
 ];
