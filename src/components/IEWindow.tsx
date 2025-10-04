@@ -18,6 +18,7 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const windowRef = useRef<HTMLDivElement>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const scrollBy = (amount: number) => {
     if (viewportRef.current) {
@@ -83,16 +84,28 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
     };
   }, [isDragging, dragStart]);
 
-  if (isMinimized) {
+  useEffect(() => {
+    if (isMinimized !== undefined) {
+      setIsAnimating(true);
+      const timer = setTimeout(() => {
+        setIsAnimating(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isMinimized]);
+
+  if (isMinimized && !isAnimating) {
     return null;
   }
 
   return (
     <div 
       ref={windowRef}
-      className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg"
+      className="xp-window w-full max-w-5xl mx-auto flex flex-col max-h-[92vh] h-full min-h-0 overflow-hidden rounded-lg transition-all duration-300 ease-in-out"
       style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
+        transform: `translate(${position.x}px, ${position.y}px) scale(${isMinimized ? 0.8 : 1})`,
+        opacity: isMinimized ? 0 : 1,
+        transformOrigin: 'bottom center',
       }}
     >
       {/* Title Bar */}
