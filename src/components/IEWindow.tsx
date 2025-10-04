@@ -19,6 +19,7 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const windowRef = useRef<HTMLDivElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => !isMinimized);
 
   const scrollBy = (amount: number) => {
     if (viewportRef.current) {
@@ -87,16 +88,18 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
   useEffect(() => {
     if (isMinimized !== undefined) {
       if (isMinimized) {
-        // Start animation before hiding
+        // Start minimize animation
         setIsAnimating(true);
         const timer = setTimeout(() => {
           setIsAnimating(false);
+          setIsVisible(false); // Hide after animation
         }, 300);
         return () => clearTimeout(timer);
       } else {
-        // Show immediately and animate
-        setIsAnimating(true);
+        // Show immediately, then animate maximize
+        setIsVisible(true);
         requestAnimationFrame(() => {
+          setIsAnimating(true);
           const timer = setTimeout(() => {
             setIsAnimating(false);
           }, 300);
@@ -105,7 +108,7 @@ const IEWindow = ({ children, isMinimized, onMinimize }: IEWindowProps) => {
     }
   }, [isMinimized]);
 
-  if (isMinimized && !isAnimating) {
+  if (!isVisible) {
     return null;
   }
 
