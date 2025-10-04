@@ -1,6 +1,7 @@
 import InternetExplorer from './InternetExplorer';
 import Notepad from './Notepad';
 import MyComputer from './MyComputer';
+import MediaPlayer from './MediaPlayer';
 
 export interface AppConfig {
   component: React.ComponentType<any>;
@@ -50,6 +51,17 @@ export const appSettings: Record<string, AppConfig> = {
     y: 40,
     resizable: true,
   },
+  MediaPlayer: {
+    component: MediaPlayer,
+    title: 'Media Player',
+    icon: '/icons/volume.png',
+    headerIcon: '/icons/volume.png',
+    width: 720,
+    height: 480,
+    x: 200,
+    y: 80,
+    resizable: true,
+  },
 };
 
 export const desktopIcons = [
@@ -76,5 +88,11 @@ export const desktopIcons = [
     title: 'mIRC',
     icon: '/icons/mirc-32.png',
     appKey: 'mIRC',
+  },
+  {
+    id: 'mediaplayer',
+    title: 'Media Player',
+    icon: '/icons/volume.png',
+    appKey: 'MediaPlayer',
   },
 ];
