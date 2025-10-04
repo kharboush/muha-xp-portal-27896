@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, ComponentType, memo } from 'react';
 import styled from 'styled-components';
+import HeaderButtons from './HeaderButtons';
 
 interface WindowProps {
   id: number;
@@ -128,19 +129,14 @@ const Window = memo(function Window(props: WindowProps) {
           draggable={false}
         />
         <div className="app__header__title">{title}</div>
-        <div className="app__header__buttons">
-          <button className="app__header__button minimize" onClick={(e) => { e.stopPropagation(); onMinimize(id); }}>
-            <span>_</span>
-          </button>
-          {resizable && (
-            <button className="app__header__button maximize" onClick={(e) => { e.stopPropagation(); onMaximize(id); }}>
-              <span>{maximized ? '❐' : '□'}</span>
-            </button>
-          )}
-          <button className="app__header__button close" onClick={(e) => { e.stopPropagation(); onClose(id); }}>
-            <span>×</span>
-          </button>
-        </div>
+        <HeaderButtons
+          onMaximize={() => onMaximize(id)}
+          onMinimize={() => onMinimize(id)}
+          onClose={() => onClose(id)}
+          maximized={maximized}
+          resizable={resizable}
+          isFocus={isFocused}
+        />
       </header>
       <div className="app__content">
         <Component onClose={() => onClose(id)} />
@@ -231,42 +227,6 @@ const StyledWindow = styled(Window)`
     text-overflow: ellipsis;
   }
   
-  .app__header__buttons {
-    display: flex;
-    gap: 2px;
-  }
-  
-  .app__header__button {
-    width: 21px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    background: linear-gradient(to bottom, #efe9de 0%, #ebe3d5 50%, #dcd1bc 100%);
-    border: 1px solid;
-    border-color: #fcfaf7 #8a8378 #8a8378 #fcfaf7;
-    border-radius: 3px;
-    font-size: 12px;
-    line-height: 1;
-    color: #000;
-    padding: 0;
-    font-family: sans-serif;
-    font-weight: bold;
-    
-    span {
-      margin-top: -2px;
-    }
-    
-    &:hover {
-      background: linear-gradient(to bottom, #fbf4eb 0%, #f7edd9 50%, #e8d8be 100%);
-    }
-    
-    &:active {
-      background: linear-gradient(to bottom, #dad0be 0%, #d5c9b2 50%, #beb19a 100%);
-      border-color: #8a8378 #fcfaf7 #fcfaf7 #8a8378;
-    }
-  }
   
   .app__content {
     flex: 1;
