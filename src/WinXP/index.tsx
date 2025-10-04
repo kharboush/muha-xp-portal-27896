@@ -23,11 +23,11 @@ interface State {
   focusedIconId: string | null;
 }
 
-// Calculate IE window dimensions: 95% width, 90% height, centered
+// Calculate IE window dimensions: 95% width (max 800px), 90% height, centered
 const taskbarHeight = 30;
 const availableHeight = window.innerHeight - taskbarHeight;
 const ieHeight = Math.floor(availableHeight * 0.9);
-const ieWidth = Math.floor(window.innerWidth * 0.95);
+const ieWidth = Math.min(Math.floor(window.innerWidth * 0.95), 800);
 const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
 const ieY = Math.floor((availableHeight - ieHeight) / 2);
 
@@ -226,7 +226,7 @@ export default function WinXP() {
       const taskbarHeight = 30;
       const availableHeight = window.innerHeight - taskbarHeight;
       const ieHeight = Math.floor(availableHeight * 0.9);
-      const ieWidth = Math.floor(window.innerWidth * 0.95);
+      const ieWidth = Math.min(Math.floor(window.innerWidth * 0.95), 800);
       const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
       const ieY = Math.floor((availableHeight - ieHeight) / 2);
 
