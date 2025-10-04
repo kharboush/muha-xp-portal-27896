@@ -18,7 +18,7 @@ export interface AppConfig {
 export const appSettings: Record<string, AppConfig> = {
   InternetExplorer: {
     component: InternetExplorer,
-    title: 'Internet Explorer',
+    title: 'Internet Browser',
     icon: '/icons/ie.png',
     headerIcon: '/icons/ie-paper.png',
     width: 800,
@@ -55,7 +55,7 @@ export const appSettings: Record<string, AppConfig> = {
 export const desktopIcons = [
   {
     id: 'ie',
-    title: 'Internet Explorer',
+    title: 'Internet Browser',
     icon: '/icons/ie.png',
     appKey: 'InternetExplorer',
   },
