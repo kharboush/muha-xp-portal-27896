@@ -23,6 +23,14 @@ interface State {
   focusedIconId: string | null;
 }
 
+// Calculate IE window dimensions: 90% height, centered
+const taskbarHeight = 30;
+const availableHeight = window.innerHeight - taskbarHeight;
+const ieHeight = Math.floor(availableHeight * 0.9);
+const ieWidth = appSettings.InternetExplorer.width;
+const ieX = Math.floor((window.innerWidth - ieWidth) / 2);
+const ieY = Math.floor((availableHeight - ieHeight) / 2);
+
 const initialState: State = {
   windows: [
     // Auto-open IE with MUHA content
@@ -31,13 +39,13 @@ const initialState: State = {
       component: appSettings.InternetExplorer.component,
       title: appSettings.InternetExplorer.title,
       icon: appSettings.InternetExplorer.headerIcon,
-      width: appSettings.InternetExplorer.width,
-      height: appSettings.InternetExplorer.height,
-      x: appSettings.InternetExplorer.x,
-      y: appSettings.InternetExplorer.y,
+      width: ieWidth,
+      height: ieHeight,
+      x: ieX,
+      y: ieY,
       zIndex: 1,
       minimized: false,
-      maximized: window.innerWidth < 900,
+      maximized: false,
       resizable: appSettings.InternetExplorer.resizable,
     },
   ],
