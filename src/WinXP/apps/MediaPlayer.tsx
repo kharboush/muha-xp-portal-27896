@@ -1,8 +1,58 @@
 import styled from 'styled-components';
+import { useEffect, useRef, useState } from 'react';
+
+// Declare YouTube IFrame API types
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
 
 function MediaPlayer() {
   // Default YouTube video - can be changed to any video ID
   const videoId = 'dQw4w9WgXcQ';
+  const playerRef = useRef<any>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [apiReady, setApiReady] = useState(false);
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+      window.onYouTubeIframeAPIReady = () => {
+        setApiReady(true);
+      };
+    } else {
+      setApiReady(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (apiReady && !playerRef.current) {
+      playerRef.current = new window.YT.Player('youtube-player', {
+        events: {
+          onStateChange: (event: any) => {
+            setIsPlaying(event.data === window.YT.PlayerState.PLAYING);
+          },
+        },
+      });
+    }
+  }, [apiReady]);
+
+  const togglePlayPause = () => {
+    if (playerRef.current) {
+      if (isPlaying) {
+        playerRef.current.pauseVideo();
+      } else {
+        playerRef.current.playVideo();
+      }
+    }
+  };
 
   return (
     <Container>
@@ -21,14 +71,20 @@ function MediaPlayer() {
       <div className="mp__content">
         <div className="mp__video">
           <iframe
+            id="youtube-player"
             width="100%"
             height="100%"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=${videoId}`}
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=${videoId}&enablejsapi=1`}
             title="Media Player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+        </div>
+        <div className="mp__controls">
+          <button className="mp__control_btn" onClick={togglePlayPause}>
+            {isPlaying ? '⏸' : '▶'}
+          </button>
         </div>
       </div>
 
@@ -84,18 +140,43 @@ const Container = styled.div`
   .mp__content {
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     padding: 8px;
     position: relative;
   }
 
   .mp__video {
-    width: 100%;
-    height: 100%;
+    flex: 1;
     background: #000;
     border: 2px solid rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
+  }
+
+  .mp__controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 4px;
+  }
+
+  .mp__control_btn {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 100%);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 4px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 40px;
+    
+    &:hover {
+      background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+    }
+    
+    &:active {
+      background: linear-gradient(to bottom, #e0e0e0 0%, #f8f8f8 100%);
+      border: 1px solid #666;
+    }
   }
 
   .mp__footer {
