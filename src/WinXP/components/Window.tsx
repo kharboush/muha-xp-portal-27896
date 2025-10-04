@@ -211,10 +211,10 @@ const StyledWindow = styled(Window)`
   }
   
   .app__header__icon {
-    width: 15px;
-    height: 15px;
-    margin-left: 1px;
-    margin-right: 3px;
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+    margin-right: 5px;
   }
   
   .app__header__title {
