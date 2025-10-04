@@ -1,6 +1,5 @@
 import { X, Minus, Square } from 'lucide-react';
 import { ReactNode } from 'react';
-import folderIcon from '@/assets/folder-icon.png';
 
 interface IEWindowProps {
   children: ReactNode;
@@ -12,7 +11,9 @@ const IEWindow = ({ children }: IEWindowProps) => {
       {/* Title Bar */}
       <div className="xp-titlebar flex items-center justify-between p-2">
         <div className="flex items-center gap-3">
-          <img src={folderIcon} alt="Browser icon" className="w-6 h-6" />
+          <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-blue-600 text-sm font-bold shadow-sm">
+            W
+          </div>
           <span className="font-bold text-sm">MUHA - Web Browser</span>
         </div>
         <div className="flex items-center gap-1">
