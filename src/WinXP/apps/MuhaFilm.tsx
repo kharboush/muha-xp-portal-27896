@@ -12,32 +12,36 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp('MediaPlayer')}
-            className="w-full mb-4 cursor-pointer border-4 border-blue-800 rounded-sm overflow-hidden hover:border-blue-600 transition-colors"
+            className="w-full mb-4 cursor-pointer border-4 overflow-hidden hover:animate-pulse transition-all"
             style={{
-              background: 'linear-gradient(180deg, #0078d7 0%, #005a9e 100%)',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.4)',
+              background: 'repeating-linear-gradient(45deg, #ff0000, #ff0000 10px, #ffff00 10px, #ffff00 20px)',
+              borderImage: 'repeating-linear-gradient(45deg, #0000ff, #0000ff 10px, #00ff00 10px, #00ff00 20px) 4',
+              boxShadow: '0 0 20px rgba(255,0,0,0.8), inset 0 0 20px rgba(255,255,0,0.5)',
             }}
           >
-            <div className="py-4 px-6 flex items-center justify-center gap-3">
-              <div 
-                className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-xl font-bold"
-                style={{
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                  border: '2px solid #f59e0b'
-                }}
-              >
-                ▶
+            <div className="py-6 px-4 bg-black bg-opacity-70">
+              <div className="text-center space-y-2">
+                <div 
+                  className="text-yellow-300 font-bold uppercase tracking-widest animate-pulse"
+                  style={{
+                    fontSize: '2rem',
+                    textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 2px 2px 0 #000',
+                    fontFamily: 'Impact, Arial Black, sans-serif',
+                    WebkitTextStroke: '1px red'
+                  }}
+                >
+                  ★ WATCH TRAILER NOW ★
+                </div>
+                <div 
+                  className="text-lime-400 text-sm font-bold italic"
+                  style={{
+                    textShadow: '1px 1px 2px #000',
+                    fontFamily: 'Comic Sans MS, cursive'
+                  }}
+                >
+                  ⚡ CLICK HERE!!! ⚡
+                </div>
               </div>
-              <span 
-                className="text-white font-bold uppercase tracking-wider"
-                style={{
-                  fontSize: '1.5rem',
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                  fontFamily: 'Arial Black, Arial, sans-serif'
-                }}
-              >
-                WATCH TRAILER NOW
-              </span>
             </div>
           </button>
         </section>
