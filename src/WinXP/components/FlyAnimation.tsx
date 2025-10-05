@@ -6,6 +6,7 @@ interface Fly {
   edge: 'top' | 'right' | 'bottom' | 'left';
   startPosition: number;
   duration: number;
+  direction: 'forward' | 'backward';
 }
 
 const crawlTop = keyframes`
@@ -46,15 +47,30 @@ const FlySprite = styled.div<{
   $edge: string;
   $startPosition: number;
   $duration: number;
+  $direction: string;
 }>`
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   background-image: url('/icons/fly.png');
   background-size: contain;
   background-repeat: no-repeat;
   
-  ${({ $edge, $startPosition, $duration }) => {
+  ${({ $edge, $startPosition, $duration, $direction }) => {
+    const getRotation = () => {
+      // Fly image is at -45° (facing top-left)
+      // Add 45° to target angle to compensate
+      if ($edge === 'top') {
+        return $direction === 'forward' ? '135deg' : '-45deg'; // right or left
+      } else if ($edge === 'right') {
+        return $direction === 'forward' ? '225deg' : '45deg'; // down or up
+      } else if ($edge === 'bottom') {
+        return $direction === 'forward' ? '-45deg' : '135deg'; // left or right
+      } else { // left
+        return $direction === 'forward' ? '45deg' : '225deg'; // up or down
+      }
+    };
+
     switch ($edge) {
       case 'top':
         return `
@@ -63,7 +79,7 @@ const FlySprite = styled.div<{
           animation: 
             crawlTop 2s ease-in-out infinite,
             flyMoveTop ${$duration}s linear forwards;
-          transform: rotate(-90deg);
+          transform: rotate(${getRotation()});
         `;
       case 'right':
         return `
@@ -72,7 +88,7 @@ const FlySprite = styled.div<{
           animation: 
             crawlRight 2s ease-in-out infinite,
             flyMoveRight ${$duration}s linear forwards;
-          transform: rotate(0deg);
+          transform: rotate(${getRotation()});
         `;
       case 'bottom':
         return `
@@ -81,7 +97,7 @@ const FlySprite = styled.div<{
           animation: 
             crawlBottom 2s ease-in-out infinite,
             flyMoveBottom ${$duration}s linear forwards;
-          transform: rotate(90deg);
+          transform: rotate(${getRotation()});
         `;
       case 'left':
         return `
@@ -90,7 +106,7 @@ const FlySprite = styled.div<{
           animation: 
             crawlLeft 2s ease-in-out infinite,
             flyMoveLeft ${$duration}s linear forwards;
-          transform: rotate(180deg);
+          transform: rotate(${getRotation()});
         `;
       default:
         return '';
@@ -128,11 +144,13 @@ export default function FlyAnimation() {
 
   useEffect(() => {
     const spawnFly = () => {
+      const startPosition = Math.random() * 80 + 10; // 10-90% to avoid corners
       const newFly: Fly = {
         id: `fly-${Date.now()}-${Math.random()}`,
         edge: getRandomEdge(),
-        startPosition: Math.random() * 80 + 10, // 10-90% to avoid corners
+        startPosition,
         duration: Math.random() * 12 + 8, // 8-20 seconds
+        direction: startPosition > 50 ? 'backward' : 'forward',
       };
 
       setFlies(prev => [...prev, newFly]);
@@ -167,6 +185,7 @@ export default function FlyAnimation() {
           $edge={fly.edge}
           $startPosition={fly.startPosition}
           $duration={fly.duration}
+          $direction={fly.direction}
         />
       ))}
     </FlyContainer>
