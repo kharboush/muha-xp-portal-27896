@@ -95,11 +95,11 @@ function MediaPlayer() {
         </div>
         <div className="mp__controls">
           <button className="mp__control_btn" onClick={togglePlayPause}>
-            {isPlaying ? 'Pause' : 'Play'}
+            {isPlaying ? '⏸' : '▶'}
           </button>
-          <button className="mp__control_btn" onClick={toggleFullscreen}>
-            Full Screen
-          </button>
+          /* <button className="mp__control_btn" onClick={toggleFullscreen}>
+            ⛶
+          </button> */
         </div>
       </div>
 
