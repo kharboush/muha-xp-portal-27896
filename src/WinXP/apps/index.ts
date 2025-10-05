@@ -19,7 +19,7 @@ export interface AppConfig {
 export const appSettings: Record<string, AppConfig> = {
   InternetExplorer: {
     component: InternetExplorer,
-    title: 'Internet Browser',
+    title: 'Internet Browser - Muha - A Short Film by Slava Milanova',
     icon: '/icons/ie.png',
     headerIcon: '/icons/ie-paper.png',
     width: 800,
@@ -53,7 +53,7 @@ export const appSettings: Record<string, AppConfig> = {
   },
   MediaPlayer: {
     component: MediaPlayer,
-    title: 'Media Player',
+    title: 'Media Player - Muha Trailer.mpeg',
     icon: '/icons/wmp-32.png',
     headerIcon: '/icons/wmp-16.png',
     width: 800,
