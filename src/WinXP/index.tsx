@@ -112,7 +112,7 @@ function reducer(state: State, action: Action): State {
         };
       }
 
-      // Calculate responsive dimensions for Media Player
+      // Calculate responsive dimensions for Media Player and Internet Explorer
       let windowWidth = appConfig.width;
       let windowHeight = appConfig.height;
       let windowX = appConfig.x;
@@ -126,6 +126,13 @@ function reducer(state: State, action: Action): State {
         windowHeight = Math.floor((maxWidth * 9) / 16) + 100; // +100 for controls and menu
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = 60; // Position slightly below top of screen
+      } else if (action.payload === 'InternetExplorer') {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
+        windowHeight = Math.floor(availableHeight * 0.9);
+        windowWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
+        windowX = Math.floor((window.innerWidth - windowWidth) / 2);
+        windowY = Math.floor((availableHeight - windowHeight) / 2);
       }
 
       // Create new window
