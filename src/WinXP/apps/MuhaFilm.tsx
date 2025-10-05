@@ -1,4 +1,5 @@
 import { User } from 'lucide-react';
+import muhaScene from '@/assets/muha-scene.png';
 
 const MuhaFilm = () => {
   return (
@@ -6,7 +7,7 @@ const MuhaFilm = () => {
       <div className="max-w-3xl mx-auto space-y-8">
         {/* Video Player */}
         <section>
-          <div className="aspect-video bg-gray-400"></div>
+          <img src={muhaScene} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
         </section>
 
         {/* Header */}
