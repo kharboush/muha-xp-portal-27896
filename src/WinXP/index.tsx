@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Window from './components/Window';
 import DesktopIcon from './components/DesktopIcon';
 import Taskbar from './components/Taskbar';
+import CRTEffect from './components/CRTEffect';
 import { appSettings, desktopIcons } from './apps';
 import { AppWindow } from './types';
 import {
@@ -390,6 +391,8 @@ export default function WinXP() {
           onWindowClick={handleWindowClick}
           onStartClick={() => {}}
         />
+
+        <CRTEffect />
       </Container>
     </WinXPContext.Provider>
   );
