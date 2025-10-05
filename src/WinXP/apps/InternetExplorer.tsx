@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MuhaFilm from './MuhaFilm';
 
 function InternetExplorer() {
-  const [url] = useState('http://muhafilm.com/index.html');
+  const [url] = useState('http://www.muhafilm.com/index.html');
 
   return (
     <Container>
