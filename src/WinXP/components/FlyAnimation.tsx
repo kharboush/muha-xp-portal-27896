@@ -3,34 +3,15 @@ import styled, { keyframes } from 'styled-components';
 
 interface Fly {
   id: string;
-  edge: 'top' | 'right' | 'bottom' | 'left';
-  startPosition: number;
+  corner: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
   duration: number;
-  direction: 'forward' | 'backward';
 }
 
-const crawlTop = keyframes`
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(2px); }
-  75% { transform: translateY(-2px); }
-`;
-
-const crawlRight = keyframes`
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  75% { transform: translateX(2px); }
-`;
-
-const crawlBottom = keyframes`
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-2px); }
-  75% { transform: translateY(2px); }
-`;
-
-const crawlLeft = keyframes`
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(2px); }
-  75% { transform: translateX(-2px); }
+const wobble = keyframes`
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
 `;
 
 const FlyContainer = styled.div`
@@ -44,10 +25,8 @@ const FlyContainer = styled.div`
 `;
 
 const FlySprite = styled.div<{ 
-  $edge: string;
-  $startPosition: number;
+  $corner: string;
   $duration: number;
-  $direction: string;
 }>`
   position: absolute;
   width: 24px;
@@ -55,88 +34,80 @@ const FlySprite = styled.div<{
   background-image: url('/icons/fly.png');
   background-size: contain;
   background-repeat: no-repeat;
+  will-change: transform;
   
-  ${({ $edge, $startPosition, $duration, $direction }) => {
-    const getRotation = () => {
-      // Fly image is at -45° (facing top-left)
-      // Add 45° to target angle to compensate
-      if ($edge === 'top') {
-        return $direction === 'forward' ? '135deg' : '-45deg'; // right or left
-      } else if ($edge === 'right') {
-        return $direction === 'forward' ? '225deg' : '45deg'; // down or up
-      } else if ($edge === 'bottom') {
-        return $direction === 'forward' ? '-45deg' : '135deg'; // left or right
-      } else { // left
-        return $direction === 'forward' ? '45deg' : '225deg'; // up or down
-      }
-    };
-
-    switch ($edge) {
-      case 'top':
+  ${({ $corner, $duration }) => {
+    // Define paths for each corner (enter from one edge, exit through adjacent edge)
+    switch ($corner) {
+      case 'top-right':
+        // Enter from top (near right), move diagonally down-right, exit right
         return `
-          top: 0;
-          left: ${$startPosition}%;
+          top: -24px;
+          right: 5%;
           animation: 
-            crawlTop 2s ease-in-out infinite,
-            flyMoveTop ${$duration}s linear forwards;
-          transform: rotate(${getRotation()});
+            wobble 1.5s ease-in-out infinite,
+            flyTopRight ${$duration}s ease-in-out forwards;
+          transform: rotate(135deg);
+          
+          @keyframes flyTopRight {
+            0% { top: -24px; right: 5%; }
+            100% { top: 50%; right: -24px; }
+          }
         `;
-      case 'right':
+      case 'top-left':
+        // Enter from top (near left), move diagonally down-left, exit left
         return `
-          right: 0;
-          top: ${$startPosition}%;
+          top: -24px;
+          left: 5%;
           animation: 
-            crawlRight 2s ease-in-out infinite,
-            flyMoveRight ${$duration}s linear forwards;
-          transform: rotate(${getRotation()});
+            wobble 1.5s ease-in-out infinite,
+            flyTopLeft ${$duration}s ease-in-out forwards;
+          transform: rotate(225deg);
+          
+          @keyframes flyTopLeft {
+            0% { top: -24px; left: 5%; }
+            100% { top: 50%; left: -24px; }
+          }
         `;
-      case 'bottom':
+      case 'bottom-right':
+        // Enter from right (near bottom), move diagonally down-left, exit bottom
         return `
-          bottom: 0;
-          right: ${$startPosition}%;
+          right: -24px;
+          bottom: 5%;
           animation: 
-            crawlBottom 2s ease-in-out infinite,
-            flyMoveBottom ${$duration}s linear forwards;
-          transform: rotate(${getRotation()});
+            wobble 1.5s ease-in-out infinite,
+            flyBottomRight ${$duration}s ease-in-out forwards;
+          transform: rotate(225deg);
+          
+          @keyframes flyBottomRight {
+            0% { right: -24px; bottom: 5%; }
+            100% { right: 50%; bottom: -24px; }
+          }
         `;
-      case 'left':
+      case 'bottom-left':
+        // Enter from left (near bottom), move diagonally down-right, exit bottom
         return `
-          left: 0;
-          bottom: ${$startPosition}%;
+          left: -24px;
+          bottom: 5%;
           animation: 
-            crawlLeft 2s ease-in-out infinite,
-            flyMoveLeft ${$duration}s linear forwards;
-          transform: rotate(${getRotation()});
+            wobble 1.5s ease-in-out infinite,
+            flyBottomLeft ${$duration}s ease-in-out forwards;
+          transform: rotate(135deg);
+          
+          @keyframes flyBottomLeft {
+            0% { left: -24px; bottom: 5%; }
+            100% { left: 50%; bottom: -24px; }
+          }
         `;
       default:
         return '';
     }
   }}
-
-  @keyframes flyMoveTop {
-    from { left: ${({ $startPosition }) => $startPosition}%; }
-    to { left: ${({ $startPosition }) => ($startPosition > 50 ? -10 : 110)}%; }
-  }
-
-  @keyframes flyMoveRight {
-    from { top: ${({ $startPosition }) => $startPosition}%; }
-    to { top: ${({ $startPosition }) => ($startPosition > 50 ? -10 : 110)}%; }
-  }
-
-  @keyframes flyMoveBottom {
-    from { right: ${({ $startPosition }) => $startPosition}%; }
-    to { right: ${({ $startPosition }) => ($startPosition > 50 ? -10 : 110)}%; }
-  }
-
-  @keyframes flyMoveLeft {
-    from { bottom: ${({ $startPosition }) => $startPosition}%; }
-    to { bottom: ${({ $startPosition }) => ($startPosition > 50 ? -10 : 110)}%; }
-  }
 `;
 
-const getRandomEdge = (): 'top' | 'right' | 'bottom' | 'left' => {
-  const edges = ['top', 'right', 'bottom', 'left'] as const;
-  return edges[Math.floor(Math.random() * edges.length)];
+const getRandomCorner = (): 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' => {
+  const corners = ['top-right', 'top-left', 'bottom-right', 'bottom-left'] as const;
+  return corners[Math.floor(Math.random() * corners.length)];
 };
 
 export default function FlyAnimation() {
@@ -144,13 +115,10 @@ export default function FlyAnimation() {
 
   useEffect(() => {
     const spawnFly = () => {
-      const startPosition = Math.random() * 80 + 10; // 10-90% to avoid corners
       const newFly: Fly = {
         id: `fly-${Date.now()}-${Math.random()}`,
-        edge: getRandomEdge(),
-        startPosition,
-        duration: Math.random() * 12 + 8, // 8-20 seconds
-        direction: startPosition > 50 ? 'backward' : 'forward',
+        corner: getRandomCorner(),
+        duration: Math.random() * 4 + 3, // 3-7 seconds (faster, more visible)
       };
 
       setFlies(prev => [...prev, newFly]);
@@ -182,10 +150,8 @@ export default function FlyAnimation() {
       {flies.map(fly => (
         <FlySprite
           key={fly.id}
-          $edge={fly.edge}
-          $startPosition={fly.startPosition}
+          $corner={fly.corner}
           $duration={fly.duration}
-          $direction={fly.direction}
         />
       ))}
     </FlyContainer>
