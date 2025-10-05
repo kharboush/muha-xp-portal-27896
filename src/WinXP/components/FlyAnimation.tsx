@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
+const FLY_SIZE = 20;
+
 interface Fly {
   id: string;
   corner: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
@@ -9,9 +11,9 @@ interface Fly {
 
 const wobble = keyframes`
   0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(1px, -1px); }
-  50% { transform: translate(-1px, 1px); }
-  75% { transform: translate(1px, 1px); }
+  25% { transform: translate(0.5px, -0.5px); }
+  50% { transform: translate(-0.5px, 0.5px); }
+  75% { transform: translate(0.5px, 0.5px); }
 `;
 
 const FlyContainer = styled.div`
@@ -24,85 +26,87 @@ const FlyContainer = styled.div`
   z-index: 10001;
 `;
 
-const FlySprite = styled.div<{ 
+const FlyWrapper = styled.div<{ 
   $corner: string;
   $duration: number;
 }>`
   position: absolute;
-  width: 24px;
-  height: 24px;
-  background-image: url('/icons/fly.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  will-change: transform;
+  width: ${FLY_SIZE}px;
+  height: ${FLY_SIZE}px;
+  will-change: top, left, right, bottom;
   
   ${({ $corner, $duration }) => {
-    // Define paths for each corner (enter from one edge, exit through adjacent edge)
+    const rotationByCorner = {
+      'top-right': 180,
+      'bottom-left': 180,
+      'top-left': -90,
+      'bottom-right': -90
+    };
+    
+    const rotation = rotationByCorner[$corner as keyof typeof rotationByCorner] || 0;
+    
     switch ($corner) {
       case 'top-right':
-        // Enter from top (near right), move diagonally down-right, exit right
         return `
-          top: -24px;
+          top: -${FLY_SIZE}px;
           right: 5%;
-          animation: 
-            wobble 1.5s ease-in-out infinite,
-            flyTopRight ${$duration}s ease-in-out forwards;
-          transform: rotate(135deg);
+          transform: rotate(${rotation}deg);
+          animation: flyTopRight ${$duration}s linear forwards;
           
           @keyframes flyTopRight {
-            0% { top: -24px; right: 5%; }
-            100% { top: 50%; right: -24px; }
+            0% { top: -${FLY_SIZE}px; right: 5%; }
+            100% { top: 50%; right: -${FLY_SIZE}px; }
           }
         `;
       case 'top-left':
-        // Enter from top (near left), move diagonally down-left, exit left
         return `
-          top: -24px;
+          top: -${FLY_SIZE}px;
           left: 5%;
-          animation: 
-            wobble 1.5s ease-in-out infinite,
-            flyTopLeft ${$duration}s ease-in-out forwards;
-          transform: rotate(225deg);
+          transform: rotate(${rotation}deg);
+          animation: flyTopLeft ${$duration}s linear forwards;
           
           @keyframes flyTopLeft {
-            0% { top: -24px; left: 5%; }
-            100% { top: 50%; left: -24px; }
+            0% { top: -${FLY_SIZE}px; left: 5%; }
+            100% { top: 50%; left: -${FLY_SIZE}px; }
           }
         `;
       case 'bottom-right':
-        // Enter from right (near bottom), move diagonally down-left, exit bottom
         return `
-          right: -24px;
+          right: -${FLY_SIZE}px;
           bottom: 5%;
-          animation: 
-            wobble 1.5s ease-in-out infinite,
-            flyBottomRight ${$duration}s ease-in-out forwards;
-          transform: rotate(225deg);
+          transform: rotate(${rotation}deg);
+          animation: flyBottomRight ${$duration}s linear forwards;
           
           @keyframes flyBottomRight {
-            0% { right: -24px; bottom: 5%; }
-            100% { right: 50%; bottom: -24px; }
+            0% { right: -${FLY_SIZE}px; bottom: 5%; }
+            100% { right: 50%; bottom: -${FLY_SIZE}px; }
           }
         `;
       case 'bottom-left':
-        // Enter from left (near bottom), move diagonally down-right, exit bottom
         return `
-          left: -24px;
+          left: -${FLY_SIZE}px;
           bottom: 5%;
-          animation: 
-            wobble 1.5s ease-in-out infinite,
-            flyBottomLeft ${$duration}s ease-in-out forwards;
-          transform: rotate(135deg);
+          transform: rotate(${rotation}deg);
+          animation: flyBottomLeft ${$duration}s linear forwards;
           
           @keyframes flyBottomLeft {
-            0% { left: -24px; bottom: 5%; }
-            100% { left: 50%; bottom: -24px; }
+            0% { left: -${FLY_SIZE}px; bottom: 5%; }
+            100% { left: 50%; bottom: -${FLY_SIZE}px; }
           }
         `;
       default:
         return '';
     }
   }}
+`;
+
+const FlySprite = styled.div`
+  width: ${FLY_SIZE}px;
+  height: ${FLY_SIZE}px;
+  background-image: url('/icons/fly.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: wobble 1.5s ease-in-out infinite;
 `;
 
 const getRandomCorner = (): 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' => {
@@ -115,10 +119,12 @@ export default function FlyAnimation() {
 
   useEffect(() => {
     const spawnFly = () => {
+      if (flies.length >= 2) return; // Max 2 flies at once
+
       const newFly: Fly = {
         id: `fly-${Date.now()}-${Math.random()}`,
         corner: getRandomCorner(),
-        duration: Math.random() * 4 + 3, // 3-7 seconds (faster, more visible)
+        duration: Math.random() * 1.0 + 1.2, // 1.2-2.2 seconds (quick corner traversal)
       };
 
       setFlies(prev => [...prev, newFly]);
@@ -126,33 +132,31 @@ export default function FlyAnimation() {
       // Remove fly after animation completes
       setTimeout(() => {
         setFlies(prev => prev.filter(f => f.id !== newFly.id));
-      }, newFly.duration * 1000 + 500);
+      }, newFly.duration * 1000 + 100);
+
+      // Schedule next fly with random delay (12-28 seconds)
+      const nextDelay = Math.random() * 16000 + 12000;
+      setTimeout(spawnFly, nextDelay);
     };
 
-    // Spawn initial fly after 5-10 seconds
+    // Start the spawn cycle after initial delay (5-10 seconds)
     const initialTimeout = setTimeout(spawnFly, Math.random() * 5000 + 5000);
-
-    // Spawn flies at random intervals (20-45 seconds)
-    const spawnInterval = setInterval(() => {
-      if (flies.length < 3) { // Max 3 flies at once
-        spawnFly();
-      }
-    }, Math.random() * 25000 + 20000);
 
     return () => {
       clearTimeout(initialTimeout);
-      clearInterval(spawnInterval);
     };
-  }, [flies.length]);
+  }, []);
 
   return (
     <FlyContainer>
       {flies.map(fly => (
-        <FlySprite
+        <FlyWrapper
           key={fly.id}
           $corner={fly.corner}
           $duration={fly.duration}
-        />
+        >
+          <FlySprite />
+        </FlyWrapper>
       ))}
     </FlyContainer>
   );
