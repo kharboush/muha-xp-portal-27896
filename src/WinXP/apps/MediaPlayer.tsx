@@ -97,9 +97,6 @@ function MediaPlayer() {
           <button className="mp__control_btn" onClick={togglePlayPause}>
             {isPlaying ? 'Pause' : 'Play'}
           </button>
-          <button className="mp__control_btn" onClick={toggleFullscreen}>
-            Full Screen
-          </button>
         </div>
       </div>
 
