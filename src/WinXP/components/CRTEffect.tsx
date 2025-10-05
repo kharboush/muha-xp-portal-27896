@@ -48,8 +48,8 @@ const Vignette = styled.div`
   background: radial-gradient(
     ellipse at center,
     transparent 0%,
-    transparent 60%,
-    rgba(0, 0, 0, 0.3) 100%
+    transparent 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
 `;
 
@@ -87,6 +87,44 @@ const GlowEffect = styled.div`
   }
 `;
 
+const ChromaticAberration = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    opacity: 0.4;
+  }
+  
+  &::before {
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(255, 0, 0, 0.03) 100%
+    );
+    transform: translateX(-1px);
+  }
+  
+  &::after {
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(0, 255, 255, 0.03) 100%
+    );
+    transform: translateX(1px);
+  }
+`;
+
 export default function CRTEffect() {
   return (
     <CRTContainer>
@@ -94,6 +132,7 @@ export default function CRTEffect() {
       <Vignette />
       <ScreenCurvature />
       <GlowEffect />
+      <ChromaticAberration />
     </CRTContainer>
   );
 }
