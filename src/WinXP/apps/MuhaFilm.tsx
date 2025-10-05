@@ -1,10 +1,47 @@
 import { User } from 'lucide-react';
 import muhaScene from '@/assets/muha-scene.png';
+import { useWinXP } from '../context/WinXPContext';
 
 const MuhaFilm = () => {
+  const { openApp } = useWinXP();
+
   return (
     <div className="h-full overflow-auto bg-white p-8">
       <div className="max-w-3xl mx-auto space-y-8">
+        {/* Watch Trailer Banner */}
+        <section>
+          <button
+            onClick={() => openApp('MediaPlayer')}
+            className="w-full mb-4 cursor-pointer border-4 border-blue-800 rounded-sm overflow-hidden hover:border-blue-600 transition-colors"
+            style={{
+              background: 'linear-gradient(180deg, #0078d7 0%, #005a9e 100%)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.4)',
+            }}
+          >
+            <div className="py-4 px-6 flex items-center justify-center gap-3">
+              <div 
+                className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-xl font-bold"
+                style={{
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                  border: '2px solid #f59e0b'
+                }}
+              >
+                ▶
+              </div>
+              <span 
+                className="text-white font-bold uppercase tracking-wider"
+                style={{
+                  fontSize: '1.5rem',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                  fontFamily: 'Arial Black, Arial, sans-serif'
+                }}
+              >
+                WATCH TRAILER NOW
+              </span>
+            </div>
+          </button>
+        </section>
+        
         {/* Video Player */}
         <section>
           <img src={muhaScene} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />

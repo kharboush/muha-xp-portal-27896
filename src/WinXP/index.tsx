@@ -14,6 +14,7 @@ import {
   FOCUS_ICON,
   FOCUS_DESKTOP,
 } from './constants/actions';
+import { WinXPContext } from './context/WinXPContext';
 
 interface State {
   windows: AppWindow[];
@@ -348,39 +349,41 @@ export default function WinXP() {
   }, [state.focusedWindowId, handleMinimizeWindow, handleFocusWindow]);
 
   return (
-    <Container onMouseDown={handleDesktopClick}>
-      <IconsContainer>
-        {desktopIcons.map((icon) => (
-          <DesktopIcon
-            key={icon.id}
-            id={icon.id}
-            icon={icon.icon}
-            title={icon.title}
-            isFocused={state.focusedIconId === icon.id}
-            onFocus={() => handleFocusIcon(icon.id)}
-            onDoubleClick={() => handleOpenApp(icon.appKey)}
+    <WinXPContext.Provider value={{ openApp: handleOpenApp }}>
+      <Container onMouseDown={handleDesktopClick}>
+        <IconsContainer>
+          {desktopIcons.map((icon) => (
+            <DesktopIcon
+              key={icon.id}
+              id={icon.id}
+              icon={icon.icon}
+              title={icon.title}
+              isFocused={state.focusedIconId === icon.id}
+              onFocus={() => handleFocusIcon(icon.id)}
+              onDoubleClick={() => handleOpenApp(icon.appKey)}
+            />
+          ))}
+        </IconsContainer>
+
+        {state.windows.map((window) => (
+          <Window
+            key={window.id}
+            {...window}
+            isFocused={state.focusedWindowId === window.id}
+            onFocus={handleFocusWindow}
+            onClose={handleCloseWindow}
+            onMinimize={handleMinimizeWindow}
+            onMaximize={handleMaximizeWindow}
           />
         ))}
-      </IconsContainer>
 
-      {state.windows.map((window) => (
-        <Window
-          key={window.id}
-          {...window}
-          isFocused={state.focusedWindowId === window.id}
-          onFocus={handleFocusWindow}
-          onClose={handleCloseWindow}
-          onMinimize={handleMinimizeWindow}
-          onMaximize={handleMaximizeWindow}
+        <Taskbar
+          windows={state.windows}
+          focusedWindowId={state.focusedWindowId}
+          onWindowClick={handleWindowClick}
+          onStartClick={() => {}}
         />
-      ))}
-
-      <Taskbar
-        windows={state.windows}
-        focusedWindowId={state.focusedWindowId}
-        onWindowClick={handleWindowClick}
-        onStartClick={() => {}}
-      />
-    </Container>
+      </Container>
+    </WinXPContext.Provider>
   );
 }
