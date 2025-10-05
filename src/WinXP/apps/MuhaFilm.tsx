@@ -12,34 +12,31 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp('MediaPlayer')}
-            className="w-full mb-4 cursor-pointer border-4 overflow-hidden hover:animate-pulse transition-all"
+            className="w-full mb-4 cursor-pointer border-4 border-red-600 overflow-hidden hover:border-yellow-400 transition-colors"
             style={{
-              background: 'repeating-linear-gradient(45deg, #ff0000, #ff0000 10px, #ffff00 10px, #ffff00 20px)',
-              borderImage: 'repeating-linear-gradient(45deg, #0000ff, #0000ff 10px, #00ff00 10px, #00ff00 20px) 4',
-              boxShadow: '0 0 20px rgba(255,0,0,0.8), inset 0 0 20px rgba(255,255,0,0.5)',
+              background: 'linear-gradient(180deg, #cc0000 0%, #990000 100%)',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
             }}
           >
-            <div className="py-6 px-4 bg-black bg-opacity-70">
-              <div className="text-center space-y-2">
+            <div className="py-5 px-6">
+              <div className="text-center space-y-1">
                 <div 
-                  className="text-yellow-300 font-bold uppercase tracking-widest animate-pulse"
+                  className="text-yellow-300 font-bold uppercase tracking-wider"
                   style={{
-                    fontSize: '2rem',
-                    textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 2px 2px 0 #000',
-                    fontFamily: 'Impact, Arial Black, sans-serif',
-                    WebkitTextStroke: '1px red'
+                    fontSize: '1.75rem',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
+                    fontFamily: 'Arial Black, sans-serif'
                   }}
                 >
                   ★ WATCH TRAILER NOW ★
                 </div>
                 <div 
-                  className="text-lime-400 text-sm font-bold italic"
+                  className="text-white text-sm font-bold"
                   style={{
                     textShadow: '1px 1px 2px #000',
-                    fontFamily: 'Comic Sans MS, cursive'
                   }}
                 >
-                  ⚡ CLICK HERE!!! ⚡
+                  Click Here!
                 </div>
               </div>
             </div>
