@@ -69,8 +69,9 @@ const MuhaFilm = () => {
           <h2 className="text-2xl font-bold mb-3 pb-2" style={{
             color: '#000000',
             borderBottom: '3px solid #FFD700',
-            fontFamily: 'Impact, Arial Black, sans-serif',
-            letterSpacing: '0.1em',
+            fontFamily: '"Antonio", sans-serif',
+            fontWeight: 700,
+            letterSpacing: '0.05em',
           }}>
             SYNOPSIS
           </h2>
@@ -102,8 +103,9 @@ const MuhaFilm = () => {
           }}>
             <h2 className="text-2xl font-bold" style={{
               color: '#000000',
-              fontFamily: 'Impact, Arial Black, sans-serif',
-              letterSpacing: '0.1em',
+              fontFamily: '"Antonio", sans-serif',
+              fontWeight: 700,
+              letterSpacing: '0.05em',
             }}>
               FRIENDS
             </h2>
