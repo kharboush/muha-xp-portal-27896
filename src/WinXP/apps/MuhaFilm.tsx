@@ -67,6 +67,12 @@ const MuhaFilm = () => {
 
         {/* Synopsis */}
         <section>
+          <div
+            className="flex items-center justify-between mb-3 pb-2"
+            style={{
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
           <h2
             className="text-2xl font-bold mb-3 pb-2"
             style={{
