@@ -201,10 +201,10 @@ const MuhaFilm = () => {
                         <span className="font-medium" style={{ color: "#2C2D2E" }}>
                           Interests:
                         </span>{" "}
-                        Internet, cars, travel
+                        driving cars
                       </p>
                       <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                        Working at the butcher shop, dreaming of leaving the village
+                        looking for someone to talk to
                       </p>
                     </div>
                   </div>
@@ -261,10 +261,10 @@ const MuhaFilm = () => {
                         <span className="font-medium" style={{ color: "#2C2D2E" }}>
                           Interests:
                         </span>{" "}
-                        Chatting, music
+                        chatting, music
                       </p>
                       <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                        Looking for cool people to chat with
+                        Looking for cool people to chat, write me if you're not dumb
                       </p>
                     </div>
                   </div>
@@ -320,10 +320,10 @@ const MuhaFilm = () => {
                         <span className="font-medium" style={{ color: "#2C2D2E" }}>
                           Interests:
                         </span>{" "}
-                        Control, order, authority
+                        None
                       </p>
                       <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                        Keeps the computer locked with a key hidden in a piggy bank
+                        no bio available
                       </p>
                     </div>
                   </div>
@@ -379,10 +379,10 @@ const MuhaFilm = () => {
                         <span className="font-medium" style={{ color: "#2C2D2E" }}>
                           Interests:
                         </span>{" "}
-                        Business, money
+                        video chats, good times
                       </p>
                       <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                        Uses the office computer when the employee isn't watching
+                        Here for fun
                       </p>
                     </div>
                   </div>
