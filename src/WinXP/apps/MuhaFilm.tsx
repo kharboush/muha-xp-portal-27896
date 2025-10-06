@@ -546,7 +546,7 @@ const MuhaFilm = () => {
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity"
             >
-              <img src={ncfLogo} alt="National Culture Fund" className="h-16" />
+              <img src={ncfLogo} alt="National Culture Fund" className="h-32" />
             </a>
           </div>
         </div>
