@@ -3,6 +3,9 @@ import muhaScene from "@/assets/muha-scene.png";
 import muhaLogo from "@/assets/muha-logo.png";
 import ncfLogo from "@/assets/ncf-logo.png";
 import trailerBanner from "@/assets/trailer-banner.png";
+import muhaStill1 from "@/assets/muha-still-1.png";
+import muhaStill2 from "@/assets/muha-still-2.png";
+import muhaStill3 from "@/assets/muha-still-3.png";
 import { useWinXP } from "../context/WinXPContext";
 
 const MuhaFilm = () => {
@@ -27,7 +30,7 @@ const MuhaFilm = () => {
 
         {/* Video Player */}
         <section>
-          <img src={muhaScene} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
+          <img src={muhaStill1} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
         </section>
 
         {/* Header */}
@@ -75,6 +78,9 @@ const MuhaFilm = () => {
               Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
               connection in the early days of social media.
             </p>
+            
+            <img src={muhaStill2} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded my-4" />
+            
             <p>
               Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
               spends his evenings waiting for his unreliable internet connection. When he receives a friend request from
@@ -83,6 +89,9 @@ const MuhaFilm = () => {
               computer screens and sporadic chat messages, Ovanеs suggests they meet in person. But when the digital
               world collides with reality, the boundaries between longing and obsession begin to blur.
             </p>
+            
+            <img src={muhaStill3} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded my-4" />
+            
             <p className="italic">
               <em>MUHA</em> is an intimate portrait of what happens when loneliness meets desperation in the flickering
               light of a computer monitor.
