@@ -262,7 +262,6 @@ const Container = styled.div`
   .ie__content {
     flex: 1;
     overflow: auto;
-    padding-left: 1px;
     border-left: 1px solid #6f6f6f;
     background-color: #f1f1f1;
     position: relative;
