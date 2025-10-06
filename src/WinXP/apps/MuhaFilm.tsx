@@ -456,7 +456,7 @@ const MuhaFilm = () => {
       {/* Special Thanks */}
       <section>
         <h2
-          className="text-2xl font-bold mb-6 pb-2"
+          className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
           style={{
             color: "#000000",
             fontFamily: '"Public Sans", sans-serif',
@@ -479,7 +479,7 @@ const MuhaFilm = () => {
 
       {/* Footer */}
       <div
-        className="max-w-3xl mx-auto text-center text-sm text-gray-500 pt-6"
+        className="max-w-3xl mx-auto text-center text-sm text-gray-500 pt-6 -mt-6 -mx-8 px-8"
         style={{
           borderTop: "2px solid #FFD700",
         }}
