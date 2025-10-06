@@ -146,7 +146,7 @@ function reducer(state: State, action: Action): State {
         const taskbarHeight = 30;
         const availableHeight = window.innerHeight - taskbarHeight;
         windowHeight = Math.floor(availableHeight * 0.9);
-        windowWidth = Math.min(Math.floor(window.innerWidth * 0.95), 1200);
+        windowWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = Math.floor((availableHeight - windowHeight) / 2);
       } else if (action.payload === 'Notepad') {
