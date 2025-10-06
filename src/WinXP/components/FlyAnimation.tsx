@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const FLY_SIZE = 20;
+const FLY_SIZE = 32;
 const PROXIMITY_THRESHOLD = 120;
 const FLEE_DISTANCE = 900;
 
@@ -65,12 +65,11 @@ const getRandomTopRightPosition = (): Position => {
 };
 
 const getOffScreenStartPosition = (targetPos: Position): Position => {
-  // Start from outside the screen, opposite to target
-  const angle = Math.random() * Math.PI * 2;
-  const distance = Math.max(window.innerWidth, window.innerHeight);
+  // Start from off-screen to the right
+  const distance = 200 + Math.random() * 100; // 200-300px off-screen
   return {
-    x: targetPos.x + Math.cos(angle) * distance,
-    y: targetPos.y + Math.sin(angle) * distance
+    x: window.innerWidth + distance,
+    y: targetPos.y + (Math.random() - 0.5) * 100 // Slight y variation
   };
 };
 
@@ -127,8 +126,8 @@ export default function FlyAnimation() {
         timeoutRef.current = setTimeout(() => {
           setFlyState('hidden');
           
-          // After 40-50 seconds, respawn
-          const respawnDelay = 40000 + Math.random() * 10000; // 40-50s
+          // After ~30 seconds, respawn
+          const respawnDelay = 28000 + Math.random() * 4000; // 28-32s
           timeoutRef.current = setTimeout(() => {
             const newTarget = getRandomTopRightPosition();
             const startPos = getOffScreenStartPosition(newTarget);
