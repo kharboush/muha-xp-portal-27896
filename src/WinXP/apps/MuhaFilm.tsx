@@ -523,7 +523,7 @@ const MuhaFilm = () => {
           <p>© 2005 MUHA Film. All rights reserved.</p>
           <div className="mt-4 flex items-center justify-center gap-6">
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/muha.film/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity"
