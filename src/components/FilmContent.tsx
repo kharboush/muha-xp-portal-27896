@@ -1,42 +1,24 @@
 import { User } from 'lucide-react';
 import muhaLogo from '@/assets/muha-logo.png';
+import trailerBanner from '@/assets/trailer-banner.png';
 
 const FilmContent = () => {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
-      {/* Video Player */}
+      {/* Trailer Banner */}
       <section>
-        <div className="bg-black border-4 border-gray-400 rounded-sm p-1" style={{
-          boxShadow: 'inset 0 0 0 1px #000, 0 2px 4px rgba(0,0,0,0.3)'
-        }}>
-          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-1 flex items-center justify-between text-xs">
-            <span className="font-bold">Media Player</span>
-            <div className="flex gap-1">
-              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-              <div className="w-4 h-4 bg-gray-500 rounded-sm" />
-            </div>
-          </div>
-          <div className="aspect-video bg-black">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-2 flex items-center gap-2 text-xs">
-            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">▶</button>
-            <button className="w-6 h-6 bg-gradient-to-b from-white to-gray-300 border border-gray-500 rounded-sm flex items-center justify-center hover:from-gray-100">■</button>
-            <div className="flex-1 bg-gray-500 h-2 rounded-full overflow-hidden">
-              <div className="bg-blue-600 h-full w-0" />
-            </div>
-            <span className="text-gray-700">00:00 / 00:00</span>
-          </div>
-        </div>
+        <a 
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+        >
+          <img 
+            src={trailerBanner} 
+            alt="Trailer Available Now - Click to Watch" 
+            className="w-full rounded-sm shadow-lg"
+          />
+        </a>
       </section>
 
       {/* Header */}
