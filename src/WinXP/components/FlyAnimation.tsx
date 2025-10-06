@@ -109,12 +109,12 @@ export default function FlyAnimation() {
       const distance = calculateDistance(flyPosition, mousePosition.current);
       
       if (distance < PROXIMITY_THRESHOLD) {
-        // Continue in current direction (current rotation)
-        const angle = (rotation - 90) * Math.PI / 180;
+        // Always flee to the right
+        setRotation(180); // Face right
         
         const fleeTarget: Position = {
-          x: flyPosition.x + Math.cos(angle) * FLEE_DISTANCE,
-          y: flyPosition.y + Math.sin(angle) * FLEE_DISTANCE
+          x: flyPosition.x + FLEE_DISTANCE,
+          y: flyPosition.y + (Math.random() - 0.5) * 100 // Slight y variation
         };
 
         const fleeDuration = 0.5 + Math.random() * 0.3; // 0.5-0.8s
