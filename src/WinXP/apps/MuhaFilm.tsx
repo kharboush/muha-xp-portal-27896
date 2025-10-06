@@ -28,7 +28,7 @@ const MuhaFilm = () => {
       </section>
 
       {/* Video Player */}
-      <section className="-mx-8 -mt-16">
+      <section className="-mx-8" style={{ marginTop: '-0.25rem' }}>
         <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[350px] object-cover block" />
       </section>
 
