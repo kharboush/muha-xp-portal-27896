@@ -145,7 +145,7 @@ const MuhaFilm = () => {
       </section>
 
       {/* Friends */}
-      <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
+      <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#DCDFE6" }}>
         <div className="max-w-3xl mx-auto">
           <div className="mb-6">
             <img src={friendsNav} alt="Navigation" className="w-[70%] mx-auto" />
