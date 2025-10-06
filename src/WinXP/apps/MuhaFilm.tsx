@@ -2,6 +2,7 @@ import { User, Circle, Instagram, Mail } from "lucide-react";
 import muhaScene from "@/assets/muha-scene.png";
 import muhaLogo from "@/assets/muha-logo.png";
 import ncfLogo from "@/assets/ncf-logo.png";
+import trailerBanner from "@/assets/trailer-banner.png";
 import { useWinXP } from "../context/WinXPContext";
 
 const MuhaFilm = () => {
@@ -14,36 +15,13 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp("MediaPlayer")}
-            className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300"
-            style={{
-              background: "#FFD700",
-            }}
+            className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0"
           >
-            <div className="py-8 px-4">
-              <div className="text-center space-y-1">
-                <div
-                  className="uppercase"
-                  style={{
-                    fontSize: "2.5rem",
-                    fontFamily: '"Public Sans", sans-serif',
-                    fontWeight: 900,
-                    fontStyle: "italic",
-                    color: "#000000",
-                  }}
-                >
-                  WATCH TRAILER NOW
-                </div>
-                <div
-                  className="text-black text-sm"
-                  style={{
-                    fontFamily: '"Public Sans", sans-serif',
-                    fontWeight: 700,
-                  }}
-                >
-                  Click to Play
-                </div>
-              </div>
-            </div>
+            <img 
+              src={trailerBanner} 
+              alt="Trailer Available Now - Click to Watch" 
+              className="w-full"
+            />
           </button>
         </section>
 
