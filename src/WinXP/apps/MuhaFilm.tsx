@@ -8,7 +8,7 @@ import muhaStill1 from "@/assets/muha-still-1.png";
 import muhaStill2 from "@/assets/muha-still-2.png";
 import muhaStill3 from "@/assets/muha-still-3.png";
 import oliProfile from "@/assets/oli-profile.png";
-import friendsNav from "@/assets/friends-nav.png";
+import friendsNav from "@/assets/friends-nav-new.png";
 import { useWinXP } from "../context/WinXPContext";
 import { ProfileNotification } from "../components/ProfileNotification";
 
