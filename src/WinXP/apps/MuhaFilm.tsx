@@ -61,6 +61,7 @@ const MuhaFilm = () => {
             style={{
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
+              fontStyle: "italic",
             }}
           >
             (Fly)
