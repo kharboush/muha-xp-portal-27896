@@ -57,20 +57,19 @@ const MuhaFilm = () => {
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
           <p 
-            className="text-2xl text-gray-600 italic"
+            className="text-2xl text-black"
             style={{
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
-              fontStyle: "italic",
             }}
           >
             (Fly)
           </p>
           <p 
-            className="text-lg mt-2 text-gray-700"
+            className="text-lg mt-2 text-black"
             style={{
               fontFamily: '"Public Sans", sans-serif',
-              fontWeight: 700,
+              fontWeight: 900,
             }}
           >
             By Slava Milanova
