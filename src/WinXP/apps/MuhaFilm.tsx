@@ -26,8 +26,8 @@ const MuhaFilm = () => {
                   className="uppercase tracking-wider"
                   style={{
                     fontSize: '2.5rem',
-                    fontFamily: '"Bebas Neue", "Arial Black", sans-serif',
-                    fontWeight: 700,
+                    fontFamily: '"Russo One", sans-serif',
+                    fontWeight: 400,
                     color: '#FFFFFF',
                     textShadow: '3px 3px 0px #000000, -2px -2px 0px #000000, 2px -2px 0px #000000, -2px 2px 0px #000000, 0px 3px 0px #000000, 3px 0px 0px #000000, 0px -2px 0px #000000, -2px 0px 0px #000000',
                     letterSpacing: '0.1em',
@@ -38,7 +38,7 @@ const MuhaFilm = () => {
                 <div 
                   className="text-black text-lg font-bold"
                   style={{
-                    fontFamily: '"Bebas Neue", Arial, sans-serif'
+                    fontFamily: '"Russo One", sans-serif'
                   }}
                 >
                   Click to Play
