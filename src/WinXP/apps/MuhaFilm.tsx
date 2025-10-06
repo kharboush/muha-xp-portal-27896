@@ -527,7 +527,7 @@ const MuhaFilm = () => {
             </a>
           </div>
           <p className="text-xs leading-relaxed max-w-2xl mx-auto mt-6">
-            © 2025 Muha Film. Built with{" "}
+            © 2025 Muha Film. This project incorporates material from{" "}
             <a
               href="https://github.com/ShizukuIchi/winXP"
               target="_blank"
