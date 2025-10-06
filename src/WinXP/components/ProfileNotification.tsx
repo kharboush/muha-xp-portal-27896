@@ -40,15 +40,11 @@ export function ProfileNotification({ show, profileImage, username, message, onD
         </AvatarFrame>
         <ContentArea>
           <HeaderText>
-            <Username>{username}</Username> ви изпрати покана за приятелство
+            <Username>{username}</Username> sent you a friend request
           </HeaderText>
           <MessageBox>
-            Съобщение: {message}
+            Message: {message}
           </MessageBox>
-          <ButtonRow>
-            <StyledButton>Приеми</StyledButton>
-            <StyledButton>Откажи</StyledButton>
-          </ButtonRow>
         </ContentArea>
       </NotificationCard>
     </NotificationContainer>
@@ -125,28 +121,6 @@ const MessageBox = styled.div`
   padding: 12px;
   font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
   font-size: 13px;
-  color: #C0C0C0;
-  min-height: 60px;
-`;
-
-const ButtonRow = styled.div`
-  display: flex;
-  gap: 12px;
-  margin-top: 4px;
-`;
-
-const StyledButton = styled.div`
-  background: #ECE9D8;
-  border-top: 2px solid #FFFFFF;
-  border-left: 2px solid #FFFFFF;
-  border-right: 2px solid #808080;
-  border-bottom: 2px solid #808080;
-  padding: 8px 24px;
-  font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
-  font-size: 13px;
   color: #000000;
-  text-align: center;
-  cursor: default;
-  min-width: 100px;
-  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  min-height: 60px;
 `;

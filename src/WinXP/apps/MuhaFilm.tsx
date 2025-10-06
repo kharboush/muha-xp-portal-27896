@@ -49,7 +49,7 @@ const MuhaFilm = () => {
         show={showNotification}
         profileImage={oliProfile}
         username="x_oli_luv_x"
-        message="Здрастии!! :**"
+        message="Helloo!! :**"
         onDismiss={() => setShowNotification(false)}
       />
       <div className="h-full overflow-auto bg-white px-8 pt-8">
