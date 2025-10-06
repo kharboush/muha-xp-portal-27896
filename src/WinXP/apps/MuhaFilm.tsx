@@ -441,11 +441,11 @@ const MuhaFilm = () => {
                 <div style={{ color: "#4169E1", fontWeight: 700 }}>Деян Славчев</div>
               </div>
               <div className="grid grid-cols-2 gap-4 items-start">
-                <div className="text-right text-gray-500 font-medium">Дизайн заглавие</div>
+                <div className="text-right text-gray-500 font-medium">Лого и графичен дизайн</div>
                 <div style={{ color: "#4169E1", fontWeight: 700 }}>Бояна Войнова</div>
               </div>
               <div className="grid grid-cols-2 gap-4 items-start">
-                <div className="text-right text-gray-500 font-medium">Дизайн плакат</div>
+                <div className="text-right text-gray-500 font-medium">Плакат и графичен дизайн</div>
                 <div style={{ color: "#4169E1", fontWeight: 700 }}>Антония Данаилова</div>
               </div>
               <div className="grid grid-cols-2 gap-4 items-start">
