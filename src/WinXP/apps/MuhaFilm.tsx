@@ -37,7 +37,7 @@ const MuhaFilm = () => {
                 <div 
                   className="text-black text-sm font-semibold"
                   style={{
-                    fontFamily: '"Antonio", sans-serif'
+                    fontFamily: '"Noto Sans", sans-serif'
                   }}
                 >
                   Click to Play
