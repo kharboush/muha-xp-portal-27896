@@ -72,8 +72,8 @@ const MuhaFilm = () => {
         </h2>
         
         {/* First section - text left, image right */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8 items-start">
-          <div className="space-y-3 text-base leading-relaxed max-w-3xl mx-auto px-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-8 items-start -mx-8">
+          <div className="space-y-3 text-base leading-relaxed px-8">
               <p>
                 Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
                 connection in the early days of social media.
@@ -87,9 +87,9 @@ const MuhaFilm = () => {
         </div>
         
         {/* Second section - image left, text right */}
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="grid md:grid-cols-2 gap-8 items-start -mx-8">
           <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover order-2 md:order-1" />
-          <div className="space-y-3 text-base leading-relaxed max-w-3xl mx-auto px-8 order-1 md:order-2">
+          <div className="space-y-3 text-base leading-relaxed px-8 order-1 md:order-2">
               <p>
                 When he receives a friend request from Oli, a 21-year-old woman confined to her father's house, both find 
                 solace in their online conversations—a rare window into something beyond their provincial lives.
