@@ -271,6 +271,65 @@ const MuhaFilm = () => {
                 </div>
               </div>
 
+              {/* Butcher */}
+              <div
+                className="rounded-lg overflow-hidden p-3"
+                style={{ background: "linear-gradient(to bottom, #E5E7EB, #D1D5DB)" }}
+              >
+                <div
+                  className="bg-white rounded-lg overflow-hidden h-full"
+                  style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
+                >
+                  <div className="p-4">
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                      <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                    </div>
+                    <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                      <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
+                      <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>
+                        mesarq
+                      </span>
+                      <span className="ml-auto text-blue-400 text-xl">♂</span>
+                    </div>
+                    <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Location:
+                        </span>{" "}
+                        Near Radomir
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Name:
+                        </span>{" "}
+                        The Butcher
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Status:
+                        </span>{" "}
+                        Married
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Age:
+                        </span>{" "}
+                        45
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Interests:
+                        </span>{" "}
+                        money, video chats, good times
+                      </p>
+                      <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        Here for fun
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Mayor */}
               <div
                 className="rounded-lg overflow-hidden p-3"
@@ -323,66 +382,7 @@ const MuhaFilm = () => {
                         None
                       </p>
                       <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                        no bio available
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Butcher */}
-              <div
-                className="rounded-lg overflow-hidden p-3"
-                style={{ background: "linear-gradient(to bottom, #E5E7EB, #D1D5DB)" }}
-              >
-                <div
-                  className="bg-white rounded-lg overflow-hidden h-full"
-                  style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
-                >
-                  <div className="p-4">
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                      <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                    </div>
-                    <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                      <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
-                      <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>
-                        mesarq
-                      </span>
-                      <span className="ml-auto text-blue-400 text-xl">♂</span>
-                    </div>
-                    <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                      <p>
-                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
-                          Location:
-                        </span>{" "}
-                        Near Radomir
-                      </p>
-                      <p>
-                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
-                          Name:
-                        </span>{" "}
-                        The Butcher
-                      </p>
-                      <p>
-                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
-                          Status:
-                        </span>{" "}
-                        Married
-                      </p>
-                      <p>
-                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
-                          Age:
-                        </span>{" "}
-                        45
-                      </p>
-                      <p>
-                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
-                          Interests:
-                        </span>{" "}
-                        video chats, good times
-                      </p>
-                      <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                        Here for fun
+                        No bio available
                       </p>
                     </div>
                   </div>
