@@ -26,8 +26,9 @@ const MuhaFilm = () => {
                   className="uppercase"
                   style={{
                     fontSize: "2.5rem",
-                    fontFamily: '"Antonio", sans-serif',
-                    fontWeight: 700,
+                    fontFamily: '"Public Sans", sans-serif',
+                    fontWeight: 900,
+                    fontStyle: "italic",
                     color: "#000000",
                     letterSpacing: "0.05em",
                   }}
