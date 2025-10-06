@@ -1,6 +1,7 @@
-import { User, Circle } from "lucide-react";
+import { User, Circle, Instagram, Mail } from "lucide-react";
 import muhaScene from "@/assets/muha-scene.png";
 import muhaLogo from "@/assets/muha-logo.png";
+import ncfLogo from "@/assets/ncf-logo.png";
 import { useWinXP } from "../context/WinXPContext";
 
 const MuhaFilm = () => {
@@ -520,19 +521,34 @@ const MuhaFilm = () => {
           }}
         >
           <p>© 2005 MUHA Film. All rights reserved.</p>
-          <p className="mt-2">
-            <a href="#" className="underline hover:text-gray-700" style={{ color: "#FFD700" }}>
-              Contact
-            </a>{" "}
-            |
-            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: "#FFD700" }}>
-              Press Kit
-            </a>{" "}
-            |
-            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: "#FFD700" }}>
-              Festival Screenings
+          <div className="mt-4 flex items-center justify-center gap-6">
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-70 transition-opacity"
+              aria-label="Instagram"
+            >
+              <Instagram size={24} style={{ color: "#FFD700" }} />
             </a>
-          </p>
+            <a 
+              href="mailto:fly.short.25@gmail.com"
+              className="hover:opacity-70 transition-opacity"
+              aria-label="Contact Email"
+            >
+              <Mail size={24} style={{ color: "#FFD700" }} />
+            </a>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <a 
+              href="https://ncf.bg/bg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <img src={ncfLogo} alt="National Culture Fund" className="h-16" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
