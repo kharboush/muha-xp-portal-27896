@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import { User, Circle, Instagram, Mail, Home, Users, Image, MessageCircle, UsersRound } from "lucide-react";
 import muhaScene from "@/assets/muha-scene.png";
 import muhaLogo from "@/assets/muha-logo.png";
@@ -6,13 +7,51 @@ import trailerBanner from "@/assets/trailer-banner.png";
 import muhaStill1 from "@/assets/muha-still-1.png";
 import muhaStill2 from "@/assets/muha-still-2.png";
 import muhaStill3 from "@/assets/muha-still-3.png";
+import oliProfile from "@/assets/oli-profile.png";
 import { useWinXP } from "../context/WinXPContext";
+import { ProfileNotification } from "../components/ProfileNotification";
 
 const MuhaFilm = () => {
   const { openApp } = useWinXP();
+  const [showNotification, setShowNotification] = useState(false);
+  const [hasShownNotification, setHasShownNotification] = useState(false);
+  const oliCardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (hasShownNotification) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasShownNotification) {
+            setShowNotification(true);
+            setHasShownNotification(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (oliCardRef.current) {
+      observer.observe(oliCardRef.current);
+    }
+
+    return () => {
+      if (oliCardRef.current) {
+        observer.unobserve(oliCardRef.current);
+      }
+    };
+  }, [hasShownNotification]);
 
   return (
-    <div className="h-full overflow-auto bg-white px-8 pt-8">
+    <>
+      <ProfileNotification
+        show={showNotification}
+        profileImage={oliProfile}
+        message="Helloo!! :**"
+        onDismiss={() => setShowNotification(false)}
+      />
+      <div className="h-full overflow-auto bg-white px-8 pt-8">
       {/* Watch Trailer Banner */}
       <section className="-mx-8 -mt-8">
         <button
@@ -176,11 +215,11 @@ const MuhaFilm = () => {
             </div>
 
             {/* Oli */}
-            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #FBC2EB, #F78CA0)" }}>
+            <div ref={oliCardRef} className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #FBC2EB, #F78CA0)" }}>
               <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
                 <div className="p-4">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                  <div className="rounded-lg overflow-hidden h-48 mb-4">
+                    <img src={oliProfile} alt="Oli profile" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
                     <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500" />
@@ -541,6 +580,7 @@ const MuhaFilm = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
