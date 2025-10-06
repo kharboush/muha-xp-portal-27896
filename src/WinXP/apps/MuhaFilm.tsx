@@ -13,29 +13,30 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp('MediaPlayer')}
-            className="w-full mb-4 cursor-pointer border-3 overflow-hidden hover:scale-[1.02] transition-all duration-300"
+            className="w-full mb-4 cursor-pointer overflow-hidden hover:scale-[1.02] transition-all duration-300 rounded-lg"
             style={{
-              background: 'linear-gradient(135deg, #cc0000 0%, #660000 50%, #000000 100%)',
-              border: '3px solid #cc6600',
-              boxShadow: '0 4px 15px rgba(204, 102, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
+              background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #000000 100%)',
+              border: '4px solid #000000',
+              boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255,255,255,0.2)',
             }}
           >
-            <div className="py-6 px-4">
-              <div className="text-center space-y-2">
+            <div className="py-8 px-4">
+              <div className="text-center space-y-3">
                 <div 
-                  className="text-amber-200 font-bold uppercase tracking-widest"
+                  className="text-black font-bold uppercase tracking-widest"
                   style={{
-                    fontSize: '2rem',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(204, 102, 0, 0.5)',
+                    fontSize: '2.5rem',
+                    textShadow: '3px 3px 0px #FFD700, -1px -1px 0px #FFD700, 1px -1px 0px #FFD700, -1px 1px 0px #FFD700',
                     fontFamily: 'Impact, Arial Black, sans-serif',
+                    letterSpacing: '0.3em',
                   }}
                 >
                   ★ WATCH TRAILER NOW ★
                 </div>
                 <div 
-                  className="text-orange-300 text-sm font-bold"
+                  className="text-yellow-300 text-lg font-bold"
                   style={{
-                    textShadow: '1px 1px 3px rgba(0,0,0,0.8)',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
                     fontFamily: 'Arial, sans-serif'
                   }}
                 >
@@ -52,7 +53,9 @@ const MuhaFilm = () => {
         </section>
 
         {/* Header */}
-        <div className="text-center border-b-2 border-blue-600 pb-6">
+        <div className="text-center pb-6" style={{
+          borderBottom: '3px solid #FFD700',
+        }}>
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
@@ -62,8 +65,13 @@ const MuhaFilm = () => {
 
         {/* Synopsis */}
         <section>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-gray-300">
-            Plot Synopsis
+          <h2 className="text-2xl font-bold mb-3 pb-2" style={{
+            color: '#000000',
+            borderBottom: '3px solid #FFD700',
+            fontFamily: 'Impact, Arial Black, sans-serif',
+            letterSpacing: '0.1em',
+          }}>
+            SYNOPSIS
           </h2>
           <div className="space-y-3 text-base leading-relaxed">
             <p>
@@ -86,11 +94,25 @@ const MuhaFilm = () => {
           </div>
         </section>
 
-        {/* Main Characters */}
+        {/* Friends */}
         <section>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-gray-300">
-            Main Characters
-          </h2>
+          <div className="flex items-center justify-between mb-3 pb-2" style={{
+            borderBottom: '3px solid #FFD700',
+          }}>
+            <h2 className="text-2xl font-bold" style={{
+              color: '#000000',
+              fontFamily: 'Impact, Arial Black, sans-serif',
+              letterSpacing: '0.1em',
+            }}>
+              FRIENDS
+            </h2>
+            <span className="text-sm font-semibold px-3 py-1 rounded-full" style={{
+              background: '#FFD700',
+              color: '#000000',
+            }}>
+              2 Online
+            </span>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Oli */}
             <div className="bg-gradient-to-b from-pink-300 to-pink-400 p-4 rounded-lg shadow-lg">
@@ -106,13 +128,13 @@ const MuhaFilm = () => {
                   <span className="ml-auto text-pink-400 text-2xl">♀</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Местоживеене:</span> Гр. Радомир</p>
-                  <p><span className="font-medium">Име:</span> Яка Оли</p>
-                  <p><span className="font-medium">Статус:</span> Свободна</p>
-                  <p><span className="font-medium">Години:</span> 21</p>
-                  <p><span className="font-medium">Интереси:</span> Да чатя, музика</p>
+                  <p><span className="font-medium">Location:</span> Radomir</p>
+                  <p><span className="font-medium">Name:</span> Oli</p>
+                  <p><span className="font-medium">Status:</span> Single</p>
+                  <p><span className="font-medium">Age:</span> 21</p>
+                  <p><span className="font-medium">Interests:</span> Chatting, music</p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
-                    Търся готини хора за чат, пиши ми ако не си тъп
+                    Looking for cool people to chat with
                   </p>
                 </div>
               </div>
@@ -132,13 +154,13 @@ const MuhaFilm = () => {
                   <span className="ml-auto text-blue-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Местоживеене:</span> Село близо до Радомир</p>
-                  <p><span className="font-medium">Име:</span> Ованес</p>
-                  <p><span className="font-medium">Статус:</span> Самотен</p>
-                  <p><span className="font-medium">Години:</span> 30</p>
-                  <p><span className="font-medium">Интереси:</span> Интернет, коли, пътувания</p>
+                  <p><span className="font-medium">Location:</span> Near Radomir</p>
+                  <p><span className="font-medium">Name:</span> Ovanes</p>
+                  <p><span className="font-medium">Status:</span> Single</p>
+                  <p><span className="font-medium">Age:</span> 30</p>
+                  <p><span className="font-medium">Interests:</span> Internet, cars, travel</p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
-                    Работя в месарница, мечтая да заминавам от селото
+                    Working at the butcher shop, dreaming of leaving the village
                   </p>
                 </div>
               </div>
@@ -154,17 +176,17 @@ const MuhaFilm = () => {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
                   <Circle className="w-3 h-3 fill-red-500 text-red-500" />
-                  <span className="text-xl font-semibold text-gray-700">kmet_radomir</span>
+                  <span className="text-xl font-semibold text-gray-700">mayor_radomir</span>
                   <span className="ml-auto text-gray-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Местоживеене:</span> Гр. Радомир</p>
-                  <p><span className="font-medium">Име:</span> Кметът</p>
-                  <p><span className="font-medium">Статус:</span> Вдовец</p>
-                  <p><span className="font-medium">Години:</span> 50</p>
-                  <p><span className="font-medium">Интереси:</span> Контрол, ред, власт</p>
+                  <p><span className="font-medium">Location:</span> Radomir</p>
+                  <p><span className="font-medium">Name:</span> The Mayor</p>
+                  <p><span className="font-medium">Status:</span> Widower</p>
+                  <p><span className="font-medium">Age:</span> 50</p>
+                  <p><span className="font-medium">Interests:</span> Control, order, authority</p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
-                    Пазя компютъра с ключ в прасенце
+                    Keeps the computer locked with a key hidden in a piggy bank
                   </p>
                 </div>
               </div>
@@ -180,17 +202,17 @@ const MuhaFilm = () => {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
                   <Circle className="w-3 h-3 fill-gray-400 text-gray-400" />
-                  <span className="text-xl font-semibold text-gray-700">mecar_boss</span>
+                  <span className="text-xl font-semibold text-gray-700">butcher_boss</span>
                   <span className="ml-auto text-blue-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Местоживеене:</span> Близо до Радомир</p>
-                  <p><span className="font-medium">Име:</span> Месарят</p>
-                  <p><span className="font-medium">Статус:</span> Женен</p>
-                  <p><span className="font-medium">Години:</span> 45</p>
-                  <p><span className="font-medium">Интереси:</span> Месарница, пари</p>
+                  <p><span className="font-medium">Location:</span> Near Radomir</p>
+                  <p><span className="font-medium">Name:</span> The Butcher</p>
+                  <p><span className="font-medium">Status:</span> Married</p>
+                  <p><span className="font-medium">Age:</span> 45</p>
+                  <p><span className="font-medium">Interests:</span> Business, money</p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
-                    Използвам компютъра когато служителят не гледа
+                    Uses the office computer when the employee isn't watching
                   </p>
                 </div>
               </div>
@@ -198,25 +220,15 @@ const MuhaFilm = () => {
           </div>
         </section>
 
-        {/* Film Details */}
-        <section className="bg-blue-50 p-6 rounded border border-blue-200">
-          <h2 className="text-2xl font-bold text-blue-700 mb-3 pb-1 border-b border-blue-300">
-            Film Details
-          </h2>
-          <div className="space-y-2 text-base">
-            <p><strong>Genre:</strong> Psychological Drama / Thriller</p>
-            <p><strong>Setting:</strong> Rural Bulgaria, 2005</p>
-            <p><strong>Language:</strong> Bulgarian</p>
-          </div>
-        </section>
-
         {/* Footer */}
-        <div className="text-center text-sm text-gray-500 pt-6 border-t border-gray-300">
+        <div className="text-center text-sm text-gray-500 pt-6" style={{
+          borderTop: '2px solid #FFD700',
+        }}>
           <p>© 2005 MUHA Film. All rights reserved.</p>
           <p className="mt-2">
-            <a href="#" className="text-blue-600 underline hover:text-blue-800">Contact</a> | 
-            <a href="#" className="text-blue-600 underline hover:text-blue-800 ml-2">Press Kit</a> | 
-            <a href="#" className="text-blue-600 underline hover:text-blue-800 ml-2">Festival Screenings</a>
+            <a href="#" className="underline hover:text-gray-700" style={{ color: '#FFD700' }}>Contact</a> | 
+            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: '#FFD700' }}>Press Kit</a> | 
+            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: '#FFD700' }}>Festival Screenings</a>
           </p>
         </div>
       </div>
