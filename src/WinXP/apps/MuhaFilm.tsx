@@ -1,4 +1,4 @@
-import { User } from 'lucide-react';
+import { User, Circle } from 'lucide-react';
 import muhaScene from '@/assets/muha-scene.png';
 import muhaLogo from '@/assets/muha-logo.png';
 import { useWinXP } from '../context/WinXPContext';
@@ -92,79 +92,106 @@ const MuhaFilm = () => {
             Main Characters
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-              <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
-                <User className="w-24 h-24 text-gray-400" />
-              </div>
-              <div className="space-y-1 text-sm">
-                <div className="bg-blue-600 text-white px-2 py-1 font-bold">Ovanеs (30)</div>
-                <div className="bg-white border border-gray-400 p-2">
-                  <p className="text-xs leading-relaxed">
-                    A solitary butcher shop worker who spends his time making fly traps and waiting for 
-                    the internet to connect. He dreams of driving away from the village and seeks 
-                    companionship through the screen.
-                  </p>
+            {/* Oli */}
+            <div className="bg-gradient-to-b from-pink-300 to-pink-400 p-4 rounded-lg shadow-lg">
+              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
+                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
+                  <User className="w-32 h-32 text-gray-400" />
                 </div>
-                <div className="flex gap-1 text-xs">
-                  <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
-                  <span className="bg-yellow-400 px-2 py-0.5">Online</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
+                  <Circle className="w-3 h-3 fill-green-400 text-green-400" />
+                  <span className="text-xl font-semibold text-gray-700">x_oli_luv_x</span>
+                  <span className="ml-auto text-pink-400 text-2xl">♀</span>
+                </div>
+                <div className="space-y-1 text-sm text-gray-600">
+                  <p><span className="font-medium">Местоживеене:</span> Гр. Радомир</p>
+                  <p><span className="font-medium">Име:</span> Яка Оли</p>
+                  <p><span className="font-medium">Статус:</span> Свободна</p>
+                  <p><span className="font-medium">Години:</span> 21</p>
+                  <p><span className="font-medium">Интереси:</span> Да чатя, музика</p>
+                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                    Търся готини хора за чат, пиши ми ако не си тъп
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-              <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
-                <User className="w-24 h-24 text-gray-400" />
-              </div>
-              <div className="space-y-1 text-sm">
-                <div className="bg-blue-600 text-white px-2 py-1 font-bold">Oli (21)</div>
-                <div className="bg-white border border-gray-400 p-2">
-                  <p className="text-xs leading-relaxed">
-                    The mayor's daughter, who sneaks access to her father's computer to escape the 
-                    suffocating confines of village life. Her mother is absent, and the computer room 
-                    stays locked.
-                  </p>
+            {/* Ovanes */}
+            <div className="bg-gradient-to-b from-blue-300 to-blue-400 p-4 rounded-lg shadow-lg">
+              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
+                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
+                  <User className="w-32 h-32 text-gray-400" />
                 </div>
-                <div className="flex gap-1 text-xs">
-                  <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
-                  <span className="bg-yellow-400 px-2 py-0.5">Online</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
+                  <Circle className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                  <span className="text-xl font-semibold text-gray-700">ovanes_30</span>
+                  <span className="ml-auto text-blue-400 text-2xl">♂</span>
+                </div>
+                <div className="space-y-1 text-sm text-gray-600">
+                  <p><span className="font-medium">Местоживеене:</span> Село близо до Радомир</p>
+                  <p><span className="font-medium">Име:</span> Ованес</p>
+                  <p><span className="font-medium">Статус:</span> Самотен</p>
+                  <p><span className="font-medium">Години:</span> 30</p>
+                  <p><span className="font-medium">Интереси:</span> Интернет, коли, пътувания</p>
+                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                    Работя в месарница, мечтая да заминавам от селото
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-              <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
-                <User className="w-24 h-24 text-gray-400" />
-              </div>
-              <div className="space-y-1 text-sm">
-                <div className="bg-blue-600 text-white px-2 py-1 font-bold">The Mayor (50)</div>
-                <div className="bg-white border border-gray-400 p-2">
-                  <p className="text-xs leading-relaxed">
-                    A man who guards the computer with a key hidden in a piggy bank. He watches his 
-                    daughter from a distance and keeps certain doors locked.
-                  </p>
+            {/* Mayor */}
+            <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-4 rounded-lg shadow-lg">
+              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
+                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
+                  <User className="w-32 h-32 text-gray-400" />
                 </div>
-                <div className="flex gap-1 text-xs">
-                  <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
-                  <span className="bg-red-500 text-white px-2 py-0.5">Offline</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
+                  <Circle className="w-3 h-3 fill-red-500 text-red-500" />
+                  <span className="text-xl font-semibold text-gray-700">kmet_radomir</span>
+                  <span className="ml-auto text-gray-400 text-2xl">♂</span>
+                </div>
+                <div className="space-y-1 text-sm text-gray-600">
+                  <p><span className="font-medium">Местоживеене:</span> Гр. Радомир</p>
+                  <p><span className="font-medium">Име:</span> Кметът</p>
+                  <p><span className="font-medium">Статус:</span> Вдовец</p>
+                  <p><span className="font-medium">Години:</span> 50</p>
+                  <p><span className="font-medium">Интереси:</span> Контрол, ред, власт</p>
+                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                    Пазя компютъра с ключ в прасенце
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-b from-[#E3E3E3] to-[#C5C5C5] border-2 border-[#7F7F7F] rounded-sm p-3 shadow-md">
-              <div className="bg-white border border-gray-400 p-2 mb-2 flex items-center justify-center h-48">
-                <User className="w-24 h-24 text-gray-400" />
-              </div>
-              <div className="space-y-1 text-sm">
-                <div className="bg-blue-600 text-white px-2 py-1 font-bold">The Butcher</div>
-                <div className="bg-white border border-gray-400 p-2">
-                  <p className="text-xs leading-relaxed">
-                    Ovanеs's employer, who uses the office computer when his employee isn't watching.
-                  </p>
+            {/* Butcher */}
+            <div className="bg-gradient-to-b from-red-300 to-red-400 p-4 rounded-lg shadow-lg">
+              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
+                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
+                  <User className="w-32 h-32 text-gray-400" />
                 </div>
-                <div className="flex gap-1 text-xs">
-                  <span className="bg-gray-700 text-white px-2 py-0.5">Status:</span>
-                  <span className="bg-gray-400 px-2 py-0.5">Away</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
+                  <Circle className="w-3 h-3 fill-gray-400 text-gray-400" />
+                  <span className="text-xl font-semibold text-gray-700">mecar_boss</span>
+                  <span className="ml-auto text-blue-400 text-2xl">♂</span>
+                </div>
+                <div className="space-y-1 text-sm text-gray-600">
+                  <p><span className="font-medium">Местоживеене:</span> Близо до Радомир</p>
+                  <p><span className="font-medium">Име:</span> Месарят</p>
+                  <p><span className="font-medium">Статус:</span> Женен</p>
+                  <p><span className="font-medium">Години:</span> 45</p>
+                  <p><span className="font-medium">Интереси:</span> Месарница, пари</p>
+                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                    Използвам компютъра когато служителят не гледа
+                  </p>
                 </div>
               </div>
             </div>
