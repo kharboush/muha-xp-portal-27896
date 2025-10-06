@@ -12,22 +12,22 @@ const MuhaFilm = () => {
   const { openApp } = useWinXP();
 
   return (
-    <div className="h-full overflow-auto bg-white p-8 space-y-16">
+    <div className="h-full overflow-auto bg-white px-8 pt-8 space-y-16">
       {/* Watch Trailer Banner */}
       <section className="-mx-8 -mt-8">
         <button
-            onClick={() => openApp("MediaPlayer")}
-            className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0"
-          >
-            <img 
-              src={trailerBanner} 
-              alt="Trailer Available Now - Click to Watch" 
-              className="w-full block"
-            />
-          </button>
+          onClick={() => openApp("MediaPlayer")}
+          className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0 block"
+        >
+          <img 
+            src={trailerBanner} 
+            alt="Trailer Available Now - Click to Watch" 
+            className="w-full block"
+          />
+        </button>
       </section>
 
-      {/* Video Player */}
+      {/* Hero Image */}
       <section className="-mx-8 -mt-16">
         <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[350px] object-cover block" />
       </section>
