@@ -47,11 +47,13 @@ const notepadWidth = Math.min(Math.floor(window.innerWidth * 0.9), 800);
 const notepadX = Math.floor((window.innerWidth - notepadWidth) / 2);
 const notepadY = Math.floor((availableHeight - notepadHeight) / 2);
 
-// Calculate mIRC dimensions: maintain aspect ratio (720/646)
-const mircAspectRatio = 720 / 646;
+// Calculate mIRC dimensions: content aspect ratio 1.3 + 69px chrome (25px header + 24px menu + 20px footer)
+const mircChromeHeight = 69;
+const mircContentAspectRatio = 1.3;
 const maxMircWidth = 646;
 const mircWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxMircWidth);
-const mircHeight = Math.floor(mircWidth * mircAspectRatio);
+const mircContentHeight = Math.floor(mircWidth * mircContentAspectRatio);
+const mircHeight = mircContentHeight + mircChromeHeight;
 const mircX = Math.floor((window.innerWidth - mircWidth) / 2);
 const mircY = 60;
 
@@ -157,10 +159,12 @@ function reducer(state: State, action: Action): State {
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = Math.floor((availableHeight - windowHeight) / 2);
       } else if (action.payload === 'mIRC') {
-        const mircAspectRatio = 720 / 646;
+        const mircChromeHeight = 69;
+        const mircContentAspectRatio = 1.3;
         const maxWidth = 646;
         windowWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxWidth);
-        windowHeight = Math.floor(windowWidth * mircAspectRatio);
+        const mircContentHeight = Math.floor(windowWidth * mircContentAspectRatio);
+        windowHeight = mircContentHeight + mircChromeHeight;
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = 60;
       }
@@ -365,10 +369,12 @@ export default function WinXP() {
       // Handle mIRC window
       const mircWindow = state.windows.find(w => w.title === appSettings.mIRC.title);
       if (mircWindow && !mircWindow.maximized) {
-        const mircAspectRatio = 720 / 646;
+        const mircChromeHeight = 69;
+        const mircContentAspectRatio = 1.3;
         const maxWidth = 646;
         const mircWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxWidth);
-        const mircHeight = Math.floor(mircWidth * mircAspectRatio);
+        const mircContentHeight = Math.floor(mircWidth * mircContentAspectRatio);
+        const mircHeight = mircContentHeight + mircChromeHeight;
         const mircX = Math.floor((window.innerWidth - mircWidth) / 2);
         const mircY = 60;
 
