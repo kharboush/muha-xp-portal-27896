@@ -86,12 +86,12 @@ const MuhaFilm = () => {
                 spends his evenings waiting for his unreliable internet connection.
               </p>
             </div>
-            <img src={muhaStill1} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded" />
+            <img src={muhaStill1} alt="Scene from MUHA film" className="w-full h-[400px] object-cover rounded" />
           </div>
           
           {/* Second section - image left, text right */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <img src={muhaStill3} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded" />
+            <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover rounded" />
             <div className="space-y-3 text-base leading-relaxed">
               <p>
                 When he receives a friend request from Oli, a 21-year-old woman confined to her father's house, both find 
