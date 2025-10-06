@@ -1,7 +1,7 @@
 import InternetExplorer from './InternetExplorer';
 import Notepad from './Notepad';
-import MyComputer from './MyComputer';
 import MediaPlayer from './MediaPlayer';
+import mIRC from './mIRC';
 
 export interface AppConfig {
   component: React.ComponentType<any>;
@@ -40,17 +40,6 @@ export const appSettings: Record<string, AppConfig> = {
     resizable: true,
     multiInstance: true,
   },
-  MyComputer: {
-    component: MyComputer,
-    title: 'My Computer',
-    icon: '/icons/computer-32.png',
-    headerIcon: '/icons/computer-16.png',
-    width: 660,
-    height: 500,
-    x: 250,
-    y: 40,
-    resizable: true,
-  },
   MediaPlayer: {
     component: MediaPlayer,
     title: 'Media Player - Muha Trailer.mpeg',
@@ -60,6 +49,17 @@ export const appSettings: Record<string, AppConfig> = {
     height: 500,
     x: 200,
     y: 80,
+    resizable: true,
+  },
+  mIRC: {
+    component: mIRC,
+    title: 'mIRC',
+    icon: '/icons/mirc-32.png',
+    headerIcon: '/icons/mirc-32.png',
+    width: 646,
+    height: 520,
+    x: 180,
+    y: 100,
     resizable: true,
   },
 };

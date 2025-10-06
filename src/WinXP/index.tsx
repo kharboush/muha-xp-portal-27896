@@ -41,6 +41,12 @@ const mpHeight = Math.floor((maxMPWidth * 9) / 16) + 100; // +100 for controls a
 const mpX = Math.floor((window.innerWidth - mpWidth) / 2);
 const mpY = 60; // Position slightly below top of screen
 
+// Calculate Notepad dimensions: 90% width (max 800px), 80% height, centered
+const notepadHeight = Math.floor(availableHeight * 0.8);
+const notepadWidth = Math.min(Math.floor(window.innerWidth * 0.9), 800);
+const notepadX = Math.floor((window.innerWidth - notepadWidth) / 2);
+const notepadY = Math.floor((availableHeight - notepadHeight) / 2);
+
 const initialState: State = {
   windows: [
     // Auto-open IE with MUHA content
@@ -133,6 +139,13 @@ function reducer(state: State, action: Action): State {
         const availableHeight = window.innerHeight - taskbarHeight;
         windowHeight = Math.floor(availableHeight * 0.9);
         windowWidth = Math.min(Math.floor(window.innerWidth * 0.95), 900);
+        windowX = Math.floor((window.innerWidth - windowWidth) / 2);
+        windowY = Math.floor((availableHeight - windowHeight) / 2);
+      } else if (action.payload === 'Notepad') {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
+        windowHeight = Math.floor(availableHeight * 0.8);
+        windowWidth = Math.min(Math.floor(window.innerWidth * 0.9), 800);
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = Math.floor((availableHeight - windowHeight) / 2);
       }
@@ -265,11 +278,12 @@ const IconsContainer = styled.div`
 export default function WinXP() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Handle window resize to update IE and Media Player dimensions
+  // Handle window resize to update IE, Media Player, and Notepad dimensions
   useEffect(() => {
     const handleResize = () => {
       const ieWindow = state.windows.find(w => w.title === appSettings.InternetExplorer.title);
       const mpWindow = state.windows.find(w => w.title === appSettings.MediaPlayer.title);
+      const notepadWindows = state.windows.filter(w => w.title === appSettings.Notepad.title);
       
       if (ieWindow && !ieWindow.maximized) {
         const taskbarHeight = 30;
@@ -309,6 +323,29 @@ export default function WinXP() {
           },
         });
       }
+
+      // Handle all Notepad windows
+      notepadWindows.forEach(notepadWindow => {
+        if (!notepadWindow.maximized) {
+          const taskbarHeight = 30;
+          const availableHeight = window.innerHeight - taskbarHeight;
+          const notepadHeight = Math.floor(availableHeight * 0.8);
+          const notepadWidth = Math.min(Math.floor(window.innerWidth * 0.9), 800);
+          const notepadX = Math.floor((window.innerWidth - notepadWidth) / 2);
+          const notepadY = Math.floor((availableHeight - notepadHeight) / 2);
+
+          dispatch({
+            type: 'UPDATE_WINDOW_SIZE' as any,
+            payload: {
+              id: notepadWindow.id,
+              width: notepadWidth,
+              height: notepadHeight,
+              x: notepadX,
+              y: notepadY,
+            },
+          });
+        }
+      });
     };
 
     window.addEventListener('resize', handleResize);
@@ -375,15 +412,17 @@ export default function WinXP() {
         </IconsContainer>
 
         {state.windows.map((window) => (
-          <Window
-            key={window.id}
-            {...window}
-            isFocused={state.focusedWindowId === window.id}
-            onFocus={handleFocusWindow}
-            onClose={handleCloseWindow}
-            onMinimize={handleMinimizeWindow}
-            onMaximize={handleMaximizeWindow}
-          />
+          !window.minimized && (
+            <Window
+              key={window.id}
+              {...window}
+              isFocused={state.focusedWindowId === window.id}
+              onFocus={handleFocusWindow}
+              onClose={handleCloseWindow}
+              onMinimize={handleMinimizeWindow}
+              onMaximize={handleMaximizeWindow}
+            />
+          )
         ))}
 
         <Taskbar
