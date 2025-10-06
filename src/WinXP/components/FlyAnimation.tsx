@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const FLY_SIZE = 20;
 const PROXIMITY_THRESHOLD = 120;
-const FLEE_DISTANCE = 600;
+const FLEE_DISTANCE = 900;
 
 type FlyState = 'idle' | 'fleeing' | 'flying-in' | 'hidden';
 
@@ -50,20 +50,12 @@ const FlyWrapper = styled.div<{
   filter: ${({ $isMoving }) => $isMoving ? 'blur(3px)' : 'none'};
 `;
 
-const FlySprite = styled.div<{ $isIdle: boolean }>`
+const FlySprite = styled.div`
   width: ${FLY_SIZE}px;
   height: ${FLY_SIZE}px;
   background-image: url('/icons/fly.png');
   background-size: contain;
   background-repeat: no-repeat;
-  animation: ${({ $isIdle }) => $isIdle ? 'wobble 1.5s ease-in-out infinite' : 'none'};
-  
-  @keyframes wobble {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(0.5px, -0.5px); }
-    50% { transform: translate(-0.5px, 0.5px); }
-    75% { transform: translate(0.5px, 0.5px); }
-  }
 `;
 
 const getRandomTopRightPosition = (): Position => {
@@ -95,7 +87,7 @@ export default function FlyAnimation() {
   const [flyState, setFlyState] = useState<FlyState>('hidden');
   const [flyPosition, setFlyPosition] = useState<Position>({ x: 0, y: 0 });
   const [targetPosition, setTargetPosition] = useState<Position>({ x: 0, y: 0 });
-  const [rotation, setRotation] = useState<number>(-135);
+  const [rotation, setRotation] = useState<number>(180);
   const [duration, setDuration] = useState<number>(0);
   const mousePosition = useRef<Position>({ x: -1000, y: -1000 });
   const timeoutRef = useRef<NodeJS.Timeout>();
@@ -118,20 +110,17 @@ export default function FlyAnimation() {
       const distance = calculateDistance(flyPosition, mousePosition.current);
       
       if (distance < PROXIMITY_THRESHOLD) {
-        // Calculate flee direction (away from cursor)
-        const dx = flyPosition.x - mousePosition.current.x;
-        const dy = flyPosition.y - mousePosition.current.y;
-        const angle = Math.atan2(dy, dx);
+        // Continue in current direction (current rotation)
+        const angle = (rotation - 90) * Math.PI / 180;
         
         const fleeTarget: Position = {
           x: flyPosition.x + Math.cos(angle) * FLEE_DISTANCE,
           y: flyPosition.y + Math.sin(angle) * FLEE_DISTANCE
         };
 
-        const fleeDuration = 0.8 + Math.random() * 0.4; // 0.8-1.2s
+        const fleeDuration = 0.5 + Math.random() * 0.3; // 0.5-0.8s
         setDuration(fleeDuration);
         setTargetPosition(fleeTarget);
-        setRotation(calculateRotation(flyPosition, fleeTarget));
         setFlyState('fleeing');
 
         // After fleeing, go to hidden state
@@ -143,18 +132,23 @@ export default function FlyAnimation() {
           timeoutRef.current = setTimeout(() => {
             const newTarget = getRandomTopRightPosition();
             const startPos = getOffScreenStartPosition(newTarget);
-            const flyInDuration = 1.5 + Math.random() * 0.5; // 1.5-2s
+            const flyInDuration = 1.0 + Math.random() * 0.3; // 1.0-1.3s
             
+            // First, position fly off-screen
             setFlyPosition(startPos);
-            setTargetPosition(newTarget);
             setRotation(calculateRotation(startPos, newTarget));
-            setDuration(flyInDuration);
-            setFlyState('flying-in');
+            
+            // Then animate in on next frame
+            requestAnimationFrame(() => {
+              setTargetPosition(newTarget);
+              setDuration(flyInDuration);
+              setFlyState('flying-in');
+            });
             
             // After flying in, become idle
             timeoutRef.current = setTimeout(() => {
               setFlyState('idle');
-              setRotation(-135); // Default idle rotation
+              setRotation(180); // Face right for quick escape
             }, flyInDuration * 1000);
           }, respawnDelay);
         }, fleeDuration * 1000);
@@ -176,17 +170,22 @@ export default function FlyAnimation() {
   useEffect(() => {
     const initialTarget = getRandomTopRightPosition();
     const startPos = getOffScreenStartPosition(initialTarget);
-    const initialDuration = 1.5 + Math.random() * 0.5;
+    const initialDuration = 1.0 + Math.random() * 0.3;
     
+    // Position off-screen first
     setFlyPosition(startPos);
-    setTargetPosition(initialTarget);
     setRotation(calculateRotation(startPos, initialTarget));
-    setDuration(initialDuration);
-    setFlyState('flying-in');
+    
+    // Animate in on next frame
+    requestAnimationFrame(() => {
+      setTargetPosition(initialTarget);
+      setDuration(initialDuration);
+      setFlyState('flying-in');
+    });
     
     timeoutRef.current = setTimeout(() => {
       setFlyState('idle');
-      setRotation(-135);
+      setRotation(180); // Face right for quick escape
     }, initialDuration * 1000);
 
     return () => {
@@ -205,7 +204,7 @@ export default function FlyAnimation() {
         $isMoving={flyState === 'fleeing' || flyState === 'flying-in'}
         $duration={duration}
       >
-        <FlySprite $isIdle={flyState === 'idle'} />
+        <FlySprite />
       </FlyWrapper>
     </FlyContainer>
   );
