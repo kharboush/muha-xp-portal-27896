@@ -129,138 +129,146 @@ const MuhaFilm = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Oli */}
-            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-              <div className="p-4">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                </div>
-                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                  <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500" />
-                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>x_oli_luv_x</span>
-                  <span className="ml-auto text-pink-400 text-xl">♀</span>
-                </div>
-                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Oli
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 21
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Chatting, music
-                  </p>
-                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                    Looking for cool people to chat with
-                  </p>
+            {/* Ovanes */}
+            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #9CA3AF, #6B7280)" }}>
+              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+                <div className="p-4">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                    <Circle className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
+                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>Ovanes</span>
+                    <span className="ml-auto text-blue-400 text-xl">♂</span>
+                  </div>
+                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Ovanes
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 30
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Internet, cars, travel
+                    </p>
+                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                      Working at the butcher shop, dreaming of leaving the village
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Ovanes */}
-            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-              <div className="p-4">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                </div>
-                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                  <Circle className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>Ovanes</span>
-                  <span className="ml-auto text-blue-400 text-xl">♂</span>
-                </div>
-                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Ovanes
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 30
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Internet, cars, travel
-                  </p>
-                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                    Working at the butcher shop, dreaming of leaving the village
-                  </p>
+            {/* Oli */}
+            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #FBC2EB, #F78CA0)" }}>
+              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+                <div className="p-4">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                    <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500" />
+                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>x_oli_luv_x</span>
+                    <span className="ml-auto text-pink-400 text-xl">♀</span>
+                  </div>
+                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Oli
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 21
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Chatting, music
+                    </p>
+                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                      Looking for cool people to chat with
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Mayor */}
-            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-              <div className="p-4">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                </div>
-                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                  <Circle className="w-2.5 h-2.5 fill-red-500 text-red-500" />
-                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>kmeta_radomir</span>
-                  <span className="ml-auto text-gray-400 text-xl">♂</span>
-                </div>
-                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Mayor
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Widower
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 50
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Control, order, authority
-                  </p>
-                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                    Keeps the computer locked with a key hidden in a piggy bank
-                  </p>
+            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #D1D5DB, #9CA3AF)" }}>
+              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+                <div className="p-4">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                    <Circle className="w-2.5 h-2.5 fill-red-500 text-red-500" />
+                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>kmeta_radomir</span>
+                    <span className="ml-auto text-gray-400 text-xl">♂</span>
+                  </div>
+                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Mayor
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Widower
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 50
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Control, order, authority
+                    </p>
+                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                      Keeps the computer locked with a key hidden in a piggy bank
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Butcher */}
-            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-              <div className="p-4">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                </div>
-                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                  <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
-                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>mesarq</span>
-                  <span className="ml-auto text-blue-400 text-xl">♂</span>
-                </div>
-                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Butcher
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Married
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 45
-                  </p>
-                  <p>
-                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Business, money
-                  </p>
-                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                    Uses the office computer when the employee isn't watching
-                  </p>
+            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #E5E7EB, #D1D5DB)" }}>
+              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+                <div className="p-4">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                    <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
+                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>mesarq</span>
+                    <span className="ml-auto text-blue-400 text-xl">♂</span>
+                  </div>
+                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Butcher
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Married
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 45
+                    </p>
+                    <p>
+                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Business, money
+                    </p>
+                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                      Uses the office computer when the employee isn't watching
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
