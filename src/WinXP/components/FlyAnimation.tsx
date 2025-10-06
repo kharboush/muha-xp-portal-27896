@@ -109,12 +109,14 @@ export default function FlyAnimation() {
       const distance = calculateDistance(flyPosition, mousePosition.current);
       
       if (distance < PROXIMITY_THRESHOLD) {
-        // Always flee to the right
-        setRotation(180); // Face right
+        // Flee at 10 degrees upward angle
+        const fleeAngle = -10 * (Math.PI / 180); // Convert to radians (negative for upward)
+        const fleeRotation = 170; // Face the flee direction
+        setRotation(fleeRotation);
         
         const fleeTarget: Position = {
-          x: flyPosition.x + FLEE_DISTANCE,
-          y: flyPosition.y + (Math.random() - 0.5) * 100 // Slight y variation
+          x: flyPosition.x + FLEE_DISTANCE * Math.cos(fleeAngle),
+          y: flyPosition.y + FLEE_DISTANCE * Math.sin(fleeAngle)
         };
 
         const fleeDuration = 0.5 + Math.random() * 0.3; // 0.5-0.8s
@@ -131,7 +133,7 @@ export default function FlyAnimation() {
           timeoutRef.current = setTimeout(() => {
             const newTarget = getRandomTopRightPosition();
             const startPos = getOffScreenStartPosition(newTarget);
-            const flyInDuration = 1.0 + Math.random() * 0.3; // 1.0-1.3s
+            const flyInDuration = 0.5 + Math.random() * 0.15; // 0.5-0.65s (2x faster)
             
             // First, position fly off-screen
             setFlyPosition(startPos);
@@ -173,7 +175,7 @@ export default function FlyAnimation() {
   useEffect(() => {
     const initialTarget = getRandomTopRightPosition();
     const startPos = getOffScreenStartPosition(initialTarget);
-    const initialDuration = 1.0 + Math.random() * 0.3;
+    const initialDuration = 0.5 + Math.random() * 0.15; // 2x faster
     
     // Position off-screen first
     setFlyPosition(startPos);
