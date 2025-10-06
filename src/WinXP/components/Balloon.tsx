@@ -30,7 +30,7 @@ function Balloon({ startAfter = 3000, duration = 15000 }: BalloonProps) {
           <span className="balloon__header__text">Your computer might be at risk</span>
         </div>
         <p className="balloon__text__first">Antivirus software might not be installed</p>
-        <p className="balloon__text__second">Click this balloon to fix all your life's problems.</p>
+        <p className="balloon__text__second">Click this to fix your life's problems.</p>
       </div>
     </Div>
   ) : null;
