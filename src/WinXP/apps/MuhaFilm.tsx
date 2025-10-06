@@ -21,7 +21,7 @@ const MuhaFilm = () => {
             }}
           >
             <div className="py-8 px-4">
-              <div className="text-center space-y-2">
+              <div className="text-center space-y-1">
                 <div
                   className="uppercase"
                   style={{
@@ -37,7 +37,7 @@ const MuhaFilm = () => {
                 <div
                   className="text-black text-sm"
                   style={{
-                    fontFamily: '"Noto Sans", sans-serif',
+                    fontFamily: '"Public Sans", sans-serif',
                     fontWeight: 700,
                   }}
                 >
