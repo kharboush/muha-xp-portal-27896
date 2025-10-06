@@ -1,7 +1,7 @@
-import { User, Circle } from 'lucide-react';
-import muhaScene from '@/assets/muha-scene.png';
-import muhaLogo from '@/assets/muha-logo.png';
-import { useWinXP } from '../context/WinXPContext';
+import { User, Circle } from "lucide-react";
+import muhaScene from "@/assets/muha-scene.png";
+import muhaLogo from "@/assets/muha-logo.png";
+import { useWinXP } from "../context/WinXPContext";
 
 const MuhaFilm = () => {
   const { openApp } = useWinXP();
@@ -12,33 +12,33 @@ const MuhaFilm = () => {
         {/* Watch Trailer Banner */}
         <section>
           <button
-            onClick={() => openApp('MediaPlayer')}
+            onClick={() => openApp("MediaPlayer")}
             className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 rounded"
             style={{
-              background: '#FFD700',
-              border: '4px solid #000000',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+              background: "#FFD700",
+              border: "4px solid #000000",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
             }}
           >
             <div className="py-8 px-4">
               <div className="text-center space-y-2">
-                <div 
-                  className="uppercase tracking-wider"
+                <div
+                  className="uppercase"
                   style={{
-                    fontSize: '2.5rem',
+                    fontSize: "2.5rem",
                     fontFamily: '"Antonio", sans-serif',
                     fontWeight: 700,
-                    color: '#000000',
-                    letterSpacing: '0.05em',
+                    color: "#000000",
+                    letterSpacing: "0.05em",
                   }}
                 >
                   WATCH TRAILER NOW
                 </div>
-                <div 
+                <div
                   className="text-black text-sm"
                   style={{
                     fontFamily: '"Noto Sans", sans-serif',
-                    fontWeight: 700
+                    fontWeight: 700,
                   }}
                 >
                   Click to Play
@@ -47,16 +47,19 @@ const MuhaFilm = () => {
             </div>
           </button>
         </section>
-        
+
         {/* Video Player */}
         <section>
           <img src={muhaScene} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
         </section>
 
         {/* Header */}
-        <div className="text-center pb-6" style={{
-          borderBottom: '3px solid #FFD700',
-        }}>
+        <div
+          className="text-center pb-6"
+          style={{
+            borderBottom: "3px solid #FFD700",
+          }}
+        >
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
@@ -66,53 +69,64 @@ const MuhaFilm = () => {
 
         {/* Synopsis */}
         <section>
-          <h2 className="text-2xl font-bold mb-3 pb-2" style={{
-            color: '#000000',
-            borderBottom: '3px solid #FFD700',
-            fontFamily: '"Antonio", sans-serif',
-            fontWeight: 700,
-            letterSpacing: '0.05em',
-          }}>
+          <h2
+            className="text-2xl font-bold mb-3 pb-2"
+            style={{
+              color: "#000000",
+              borderBottom: "3px solid #FFD700",
+              fontFamily: '"Antonio", sans-serif',
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+            }}
+          >
             SYNOPSIS
           </h2>
           <div className="space-y-3 text-base leading-relaxed">
             <p>
-              Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness 
-              and the search for connection in the early days of social media.
+              Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
+              connection in the early days of social media.
             </p>
             <p>
-              Ovanеs, a 30-year-old man living in isolation in a small village, works at the local 
-              butcher shop and spends his evenings waiting for his unreliable internet connection. 
-              When he receives a friend request from Oli, a 21-year-old woman confined to her father's 
-              house, both find solace in their online conversations—a rare window into something beyond 
-              their provincial lives. As their connection deepens through glowing computer screens and 
-              sporadic chat messages, Ovanеs suggests they meet in person. But when the digital world 
-              collides with reality, the boundaries between longing and obsession begin to blur.
+              Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
+              spends his evenings waiting for his unreliable internet connection. When he receives a friend request from
+              Oli, a 21-year-old woman confined to her father's house, both find solace in their online conversations—a
+              rare window into something beyond their provincial lives. As their connection deepens through glowing
+              computer screens and sporadic chat messages, Ovanеs suggests they meet in person. But when the digital
+              world collides with reality, the boundaries between longing and obsession begin to blur.
             </p>
             <p className="italic">
-              <em>MUHA</em> is an intimate portrait of what happens when loneliness meets desperation 
-              in the flickering light of a computer monitor.
+              <em>MUHA</em> is an intimate portrait of what happens when loneliness meets desperation in the flickering
+              light of a computer monitor.
             </p>
           </div>
         </section>
 
         {/* Friends */}
         <section>
-          <div className="flex items-center justify-between mb-3 pb-2" style={{
-            borderBottom: '3px solid #FFD700',
-          }}>
-            <h2 className="text-2xl font-bold" style={{
-              color: '#000000',
-              fontFamily: '"Antonio", sans-serif',
-              fontWeight: 700,
-              letterSpacing: '0.05em',
-            }}>
+          <div
+            className="flex items-center justify-between mb-3 pb-2"
+            style={{
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            <h2
+              className="text-2xl font-bold"
+              style={{
+                color: "#000000",
+                fontFamily: '"Antonio", sans-serif',
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+              }}
+            >
               FRIENDS
             </h2>
-            <span className="text-sm font-semibold px-3 py-1 rounded-full" style={{
-              background: '#FFD700',
-              color: '#000000',
-            }}>
+            <span
+              className="text-sm font-semibold px-3 py-1 rounded-full"
+              style={{
+                background: "#FFD700",
+                color: "#000000",
+              }}
+            >
               2 Online
             </span>
           </div>
@@ -131,11 +145,21 @@ const MuhaFilm = () => {
                   <span className="ml-auto text-pink-400 text-2xl">♀</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Location:</span> Radomir</p>
-                  <p><span className="font-medium">Name:</span> Oli</p>
-                  <p><span className="font-medium">Status:</span> Single</p>
-                  <p><span className="font-medium">Age:</span> 21</p>
-                  <p><span className="font-medium">Interests:</span> Chatting, music</p>
+                  <p>
+                    <span className="font-medium">Location:</span> Radomir
+                  </p>
+                  <p>
+                    <span className="font-medium">Name:</span> Oli
+                  </p>
+                  <p>
+                    <span className="font-medium">Status:</span> Single
+                  </p>
+                  <p>
+                    <span className="font-medium">Age:</span> 21
+                  </p>
+                  <p>
+                    <span className="font-medium">Interests:</span> Chatting, music
+                  </p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
                     Looking for cool people to chat with
                   </p>
@@ -157,11 +181,21 @@ const MuhaFilm = () => {
                   <span className="ml-auto text-blue-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Location:</span> Near Radomir</p>
-                  <p><span className="font-medium">Name:</span> Ovanes</p>
-                  <p><span className="font-medium">Status:</span> Single</p>
-                  <p><span className="font-medium">Age:</span> 30</p>
-                  <p><span className="font-medium">Interests:</span> Internet, cars, travel</p>
+                  <p>
+                    <span className="font-medium">Location:</span> Near Radomir
+                  </p>
+                  <p>
+                    <span className="font-medium">Name:</span> Ovanes
+                  </p>
+                  <p>
+                    <span className="font-medium">Status:</span> Single
+                  </p>
+                  <p>
+                    <span className="font-medium">Age:</span> 30
+                  </p>
+                  <p>
+                    <span className="font-medium">Interests:</span> Internet, cars, travel
+                  </p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
                     Working at the butcher shop, dreaming of leaving the village
                   </p>
@@ -183,11 +217,21 @@ const MuhaFilm = () => {
                   <span className="ml-auto text-gray-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Location:</span> Radomir</p>
-                  <p><span className="font-medium">Name:</span> The Mayor</p>
-                  <p><span className="font-medium">Status:</span> Widower</p>
-                  <p><span className="font-medium">Age:</span> 50</p>
-                  <p><span className="font-medium">Interests:</span> Control, order, authority</p>
+                  <p>
+                    <span className="font-medium">Location:</span> Radomir
+                  </p>
+                  <p>
+                    <span className="font-medium">Name:</span> The Mayor
+                  </p>
+                  <p>
+                    <span className="font-medium">Status:</span> Widower
+                  </p>
+                  <p>
+                    <span className="font-medium">Age:</span> 50
+                  </p>
+                  <p>
+                    <span className="font-medium">Interests:</span> Control, order, authority
+                  </p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
                     Keeps the computer locked with a key hidden in a piggy bank
                   </p>
@@ -209,11 +253,21 @@ const MuhaFilm = () => {
                   <span className="ml-auto text-blue-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
-                  <p><span className="font-medium">Location:</span> Near Radomir</p>
-                  <p><span className="font-medium">Name:</span> The Butcher</p>
-                  <p><span className="font-medium">Status:</span> Married</p>
-                  <p><span className="font-medium">Age:</span> 45</p>
-                  <p><span className="font-medium">Interests:</span> Business, money</p>
+                  <p>
+                    <span className="font-medium">Location:</span> Near Radomir
+                  </p>
+                  <p>
+                    <span className="font-medium">Name:</span> The Butcher
+                  </p>
+                  <p>
+                    <span className="font-medium">Status:</span> Married
+                  </p>
+                  <p>
+                    <span className="font-medium">Age:</span> 45
+                  </p>
+                  <p>
+                    <span className="font-medium">Interests:</span> Business, money
+                  </p>
                   <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
                     Uses the office computer when the employee isn't watching
                   </p>
@@ -224,14 +278,25 @@ const MuhaFilm = () => {
         </section>
 
         {/* Footer */}
-        <div className="text-center text-sm text-gray-500 pt-6" style={{
-          borderTop: '2px solid #FFD700',
-        }}>
+        <div
+          className="text-center text-sm text-gray-500 pt-6"
+          style={{
+            borderTop: "2px solid #FFD700",
+          }}
+        >
           <p>© 2005 MUHA Film. All rights reserved.</p>
           <p className="mt-2">
-            <a href="#" className="underline hover:text-gray-700" style={{ color: '#FFD700' }}>Contact</a> | 
-            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: '#FFD700' }}>Press Kit</a> | 
-            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: '#FFD700' }}>Festival Screenings</a>
+            <a href="#" className="underline hover:text-gray-700" style={{ color: "#FFD700" }}>
+              Contact
+            </a>{" "}
+            |
+            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: "#FFD700" }}>
+              Press Kit
+            </a>{" "}
+            |
+            <a href="#" className="underline hover:text-gray-700 ml-2" style={{ color: "#FFD700" }}>
+              Festival Screenings
+            </a>
           </p>
         </div>
       </div>
