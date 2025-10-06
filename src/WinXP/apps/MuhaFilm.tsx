@@ -148,7 +148,7 @@ const MuhaFilm = () => {
       <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
         <div className="max-w-3xl mx-auto">
           <div className="mb-6">
-            <img src={friendsNav} alt="Navigation" className="w-1/2" />
+            <img src={friendsNav} alt="Navigation" className="w-[65%]" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
