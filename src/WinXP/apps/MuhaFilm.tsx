@@ -481,7 +481,7 @@ const MuhaFilm = () => {
       <div
         className="max-w-3xl mx-auto text-center text-sm text-gray-500 pt-6 -mt-6 -mx-8 px-8"
         style={{
-          borderTop: "2px solid #FFD700",
+          borderTop: "3px solid #FFD700",
         }}
       >
           <div className="flex items-center justify-center gap-6">
