@@ -26,7 +26,7 @@ const MuhaFilm = () => {
                   className="uppercase tracking-wider"
                   style={{
                     fontSize: '2.5rem',
-                    fontFamily: '"Black Ops One", sans-serif',
+                    fontFamily: '"Alfa Slab One", sans-serif',
                     fontWeight: 400,
                     color: '#FFFFFF',
                     textShadow: '3px 3px 0px #000000, -2px -2px 0px #000000, 2px -2px 0px #000000, -2px 2px 0px #000000, 0px 3px 0px #000000, 3px 0px 0px #000000, 0px -2px 0px #000000, -2px 0px 0px #000000',
@@ -38,7 +38,7 @@ const MuhaFilm = () => {
                 <div 
                   className="text-black text-lg font-bold"
                   style={{
-                    fontFamily: '"Black Ops One", sans-serif'
+                    fontFamily: '"Alfa Slab One", sans-serif'
                   }}
                 >
                   Click to Play
