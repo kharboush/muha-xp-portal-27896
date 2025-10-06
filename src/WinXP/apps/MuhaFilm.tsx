@@ -287,6 +287,213 @@ const MuhaFilm = () => {
           </div>
         </section>
 
+        {/* Credits */}
+        <section>
+          <h2
+            className="text-2xl font-bold mb-6 pb-2"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              fontStyle: "italic",
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            КРЕДИТИ
+          </h2>
+          <div className="space-y-3">
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Оператор</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Георги Гидиков</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Продуцент</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Ивана Каблешкова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Първи ас. реж.</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Асен Симеонов</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Втори ас. реж.</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Александър Паунов</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Първи ас. камера</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Елица Стефанова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Steady cam op</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Ерик Бассан</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Гафер</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Георги Гвоздев</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Осветител</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Петър Райжеков</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Осветител/втори ас. камера</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Валентина Николова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Осветител/Grip</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Владо Вълков</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Звук</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Пресиан Димитров</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Звук</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Алекс Димитров</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Скриптьр</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Gabriela Pometkova</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Сценография</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Шани Илиева</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Сценография</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Кардам Георгиев</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Грим и коса</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Деница Петрова-Божинова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Гардероб на терен</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Валентина Георгиева</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Гардероб</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Борислав Стаменов</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">PA n grip</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Любен Краен</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Animal handler</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Петко Лазаров</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Визуални ефекти</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Калина Александрова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Счетоводител</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Наталия Нанчева</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Монтаж</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Габриела Пометкова, Никола Димов</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Цветове</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Никола Димов</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Звук</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Тома Тодоров</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Музика</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Деян Славчев</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Title</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Бояна Войнова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Плакат</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Антония Данаилова</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Сайт</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Антон Харбуш</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Транспорт</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Лиа Манчева</div>
+            </div>
+            <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+              <div className="text-right text-gray-500 font-medium">Транспорт мениджър</div>
+              <div style={{ color: "#FFD700", fontWeight: 700 }}>Ахинора Каблешкова</div>
+            </div>
+
+            <div className="pt-4 mt-6" style={{ borderTop: "2px solid #FFD700" }}>
+              <h3 className="text-xl font-bold mb-4" style={{ color: "#000000", fontFamily: '"Public Sans", sans-serif', fontWeight: 900, fontStyle: "italic" }}>В РОЛИТЕ</h3>
+              <div className="space-y-2">
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Даниел Кукушев</div>
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Елеонора Иванова</div>
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Свежен Младенов</div>
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Стефан Денолюбов</div>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-6">
+              <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
+                <div className="text-right text-gray-500 font-medium">Сценарист и режисьор</div>
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Слава Миланова</div>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-6">
+              <h3 className="text-xl font-bold mb-4" style={{ color: "#000000", fontFamily: '"Public Sans", sans-serif', fontWeight: 900, fontStyle: "italic" }}>МАСОВКА</h3>
+              <div className="space-y-2">
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Сибела Чинарева</div>
+                <div style={{ color: "#FFD700", fontWeight: 700 }}>Георги Желев</div>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-6" style={{ borderTop: "2px solid #FFD700" }}>
+              <h3 className="text-xl font-bold mb-4" style={{ color: "#000000", fontFamily: '"Public Sans", sans-serif', fontWeight: 900, fontStyle: "italic" }}>СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА</h3>
+              <div className="space-y-2 text-gray-700">
+                <div>Кева</div>
+                <div>Месопродавница</div>
+                <div>Десислава Веселинова</div>
+                <div>Димитър Веселинов</div>
+                <div>Анжелика Симеонова</div>
+                <div>Антон Симеонов</div>
+                <div>Able design</div>
+                <div>Стиван Чолаков</div>
+                <div>Стоян Лазаров</div>
+                <div>Чавдар Чушев</div>
+                <div>Панайот Горанов</div>
+                <div>Анна Иванова</div>
+                <div>Иван Иванов</div>
+                <div>Димитър Василев</div>
+                <div>Гергана Георгиева</div>
+                <div>Семейство Христови</div>
+                <div>Стефан Пенев</div>
+                <div>Любомира Чушева</div>
+                <div>Маргарита Василева</div>
+                <div>Валери Василев</div>
+                <div>Верослав Христов</div>
+                <div>Amann kaffe - Иван Джиджев</div>
+                <div>Александрина Андонова</div>
+                <div>Electricity Productions - Борил Петров</div>
+                <div>Reality Cam - Георги Гвоздев</div>
+                <div>"Парти Тент ЕООД" - Асен Кожаров</div>
+                <div>Лора Йосифова НИМХ</div>
+                <div>Столична община, район Младост</div>
+                <div>Столичен инспекторат - Ромина Митева, Петя Панайотова</div>
+                <div>Лидия Димитрова</div>
+                <div>Румяна Серафимова</div>
+                <div>Зоя Милванова</div>
+                <div>Магазин "Роден Дар" - Красина Ненкова, Силвана Миткова</div>
+                <div>Цветан Атанасов</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
         <div
           className="text-center text-sm text-gray-500 pt-6"
