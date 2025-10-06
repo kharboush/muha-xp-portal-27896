@@ -36,7 +36,7 @@ const ContentArea = styled.div`
   justify-content: center;
   align-items: center;
   overflow: auto;
-  background: #000;
+  background: #DDE2E9;
 `;
 
 const ChatImage = styled.img`

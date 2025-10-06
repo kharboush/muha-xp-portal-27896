@@ -53,11 +53,11 @@ export const appSettings: Record<string, AppConfig> = {
   },
   mIRC: {
     component: mIRC,
-    title: 'mIRC',
+    title: 'mIRC- x_oli_luv_x',
     icon: '/icons/mirc-32.png',
     headerIcon: '/icons/mirc-32.png',
     width: 646,
-    height: 580,
+    height: 640,
     x: 180,
     y: 60,
     resizable: true,
