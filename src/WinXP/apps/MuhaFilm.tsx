@@ -52,17 +52,29 @@ const MuhaFilm = () => {
         </section>
 
         {/* Header */}
-        <div
-          className="text-center pb-6"
-          style={{
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
+        <div className="text-center pb-6">
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
-          <p className="text-2xl text-gray-600 italic">(Fly)</p>
-          <p className="text-lg mt-2 text-gray-700">By Slava Milanova</p>
+          <p 
+            className="text-2xl text-gray-600 italic"
+            style={{
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              fontStyle: "italic",
+            }}
+          >
+            (Fly)
+          </p>
+          <p 
+            className="text-lg mt-2 text-gray-700"
+            style={{
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 700,
+            }}
+          >
+            By Slava Milanova
+          </p>
         </div>
 
         {/* Synopsis */}
@@ -74,6 +86,7 @@ const MuhaFilm = () => {
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
               fontStyle: "italic",
+              borderBottom: "3px solid #FFD700",
             }}
           >
             SYNOPSIS
