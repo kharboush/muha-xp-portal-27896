@@ -13,34 +13,33 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp('MediaPlayer')}
-            className="w-full mb-4 cursor-pointer overflow-hidden hover:scale-[1.02] transition-all duration-300 rounded-lg"
+            className="w-full mb-4 cursor-pointer overflow-hidden hover:scale-[1.02] transition-all duration-300 rounded"
             style={{
-              background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #000000 100%)',
-              border: '4px solid #000000',
-              boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255,255,255,0.2)',
+              background: 'linear-gradient(to bottom, #FFD700 0%, #FFA500 100%)',
+              border: '3px solid #000000',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
             }}
           >
-            <div className="py-8 px-4">
-              <div className="text-center space-y-3">
+            <div className="py-6 px-4">
+              <div className="text-center space-y-2">
                 <div 
-                  className="text-black font-bold uppercase tracking-widest"
+                  className="text-black font-extrabold uppercase tracking-wide"
                   style={{
-                    fontSize: '2.5rem',
-                    textShadow: '3px 3px 0px #FFD700, -1px -1px 0px #FFD700, 1px -1px 0px #FFD700, -1px 1px 0px #FFD700',
-                    fontFamily: 'Impact, Arial Black, sans-serif',
-                    letterSpacing: '0.3em',
+                    fontSize: '2rem',
+                    textShadow: '2px 2px 0px rgba(0,0,0,0.1)',
+                    fontFamily: 'Arial Black, Arial, sans-serif',
+                    letterSpacing: '0.15em',
                   }}
                 >
-                  ★ WATCH TRAILER NOW ★
+                  WATCH TRAILER NOW
                 </div>
                 <div 
-                  className="text-yellow-300 text-lg font-bold"
+                  className="text-black text-base font-semibold"
                   style={{
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
                     fontFamily: 'Arial, sans-serif'
                   }}
                 >
-                  » Click to Play «
+                  Click to Play
                 </div>
               </div>
             </div>
