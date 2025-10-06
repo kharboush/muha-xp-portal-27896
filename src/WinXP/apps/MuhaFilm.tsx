@@ -13,30 +13,32 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp('MediaPlayer')}
-            className="w-full mb-4 cursor-pointer overflow-hidden hover:scale-[1.02] transition-all duration-300 rounded"
+            className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 rounded"
             style={{
-              background: 'linear-gradient(to bottom, #FFD700 0%, #FFA500 100%)',
-              border: '3px solid #000000',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+              background: '#FFD700',
+              border: '4px solid #000000',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
             }}
           >
-            <div className="py-6 px-4">
+            <div className="py-8 px-4">
               <div className="text-center space-y-2">
                 <div 
-                  className="text-black font-extrabold uppercase tracking-wide"
+                  className="uppercase tracking-wider"
                   style={{
-                    fontSize: '2rem',
-                    textShadow: '2px 2px 0px rgba(0,0,0,0.1)',
-                    fontFamily: 'Arial Black, Arial, sans-serif',
-                    letterSpacing: '0.15em',
+                    fontSize: '2.5rem',
+                    fontFamily: '"Bebas Neue", "Arial Black", sans-serif',
+                    fontWeight: 700,
+                    color: '#FFFFFF',
+                    textShadow: '3px 3px 0px #000000, -2px -2px 0px #000000, 2px -2px 0px #000000, -2px 2px 0px #000000, 0px 3px 0px #000000, 3px 0px 0px #000000, 0px -2px 0px #000000, -2px 0px 0px #000000',
+                    letterSpacing: '0.1em',
                   }}
                 >
                   WATCH TRAILER NOW
                 </div>
                 <div 
-                  className="text-black text-base font-semibold"
+                  className="text-black text-lg font-bold"
                   style={{
-                    fontFamily: 'Arial, sans-serif'
+                    fontFamily: '"Bebas Neue", Arial, sans-serif'
                   }}
                 >
                   Click to Play
