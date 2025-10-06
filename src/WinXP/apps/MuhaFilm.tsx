@@ -57,7 +57,7 @@ const MuhaFilm = () => {
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
-          <p 
+          <p
             className="text-2xl text-black"
             style={{
               fontFamily: '"Public Sans", sans-serif',
@@ -67,7 +67,7 @@ const MuhaFilm = () => {
           >
             (Fly)
           </p>
-          <p 
+          <p
             className="text-lg mt-2 text-black"
             style={{
               fontFamily: '"Public Sans", sans-serif',
@@ -476,10 +476,16 @@ const MuhaFilm = () => {
               borderBottom: "3px solid #FFD700",
             }}
           >
-            СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА
+            СПЕЦИАЛНИ БЛАГОДАРНОСТИ
           </h2>
           <div className="text-gray-700">
-            Кева, Месопродавница, Десислава Веселинова, Димитър Веселинов, Анжелика Симеонова, Антон Симеонов, Able design, Стиван Чолаков, Стоян Лазаров, Чавдар Чушев, Панайот Горанов, Анна Иванова, Иван Иванов, Димитър Василев, Гергана Георгиева, Семейство Христови, Стефан Пенев, Любомира Чушева, Маргарита Василева, Валери Василев, Верослав Христов, Amann kaffe - Иван Джиджев, Александрина Андонова, Electricity Productions - Борил Петров, Reality Cam - Георги Гвоздев, "Парти Тент ЕООД" - Асен Кожаров, Лора Йосифова НИМХ, Столична община, район Младост, Столичен инспекторат - Ромина Митева, Петя Панайотова, Лидия Димитрова, Румяна Серафимова, Зоя Милванова, Магазин "Роден Дар" - Красина Ненкова, Силвана Миткова, Цветан Атанасов
+            Кева, Месопродавница, Десислава Веселинова, Димитър Веселинов, Анжелика Симеонова, Антон Симеонов, Able
+            design, Стиван Чолаков, Стоян Лазаров, Чавдар Чушев, Панайот Горанов, Анна Иванова, Иван Иванов, Димитър
+            Василев, Гергана Георгиева, Семейство Христови, Стефан Пенев, Любомира Чушева, Маргарита Василева, Валери
+            Василев, Верослав Христов, Amann kaffe - Иван Джиджев, Александрина Андонова, Electricity Productions -
+            Борил Петров, Reality Cam - Георги Гвоздев, "Парти Тент ЕООД" - Асен Кожаров, Лора Йосифова НИМХ, Столична
+            община, район Младост, Столичен инспекторат - Ромина Митева, Петя Панайотова, Лидия Димитрова, Румяна
+            Серафимова, Зоя Милванова, Магазин "Роден Дар" - Красина Ненкова, Силвана Миткова, Цветан Атанасов
           </div>
         </section>
 
@@ -491,9 +497,9 @@ const MuhaFilm = () => {
           }}
         >
           <div className="flex items-center justify-center gap-6">
-            <a 
-              href="https://www.instagram.com/muha.film/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/muha.film/"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
               style={{ color: "#4169E1" }}
@@ -501,7 +507,7 @@ const MuhaFilm = () => {
               <Instagram size={20} />
               <span>Instagram</span>
             </a>
-            <a 
+            <a
               href="mailto:fly.short.25@gmail.com"
               className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
               style={{ color: "#4169E1" }}
@@ -511,9 +517,9 @@ const MuhaFilm = () => {
             </a>
           </div>
           <div className="mt-6 flex justify-center">
-            <a 
-              href="https://ncf.bg/bg" 
-              target="_blank" 
+            <a
+              href="https://ncf.bg/bg"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity"
             >
@@ -521,8 +527,19 @@ const MuhaFilm = () => {
             </a>
           </div>
           <p className="text-xs leading-relaxed max-w-2xl mx-auto mt-6">
-            © 2025 Muha Film. Built with <a href="https://github.com/ShizukuIchi/winXP" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "#4169E1" }}>winXP project</a> (MIT License) by ShizukuIchi. 
-            This site is not affiliated with, endorsed by, or sponsored by Microsoft. All interface elements have been independently created or modified for artistic purposes. mIRC used with permission.
+            © 2025 Muha Film. Built with{" "}
+            <a
+              href="https://github.com/ShizukuIchi/winXP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              style={{ color: "#4169E1" }}
+            >
+              winXP project
+            </a>{" "}
+            (MIT License) by ShizukuIchi. This site is not affiliated with, endorsed by, or sponsored by Microsoft. All
+            interface elements have been independently created or modified for artistic purposes. mIRC used with
+            permission.
           </p>
         </div>
       </div>
