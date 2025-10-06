@@ -178,7 +178,7 @@ const MuhaFilm = () => {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
                   <Circle className="w-3 h-3 fill-red-500 text-red-500" />
-                  <span className="text-xl font-semibold text-gray-700">mayor_radomir</span>
+                  <span className="text-xl font-semibold text-gray-700">kmeta_radomir</span>
                   <span className="ml-auto text-gray-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
@@ -204,7 +204,7 @@ const MuhaFilm = () => {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
                   <Circle className="w-3 h-3 fill-gray-400 text-gray-400" />
-                  <span className="text-xl font-semibold text-gray-700">butcher_boss</span>
+                  <span className="text-xl font-semibold text-gray-700">mesarq</span>
                   <span className="ml-auto text-blue-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
