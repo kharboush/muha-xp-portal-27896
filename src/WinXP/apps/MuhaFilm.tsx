@@ -73,34 +73,36 @@ const MuhaFilm = () => {
               borderBottom: "3px solid #FFD700",
             }}
           >
-          <h2
-            className="text-2xl font-bold mb-3 pb-2"
-            style={{
-              color: "#000000",
-              fontFamily: '"Public Sans", sans-serif',
-              fontWeight: 900,
-              fontStyle: "italic",
-            }}
-          >
-            SYNOPSIS
-          </h2>
-          <div className="space-y-3 text-base leading-relaxed">
-            <p>
-              Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
-              connection in the early days of social media.
-            </p>
-            <p>
-              Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
-              spends his evenings waiting for his unreliable internet connection. When he receives a friend request from
-              Oli, a 21-year-old woman confined to her father's house, both find solace in their online conversations—a
-              rare window into something beyond their provincial lives. As their connection deepens through glowing
-              computer screens and sporadic chat messages, Ovanеs suggests they meet in person. But when the digital
-              world collides with reality, the boundaries between longing and obsession begin to blur.
-            </p>
-            <p className="italic">
-              <em>MUHA</em> is an intimate portrait of what happens when loneliness meets desperation in the flickering
-              light of a computer monitor.
-            </p>
+            <h2
+              className="text-2xl font-bold mb-3 pb-2"
+              style={{
+                color: "#000000",
+                fontFamily: '"Public Sans", sans-serif',
+                fontWeight: 900,
+                fontStyle: "italic",
+              }}
+            >
+              SYNOPSIS
+            </h2>
+            <div className="space-y-3 text-base leading-relaxed">
+              <p>
+                Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search
+                for connection in the early days of social media.
+              </p>
+              <p>
+                Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
+                spends his evenings waiting for his unreliable internet connection. When he receives a friend request
+                from Oli, a 21-year-old woman confined to her father's house, both find solace in their online
+                conversations—a rare window into something beyond their provincial lives. As their connection deepens
+                through glowing computer screens and sporadic chat messages, Ovanеs suggests they meet in person. But
+                when the digital world collides with reality, the boundaries between longing and obsession begin to
+                blur.
+              </p>
+              <p className="italic">
+                <em>MUHA</em> is an intimate portrait of what happens when loneliness meets desperation in the
+                flickering light of a computer monitor.
+              </p>
+            </div>
           </div>
         </section>
 
