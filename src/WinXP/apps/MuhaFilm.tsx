@@ -104,64 +104,59 @@ const MuhaFilm = () => {
       </section>
 
       {/* Friends */}
-      <section className="mt-16">
-        <div
-          className="flex items-center justify-between mb-3 pb-2 -mx-8 px-8"
-          style={{
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
+      <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-6 pb-3" style={{ borderBottom: "1px solid #D4D8DD" }}>
             <h2
-              className="text-2xl font-bold"
+              className="text-xl font-semibold"
               style={{
-                color: "#000000",
+                color: "#2C2D2E",
                 fontFamily: '"Public Sans", sans-serif',
-                fontWeight: 900,
+                fontWeight: 600,
               }}
             >
-              FRIENDS
+              Friends
             </h2>
             <span
-              className="text-sm font-semibold px-3 py-1 rounded-full"
+              className="text-xs font-medium px-3 py-1 rounded-full"
               style={{
-                background: "#FFD700",
-                color: "#000000",
+                background: "#D4D8DD",
+                color: "#2C2D2E",
               }}
             >
               2 Online
-          </span>
-        </div>
-        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Oli */}
-            <div className="bg-gradient-to-b from-pink-300 to-pink-400 p-4 rounded-lg shadow-lg">
-              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
-                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
-                  <User className="w-32 h-32 text-gray-400" />
+            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="p-4">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
                 </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-md">
-                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
-                  <Circle className="w-3 h-3 fill-green-400 text-green-400" />
-                  <span className="text-xl font-semibold text-gray-700">x_oli_luv_x</span>
-                  <span className="ml-auto text-pink-400 text-2xl">♀</span>
+                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                  <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500" />
+                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>x_oli_luv_x</span>
+                  <span className="ml-auto text-pink-400 text-xl">♀</span>
                 </div>
-                <div className="space-y-1 text-sm text-gray-600">
+                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
                   <p>
-                    <span className="font-medium">Location:</span> Radomir
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
                   </p>
                   <p>
-                    <span className="font-medium">Name:</span> Oli
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Oli
                   </p>
                   <p>
-                    <span className="font-medium">Status:</span> Single
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
                   </p>
                   <p>
-                    <span className="font-medium">Age:</span> 21
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 21
                   </p>
                   <p>
-                    <span className="font-medium">Interests:</span> Chatting, music
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Chatting, music
                   </p>
-                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                     Looking for cool people to chat with
                   </p>
                 </div>
@@ -169,35 +164,33 @@ const MuhaFilm = () => {
             </div>
 
             {/* Ovanes */}
-            <div className="bg-gradient-to-b from-blue-300 to-blue-400 p-4 rounded-lg shadow-lg">
-              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
-                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
-                  <User className="w-32 h-32 text-gray-400" />
+            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="p-4">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
                 </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-md">
-                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
-                  <Circle className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  <span className="text-xl font-semibold text-gray-700">Ovanes</span>
-                  <span className="ml-auto text-blue-400 text-2xl">♂</span>
+                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                  <Circle className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
+                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>Ovanes</span>
+                  <span className="ml-auto text-blue-400 text-xl">♂</span>
                 </div>
-                <div className="space-y-1 text-sm text-gray-600">
+                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
                   <p>
-                    <span className="font-medium">Location:</span> Near Radomir
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
                   </p>
                   <p>
-                    <span className="font-medium">Name:</span> Ovanes
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Ovanes
                   </p>
                   <p>
-                    <span className="font-medium">Status:</span> Single
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
                   </p>
                   <p>
-                    <span className="font-medium">Age:</span> 30
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 30
                   </p>
                   <p>
-                    <span className="font-medium">Interests:</span> Internet, cars, travel
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Internet, cars, travel
                   </p>
-                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                     Working at the butcher shop, dreaming of leaving the village
                   </p>
                 </div>
@@ -205,35 +198,33 @@ const MuhaFilm = () => {
             </div>
 
             {/* Mayor */}
-            <div className="bg-gradient-to-b from-gray-300 to-gray-400 p-4 rounded-lg shadow-lg">
-              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
-                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
-                  <User className="w-32 h-32 text-gray-400" />
+            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="p-4">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
                 </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-md">
-                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
-                  <Circle className="w-3 h-3 fill-red-500 text-red-500" />
-                  <span className="text-xl font-semibold text-gray-700">kmeta_radomir</span>
-                  <span className="ml-auto text-gray-400 text-2xl">♂</span>
+                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                  <Circle className="w-2.5 h-2.5 fill-red-500 text-red-500" />
+                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>kmeta_radomir</span>
+                  <span className="ml-auto text-gray-400 text-xl">♂</span>
                 </div>
-                <div className="space-y-1 text-sm text-gray-600">
+                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
                   <p>
-                    <span className="font-medium">Location:</span> Radomir
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
                   </p>
                   <p>
-                    <span className="font-medium">Name:</span> The Mayor
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Mayor
                   </p>
                   <p>
-                    <span className="font-medium">Status:</span> Widower
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Widower
                   </p>
                   <p>
-                    <span className="font-medium">Age:</span> 50
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 50
                   </p>
                   <p>
-                    <span className="font-medium">Interests:</span> Control, order, authority
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Control, order, authority
                   </p>
-                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                     Keeps the computer locked with a key hidden in a piggy bank
                   </p>
                 </div>
@@ -241,39 +232,38 @@ const MuhaFilm = () => {
             </div>
 
             {/* Butcher */}
-            <div className="bg-gradient-to-b from-red-300 to-red-400 p-4 rounded-lg shadow-lg">
-              <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
-                <div className="bg-gray-100 border-4 border-white rounded-lg p-2 flex items-center justify-center h-64 shadow-lg">
-                  <User className="w-32 h-32 text-gray-400" />
+            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="p-4">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                  <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
                 </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-md">
-                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
-                  <Circle className="w-3 h-3 fill-gray-400 text-gray-400" />
-                  <span className="text-xl font-semibold text-gray-700">mesarq</span>
-                  <span className="ml-auto text-blue-400 text-2xl">♂</span>
+                <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                  <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
+                  <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>mesarq</span>
+                  <span className="ml-auto text-blue-400 text-xl">♂</span>
                 </div>
-                <div className="space-y-1 text-sm text-gray-600">
+                <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
                   <p>
-                    <span className="font-medium">Location:</span> Near Radomir
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
                   </p>
                   <p>
-                    <span className="font-medium">Name:</span> The Butcher
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Butcher
                   </p>
                   <p>
-                    <span className="font-medium">Status:</span> Married
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Married
                   </p>
                   <p>
-                    <span className="font-medium">Age:</span> 45
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 45
                   </p>
                   <p>
-                    <span className="font-medium">Interests:</span> Business, money
+                    <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Business, money
                   </p>
-                  <p className="mt-2 pt-2 border-t border-gray-200 text-xs italic">
+                  <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                     Uses the office computer when the employee isn't watching
                   </p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </section>
