@@ -30,7 +30,6 @@ const MuhaFilm = () => {
                     fontWeight: 900,
                     fontStyle: "italic",
                     color: "#000000",
-                    letterSpacing: "0.05em",
                   }}
                 >
                   WATCH TRAILER NOW
