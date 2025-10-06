@@ -30,7 +30,7 @@ const MuhaFilm = () => {
 
         {/* Video Player */}
         <section>
-          <img src={muhaStill1} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
+          <img src={muhaStill2} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
         </section>
 
         {/* Header */}
@@ -79,7 +79,7 @@ const MuhaFilm = () => {
               connection in the early days of social media.
             </p>
             
-            <img src={muhaStill2} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded my-4" />
+            <img src={muhaStill1} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded my-8" />
             
             <p>
               Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
@@ -90,7 +90,7 @@ const MuhaFilm = () => {
               world collides with reality, the boundaries between longing and obsession begin to blur.
             </p>
             
-            <img src={muhaStill3} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded my-4" />
+            <img src={muhaStill3} alt="Scene from MUHA film" className="aspect-video w-full object-cover rounded my-8" />
             
             <p className="italic">
               <em>MUHA</em> is an intimate portrait of what happens when loneliness meets desperation in the flickering
