@@ -57,7 +57,7 @@ export const appSettings: Record<string, AppConfig> = {
     icon: '/icons/mirc-32.png',
     headerIcon: '/icons/mirc-32.png',
     width: 646,
-    height: 640,
+    height: 680,
     x: 180,
     y: 60,
     resizable: true,
