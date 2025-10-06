@@ -520,7 +520,7 @@ const MuhaFilm = () => {
             borderTop: "2px solid #FFD700",
           }}
         >
-          <p>© 2005 MUHA Film. All rights reserved.</p>
+          <p>© 2025 MUHA Film. All rights reserved.</p>
           <div className="mt-4 flex items-center justify-center gap-6">
             <a 
               href="https://www.instagram.com/muha.film/" 
