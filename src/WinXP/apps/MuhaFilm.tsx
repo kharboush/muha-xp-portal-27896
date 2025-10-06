@@ -479,11 +479,12 @@ const MuhaFilm = () => {
 
       {/* Footer */}
       <div
-        className="max-w-3xl mx-auto text-center text-sm text-gray-500 pt-6 -mt-6 -mx-8 px-8"
+        className="text-center text-sm text-gray-500 pt-6 -mx-8 px-8"
         style={{
           borderTop: "3px solid #FFD700",
         }}
       >
+        <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-6">
             <a
               href="https://www.instagram.com/muha.film/"
@@ -528,7 +529,8 @@ const MuhaFilm = () => {
             (MIT License) by ShizukuIchi. This site is not affiliated with, endorsed by, or sponsored by Microsoft. All
             interface elements have been independently created or modified for artistic purposes. mIRC used with
             permission.
-        </p>
+          </p>
+        </div>
       </div>
     </div>
   );
