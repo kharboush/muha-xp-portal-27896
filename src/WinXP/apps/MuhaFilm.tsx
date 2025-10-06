@@ -12,7 +12,7 @@ const MuhaFilm = () => {
   const { openApp } = useWinXP();
 
   return (
-    <div className="h-full overflow-auto bg-white px-8 pt-8 space-y-16">
+    <div className="h-full overflow-auto bg-white px-8 pt-8">
       {/* Watch Trailer Banner */}
       <section className="-mx-8 -mt-8">
         <button
@@ -28,12 +28,12 @@ const MuhaFilm = () => {
       </section>
 
       {/* Hero Image */}
-      <section className="-mx-8 -mt-16">
+      <section className="-mx-8">
         <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[350px] object-cover block" />
       </section>
 
       {/* Header */}
-      <div className="max-w-3xl mx-auto text-center pb-6">
+      <div className="max-w-3xl mx-auto text-center pb-6 mt-16">
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
@@ -58,7 +58,7 @@ const MuhaFilm = () => {
       </div>
 
       {/* Synopsis */}
-      <section>
+      <section className="mt-16">
         <h2
           className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
           style={{
@@ -104,7 +104,7 @@ const MuhaFilm = () => {
       </section>
 
       {/* Friends */}
-      <section>
+      <section className="mt-16">
         <div
           className="flex items-center justify-between mb-3 pb-2 -mx-8 px-8"
           style={{
@@ -279,7 +279,7 @@ const MuhaFilm = () => {
       </section>
 
       {/* Credits */}
-      <section>
+      <section className="mt-16">
         <h2
           className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
           style={{
@@ -454,7 +454,7 @@ const MuhaFilm = () => {
       </section>
 
       {/* Special Thanks */}
-      <section>
+      <section className="mt-16">
         <h2
           className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
           style={{
@@ -479,7 +479,7 @@ const MuhaFilm = () => {
 
       {/* Footer */}
       <div
-        className="text-center text-sm text-gray-500 pt-6 -mx-8 px-8"
+        className="text-center text-sm text-gray-500 pt-6 -mx-8 px-8 mt-16"
         style={{
           borderTop: "3px solid #FFD700",
         }}
