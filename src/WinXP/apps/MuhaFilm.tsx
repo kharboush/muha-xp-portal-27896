@@ -16,8 +16,6 @@ const MuhaFilm = () => {
             className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 rounded"
             style={{
               background: "#FFD700",
-              border: "4px solid #000000",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
             }}
           >
             <div className="py-8 px-4">
