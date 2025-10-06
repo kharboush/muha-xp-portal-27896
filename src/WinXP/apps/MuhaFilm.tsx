@@ -69,7 +69,7 @@ const MuhaFilm = () => {
             className="text-lg mt-2 text-black"
             style={{
               fontFamily: '"Public Sans", sans-serif',
-              fontWeight: 900,
+              fontWeight: 400,
             }}
           >
             By Slava Milanova
