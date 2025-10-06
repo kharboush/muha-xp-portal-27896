@@ -107,11 +107,11 @@ const MuhaFilm = () => {
       <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-6 mb-6 pb-3" style={{ borderBottom: "1px solid #D4D8DD" }}>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
               <Home className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Home</span>
-            </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md" style={{ background: "#FFFFFF", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default" style={{ background: "#FFFFFF", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
               <Users className="w-5 h-5" style={{ color: "#4169E1" }} />
               <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>Friends</span>
               <span
@@ -123,19 +123,19 @@ const MuhaFilm = () => {
               >
                 2 Online
               </span>
-            </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
               <Image className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Photos</span>
-            </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
               <MessageCircle className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Messages</span>
-            </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
               <UsersRound className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Groups</span>
-            </button>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
