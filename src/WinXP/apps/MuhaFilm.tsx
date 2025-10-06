@@ -12,10 +12,11 @@ const MuhaFilm = () => {
   const { openApp } = useWinXP();
 
   return (
-    <div className="h-full overflow-auto bg-white p-8 space-y-16">
-      {/* Watch Trailer Banner */}
-      <section className="max-w-3xl mx-auto">
-        <button
+    <div className="h-full overflow-auto bg-white p-8">
+      <div className="max-w-3xl mx-auto space-y-16">
+        {/* Watch Trailer Banner */}
+        <section>
+          <button
             onClick={() => openApp("MediaPlayer")}
             className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0"
           >
@@ -25,15 +26,15 @@ const MuhaFilm = () => {
               className="w-full"
             />
           </button>
-      </section>
+        </section>
 
-      {/* Video Player */}
-      <section className="max-w-3xl mx-auto">
-        <img src={muhaStill2} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
-      </section>
+        {/* Video Player */}
+        <section>
+          <img src={muhaStill2} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
+        </section>
 
-      {/* Header */}
-      <div className="max-w-3xl mx-auto text-center pb-6">
+        {/* Header */}
+        <div className="text-center pb-6">
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
@@ -55,25 +56,25 @@ const MuhaFilm = () => {
           >
             By Slava Milanova
           </p>
-      </div>
+        </div>
 
-      {/* Synopsis */}
-      <section>
-        <h2
-          className="text-2xl font-bold mb-6 pb-2"
-          style={{
-            color: "#000000",
-            fontFamily: '"Public Sans", sans-serif',
-            fontWeight: 900,
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
-          SYNOPSIS
-        </h2>
-        
-        {/* First section - text left, image right */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8 items-start">
-          <div className="space-y-3 text-base leading-relaxed max-w-3xl mx-auto px-8">
+        {/* Synopsis */}
+        <section>
+          <h2
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            SYNOPSIS
+          </h2>
+          
+          {/* First section - text left, image right */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8 items-start -mx-8">
+            <div className="space-y-3 text-base leading-relaxed px-8">
               <p>
                 Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
                 connection in the early days of social media.
@@ -81,15 +82,15 @@ const MuhaFilm = () => {
               <p>
                 Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
                 spends his evenings waiting for his unreliable internet connection.
-            </p>
+              </p>
+            </div>
+            <img src={muhaStill1} alt="Scene from MUHA film" className="w-full h-[400px] object-cover" />
           </div>
-          <img src={muhaStill1} alt="Scene from MUHA film" className="w-full h-[400px] object-cover" />
-        </div>
-        
-        {/* Second section - image left, text right */}
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover order-2 md:order-1" />
-          <div className="space-y-3 text-base leading-relaxed max-w-3xl mx-auto px-8 order-1 md:order-2">
+          
+          {/* Second section - image left, text right */}
+          <div className="grid md:grid-cols-2 gap-8 items-start -mx-8">
+            <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover order-2 md:order-1" />
+            <div className="space-y-3 text-base leading-relaxed px-8 order-1 md:order-2">
               <p>
                 When he receives a friend request from Oli, a 21-year-old woman confined to her father's house, both find 
                 solace in their online conversations—a rare window into something beyond their provincial lives.
@@ -98,19 +99,19 @@ const MuhaFilm = () => {
                 As their connection deepens through glowing computer screens and sporadic chat messages, Ovanеs suggests 
                 they meet in person. But when the digital world collides with reality, the boundaries between longing and 
                 obsession begin to blur.
-          </p>
-        </div>
-      </div>
-      </section>
+              </p>
+            </div>
+          </div>
+        </section>
 
-      {/* Friends */}
-      <section>
-        <div
-          className="flex items-center justify-between mb-3 pb-2"
-          style={{
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
+        {/* Friends */}
+        <section>
+          <div
+            className="flex items-center justify-between mb-3 pb-2 -mx-8 px-8"
+            style={{
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
             <h2
               className="text-2xl font-bold"
               style={{
@@ -129,9 +130,9 @@ const MuhaFilm = () => {
               }}
             >
               2 Online
-          </span>
-        </div>
-        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Oli */}
             <div className="bg-gradient-to-b from-pink-300 to-pink-400 p-4 rounded-lg shadow-lg">
               <div className="bg-white rounded-lg p-3 mb-3 shadow-inner">
@@ -274,23 +275,23 @@ const MuhaFilm = () => {
                   </p>
                 </div>
               </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Credits */}
-      <section>
-        <h2
-          className="text-2xl font-bold mb-6 pb-2"
-          style={{
-            color: "#000000",
-            fontFamily: '"Public Sans", sans-serif',
-            fontWeight: 900,
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
-          CREDITS
-        </h2>
+        {/* Credits */}
+        <section>
+          <h2
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            CREDITS
+          </h2>
           <div className="max-w-2xl mx-auto space-y-3">
             {/* Director/Writer */}
             <div className="grid grid-cols-2 gap-4 items-start">
@@ -449,24 +450,24 @@ const MuhaFilm = () => {
                 <div className="text-right text-gray-500 font-medium">Транспорт мениджър</div>
                 <div style={{ color: "#4169E1", fontWeight: 700 }}>Ахинора Каблешкова</div>
               </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Special Thanks */}
-      <section>
-        <h2
-          className="text-2xl font-bold mb-6 pb-2"
-          style={{
-            color: "#000000",
-            fontFamily: '"Public Sans", sans-serif',
-            fontWeight: 900,
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
-          SPECIAL THANKS
-        </h2>
-        <div className="max-w-3xl mx-auto text-gray-700">
+        {/* Special Thanks */}
+        <section>
+          <h2
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            SPECIAL THANKS
+          </h2>
+          <div className="text-gray-700">
             К.Е.В.А., Месопродавница, Десислава Веселинова, Димитър Веселинов, Анжелика Симеонова, Антон Симеонов, Able
             Design, Стиван Чолаков, Стоян Лазаров, Чавдар Чушев, Панайот Горанов, Анна Иванова, Иван Иванов, Димитър
             Василев, Гергана Георгиева, Семейство Христови, Стефан Пенев, Любомира Чушева, Маргарита Василева, Валери
@@ -474,16 +475,16 @@ const MuhaFilm = () => {
             Борил Петров, Reality Cam - Георги Гвоздев, "Парти Тент ЕООД" - Асен Кожаров, Лора Йосифова НИМХ, Столична
             община, район Младост, Столичен инспекторат - Ромина Митева, Петя Панайотова, Лидия Димитрова, Румяна
             Серафимова, Зоя Милванова, Магазин "Роден Дар" - Красина Ненкова, Силвана Миткова, Цветан Атанасов
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Footer */}
-      <div
-        className="max-w-3xl mx-auto text-center text-sm text-gray-500 pt-6"
-        style={{
-          borderTop: "2px solid #FFD700",
-        }}
-      >
+        {/* Footer */}
+        <div
+          className="text-center text-sm text-gray-500 pt-6"
+          style={{
+            borderTop: "2px solid #FFD700",
+          }}
+        >
           <div className="flex items-center justify-center gap-6">
             <a
               href="https://www.instagram.com/muha.film/"
@@ -528,7 +529,8 @@ const MuhaFilm = () => {
             (MIT License) by ShizukuIchi. This site is not affiliated with, endorsed by, or sponsored by Microsoft. All
             interface elements have been independently created or modified for artistic purposes. mIRC used with
             permission.
-        </p>
+          </p>
+        </div>
       </div>
     </div>
   );
