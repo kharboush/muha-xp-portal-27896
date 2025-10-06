@@ -131,7 +131,7 @@ const MuhaFilm = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Ovanes */}
             <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #9CA3AF, #6B7280)" }}>
-              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
                 <div className="p-4">
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
                     <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
@@ -167,7 +167,7 @@ const MuhaFilm = () => {
 
             {/* Oli */}
             <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #FBC2EB, #F78CA0)" }}>
-              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
                 <div className="p-4">
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
                     <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
@@ -203,7 +203,7 @@ const MuhaFilm = () => {
 
             {/* Mayor */}
             <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #D1D5DB, #9CA3AF)" }}>
-              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
                 <div className="p-4">
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
                     <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
@@ -239,7 +239,7 @@ const MuhaFilm = () => {
 
             {/* Butcher */}
             <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #E5E7EB, #D1D5DB)" }}>
-              <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
                 <div className="p-4">
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
                     <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
