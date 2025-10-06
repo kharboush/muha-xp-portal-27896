@@ -520,7 +520,11 @@ const MuhaFilm = () => {
             borderTop: "2px solid #FFD700",
           }}
         >
-          <p>© 2025 MUHA Film. All rights reserved.</p>
+          <p className="text-xs leading-relaxed max-w-2xl mx-auto">
+            © 2025 Muha Film. Built with winXP project (MIT License) by ShizukuIchi. 
+            (<a href="https://github.com/ShizukuIchi/winXP" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700" style={{ color: "#FFD700" }}>https://github.com/ShizukuIchi/winXP</a>) 
+            This site is not affiliated with, endorsed by, or sponsored by Microsoft. All interface elements have been independently created or modified for artistic purposes. mIRC used with permission.
+          </p>
           <div className="mt-4 flex items-center justify-center gap-6">
             <a 
               href="https://www.instagram.com/muha.film/" 
