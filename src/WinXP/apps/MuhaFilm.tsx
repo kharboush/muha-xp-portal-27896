@@ -290,7 +290,7 @@ const MuhaFilm = () => {
               borderBottom: "3px solid #FFD700",
             }}
           >
-            КРЕДИТИ
+            CREDITS
           </h2>
           <div className="max-w-2xl mx-auto space-y-3">
             {/* Director/Writer */}
@@ -465,7 +465,7 @@ const MuhaFilm = () => {
               borderBottom: "3px solid #FFD700",
             }}
           >
-            СПЕЦИАЛНИ БЛАГОДАРНОСТИ
+            SPECIAL THANKS
           </h2>
           <div className="text-gray-700">
             К.Е.В.А., Месопродавница, Десислава Веселинова, Димитър Веселинов, Анжелика Симеонова, Антон Симеонов, Able
