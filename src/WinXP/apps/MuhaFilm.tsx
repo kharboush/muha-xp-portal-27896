@@ -35,9 +35,10 @@ const MuhaFilm = () => {
                   WATCH TRAILER NOW
                 </div>
                 <div 
-                  className="text-black text-sm font-semibold"
+                  className="text-black text-sm"
                   style={{
-                    fontFamily: '"Noto Sans", sans-serif'
+                    fontFamily: '"Noto Sans", sans-serif',
+                    fontWeight: 700
                   }}
                 >
                   Click to Play
