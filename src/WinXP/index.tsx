@@ -47,10 +47,10 @@ const notepadWidth = Math.min(Math.floor(window.innerWidth * 0.9), 800);
 const notepadX = Math.floor((window.innerWidth - notepadWidth) / 2);
 const notepadY = Math.floor((availableHeight - notepadHeight) / 2);
 
-// Calculate mIRC dimensions: maintain aspect ratio (720/646)
-const mircAspectRatio = 720 / 646;
+// Calculate mIRC dimensions: desktop (690/646), mobile (750/646)
 const maxMircWidth = 646;
 const mircWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxMircWidth);
+const mircAspectRatio = mircWidth < maxMircWidth ? 750 / 646 : 690 / 646;
 const mircHeight = Math.floor(mircWidth * mircAspectRatio);
 const mircX = Math.floor((window.innerWidth - mircWidth) / 2);
 const mircY = 60;
@@ -157,9 +157,9 @@ function reducer(state: State, action: Action): State {
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = Math.floor((availableHeight - windowHeight) / 2);
       } else if (action.payload === 'mIRC') {
-        const mircAspectRatio = 720 / 646;
         const maxWidth = 646;
         windowWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxWidth);
+        const mircAspectRatio = windowWidth < maxWidth ? 750 / 646 : 690 / 646;
         windowHeight = Math.floor(windowWidth * mircAspectRatio);
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = 60;
@@ -365,9 +365,9 @@ export default function WinXP() {
       // Handle mIRC window
       const mircWindow = state.windows.find(w => w.title === appSettings.mIRC.title);
       if (mircWindow && !mircWindow.maximized) {
-        const mircAspectRatio = 720 / 646;
         const maxWidth = 646;
         const mircWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxWidth);
+        const mircAspectRatio = mircWidth < maxWidth ? 750 / 646 : 690 / 646;
         const mircHeight = Math.floor(mircWidth * mircAspectRatio);
         const mircX = Math.floor((window.innerWidth - mircWidth) / 2);
         const mircY = 60;
