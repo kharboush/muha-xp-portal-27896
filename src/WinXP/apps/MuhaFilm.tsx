@@ -60,7 +60,7 @@ const MuhaFilm = () => {
       {/* Synopsis */}
       <section>
         <h2
-          className="text-2xl font-bold mb-6 pb-2"
+          className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
           style={{
             color: "#000000",
             fontFamily: '"Public Sans", sans-serif',
@@ -106,7 +106,7 @@ const MuhaFilm = () => {
       {/* Friends */}
       <section>
         <div
-          className="flex items-center justify-between mb-3 pb-2"
+          className="flex items-center justify-between mb-3 pb-2 -mx-8 px-8"
           style={{
             borderBottom: "3px solid #FFD700",
           }}
@@ -281,7 +281,7 @@ const MuhaFilm = () => {
       {/* Credits */}
       <section>
         <h2
-          className="text-2xl font-bold mb-6 pb-2"
+          className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
           style={{
             color: "#000000",
             fontFamily: '"Public Sans", sans-serif',
