@@ -13,7 +13,7 @@ const MuhaFilm = () => {
         <section>
           <button
             onClick={() => openApp("MediaPlayer")}
-            className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 rounded"
+            className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300"
             style={{
               background: "#FFD700",
             }}
