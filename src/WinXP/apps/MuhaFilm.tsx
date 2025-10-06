@@ -91,8 +91,8 @@ const MuhaFilm = () => {
           
           {/* Second section - image left, text right */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover rounded" />
-            <div className="space-y-3 text-base leading-relaxed">
+            <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover rounded order-2 md:order-1" />
+            <div className="space-y-3 text-base leading-relaxed order-1 md:order-2">
               <p>
                 When he receives a friend request from Oli, a 21-year-old woman confined to her father's house, both find 
                 solace in their online conversations—a rare window into something beyond their provincial lives.
