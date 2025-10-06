@@ -1,4 +1,4 @@
-import { User, Circle, Instagram, Mail } from "lucide-react";
+import { User, Circle, Instagram, Mail, Home, Users, Image, MessageCircle, UsersRound } from "lucide-react";
 import muhaScene from "@/assets/muha-scene.png";
 import muhaLogo from "@/assets/muha-logo.png";
 import ncfLogo from "@/assets/ncf-logo.png";
@@ -106,26 +106,36 @@ const MuhaFilm = () => {
       {/* Friends */}
       <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-between mb-6 pb-3" style={{ borderBottom: "1px solid #D4D8DD" }}>
-            <h2
-              className="text-xl font-semibold"
-              style={{
-                color: "#2C2D2E",
-                fontFamily: '"Public Sans", sans-serif',
-                fontWeight: 600,
-              }}
-            >
-              Friends
-            </h2>
-            <span
-              className="text-xs font-medium px-3 py-1 rounded-full"
-              style={{
-                background: "#D4D8DD",
-                color: "#2C2D2E",
-              }}
-            >
-              2 Online
-            </span>
+          <div className="flex items-center gap-6 mb-6 pb-3" style={{ borderBottom: "1px solid #D4D8DD" }}>
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+              <Home className="w-5 h-5" style={{ color: "#6B7280" }} />
+              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Home</span>
+            </button>
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md" style={{ background: "#FFFFFF", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+              <Users className="w-5 h-5" style={{ color: "#4169E1" }} />
+              <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>Friends</span>
+              <span
+                className="text-xs font-medium px-2 py-0.5 rounded-full ml-1"
+                style={{
+                  background: "#D4D8DD",
+                  color: "#2C2D2E",
+                }}
+              >
+                2 Online
+              </span>
+            </button>
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+              <Image className="w-5 h-5" style={{ color: "#6B7280" }} />
+              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Photos</span>
+            </button>
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+              <MessageCircle className="w-5 h-5" style={{ color: "#6B7280" }} />
+              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Messages</span>
+            </button>
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+              <UsersRound className="w-5 h-5" style={{ color: "#6B7280" }} />
+              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Groups</span>
+            </button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
