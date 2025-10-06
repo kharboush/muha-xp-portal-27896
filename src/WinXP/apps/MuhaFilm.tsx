@@ -30,7 +30,7 @@ const MuhaFilm = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (oliCardRef.current) {
@@ -54,27 +54,23 @@ const MuhaFilm = () => {
         onDismiss={() => setShowNotification(false)}
       />
       <div className="h-full overflow-auto bg-white px-8 pt-8">
-      {/* Watch Trailer Banner */}
-      <section className="-mx-8 -mt-8">
-        <button
-          onClick={() => openApp("MediaPlayer")}
-          className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0 block"
-        >
-          <img 
-            src={trailerBanner} 
-            alt="Trailer Available Now - Click to Watch" 
-            className="w-full block"
-          />
-        </button>
-      </section>
+        {/* Watch Trailer Banner */}
+        <section className="-mx-8 -mt-8">
+          <button
+            onClick={() => openApp("MediaPlayer")}
+            className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0 block"
+          >
+            <img src={trailerBanner} alt="Trailer Available Now - Click to Watch" className="w-full block" />
+          </button>
+        </section>
 
-      {/* Hero Image */}
-      <section className="-mx-8">
-        <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[350px] object-cover block" />
-      </section>
+        {/* Hero Image */}
+        <section className="-mx-8">
+          <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[350px] object-cover block" />
+        </section>
 
-      {/* Header */}
-      <div className="max-w-3xl mx-auto text-center pb-6 mt-16">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center pb-6 mt-16">
           <div className="flex justify-center mb-2">
             <img src={muhaLogo} alt="MUHA" className="h-16" />
           </div>
@@ -94,224 +90,321 @@ const MuhaFilm = () => {
               fontWeight: 400,
             }}
           >
-            By Slava Milanova
+            A short film by Slava Milanova
           </p>
-      </div>
+        </div>
 
-      {/* Synopsis */}
-      <section className="mt-16">
-        <h2
-          className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
-          style={{
-            color: "#000000",
-            fontFamily: '"Public Sans", sans-serif',
-            fontWeight: 900,
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
-          SYNOPSIS
-        </h2>
-        
-        {/* First section - text left, image right */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8 items-start -mx-8">
-          <div className="space-y-3 text-base leading-relaxed px-8">
+        {/* Synopsis */}
+        <section className="mt-16">
+          <h2
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            SYNOPSIS
+          </h2>
+
+          {/* First section - text left, image right */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8 items-start -mx-8">
+            <div className="space-y-3 text-base leading-relaxed px-8">
               <p>
-                Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
-                connection in the early days of social media.
+                Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search
+                for connection in the early days of social media.
               </p>
               <p>
                 Ovanеs, a 30-year-old man living in isolation in a small village, works at the local butcher shop and
                 spends his evenings waiting for his unreliable internet connection.
-            </p>
+              </p>
+            </div>
+            <img src={muhaStill1} alt="Scene from MUHA film" className="w-full h-[300px] object-cover" />
           </div>
-          <img src={muhaStill1} alt="Scene from MUHA film" className="w-full h-[300px] object-cover" />
-        </div>
-        
-        {/* Second section - image left, text right */}
-        <div className="grid md:grid-cols-2 gap-8 items-start -mx-8">
-          <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[300px] object-cover order-2 md:order-1" />
-          <div className="space-y-3 text-base leading-relaxed px-8 order-1 md:order-2">
+
+          {/* Second section - image left, text right */}
+          <div className="grid md:grid-cols-2 gap-8 items-start -mx-8">
+            <img
+              src={muhaStill3}
+              alt="Scene from MUHA film"
+              className="w-full h-[300px] object-cover order-2 md:order-1"
+            />
+            <div className="space-y-3 text-base leading-relaxed px-8 order-1 md:order-2">
               <p>
-                When he receives a friend request from Oli, a 21-year-old woman confined to her father's house, both find 
-                solace in their online conversations—a rare window into something beyond their provincial lives.
+                When he receives a friend request from Oli, a 21-year-old woman confined to her father's house, both
+                find solace in their online conversations—a rare window into something beyond their provincial lives.
               </p>
               <p>
-                As their connection deepens through glowing computer screens and sporadic chat messages, Ovanеs suggests 
-                they meet in person. But when the digital world collides with reality, the boundaries between longing and 
-                obsession begin to blur.
-          </p>
-        </div>
-      </div>
-      </section>
-
-      {/* Friends */}
-      <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#DCDFE6" }}>
-        <div className="max-w-3xl mx-auto">
-          <div className="mb-6">
-            <img src={friendsNav} alt="Navigation" className="w-[70%] mx-auto" />
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Ovanes */}
-            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #9CA3AF, #6B7280)" }}>
-              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-                <div className="p-4">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                  </div>
-                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                    <Circle className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
-                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>Ovanes</span>
-                    <span className="ml-auto text-blue-400 text-xl">♂</span>
-                  </div>
-                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Ovanes
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 30
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Internet, cars, travel
-                    </p>
-                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                      Working at the butcher shop, dreaming of leaving the village
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Oli */}
-            <div ref={oliCardRef} className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #FBC2EB, #F78CA0)" }}>
-              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-                <div className="p-4">
-                  <div className="rounded-lg overflow-hidden h-48 mb-4">
-                    <img src={oliProfile} alt="Oli profile" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                    <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500" />
-                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>x_oli_luv_x</span>
-                    <span className="ml-auto text-pink-400 text-xl">♀</span>
-                  </div>
-                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> Oli
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Single
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 21
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Chatting, music
-                    </p>
-                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                      Looking for cool people to chat with
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mayor */}
-            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #D1D5DB, #9CA3AF)" }}>
-              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-                <div className="p-4">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                  </div>
-                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                    <Circle className="w-2.5 h-2.5 fill-red-500 text-red-500" />
-                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>kmeta_radomir</span>
-                    <span className="ml-auto text-gray-400 text-xl">♂</span>
-                  </div>
-                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Radomir
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Mayor
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Widower
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 50
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Control, order, authority
-                    </p>
-                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                      Keeps the computer locked with a key hidden in a piggy bank
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Butcher */}
-            <div className="rounded-lg overflow-hidden p-3" style={{ background: "linear-gradient(to bottom, #E5E7EB, #D1D5DB)" }}>
-              <div className="bg-white rounded-lg overflow-hidden h-full" style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-                <div className="p-4">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
-                    <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
-                  </div>
-                  <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
-                    <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
-                    <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>mesarq</span>
-                    <span className="ml-auto text-blue-400 text-xl">♂</span>
-                  </div>
-                  <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Location:</span> Near Radomir
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Name:</span> The Butcher
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Status:</span> Married
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Age:</span> 45
-                    </p>
-                    <p>
-                      <span className="font-medium" style={{ color: "#2C2D2E" }}>Interests:</span> Business, money
-                    </p>
-                    <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                      Uses the office computer when the employee isn't watching
-                    </p>
-                  </div>
-                </div>
-              </div>
+                As their connection deepens through glowing computer screens and sporadic chat messages, Ovanеs suggests
+                they meet in person. But when the digital world collides with reality, the boundaries between longing
+                and obsession begin to blur.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Credits */}
-      <section className="mt-16">
-        <h2
-          className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
-          style={{
-            color: "#000000",
-            fontFamily: '"Public Sans", sans-serif',
-            fontWeight: 900,
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
-          CREDITS
-        </h2>
+        {/* Friends */}
+        <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#DCDFE6" }}>
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-6">
+              <img src={friendsNav} alt="Navigation" className="w-[70%] mx-auto" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Ovanes */}
+              <div
+                className="rounded-lg overflow-hidden p-3"
+                style={{ background: "linear-gradient(to bottom, #9CA3AF, #6B7280)" }}
+              >
+                <div
+                  className="bg-white rounded-lg overflow-hidden h-full"
+                  style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
+                >
+                  <div className="p-4">
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                      <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                    </div>
+                    <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                      <Circle className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
+                      <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>
+                        Ovanes
+                      </span>
+                      <span className="ml-auto text-blue-400 text-xl">♂</span>
+                    </div>
+                    <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Location:
+                        </span>{" "}
+                        Near Radomir
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Name:
+                        </span>{" "}
+                        Ovanes
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Status:
+                        </span>{" "}
+                        Single
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Age:
+                        </span>{" "}
+                        30
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Interests:
+                        </span>{" "}
+                        Internet, cars, travel
+                      </p>
+                      <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        Working at the butcher shop, dreaming of leaving the village
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Oli */}
+              <div
+                ref={oliCardRef}
+                className="rounded-lg overflow-hidden p-3"
+                style={{ background: "linear-gradient(to bottom, #FBC2EB, #F78CA0)" }}
+              >
+                <div
+                  className="bg-white rounded-lg overflow-hidden h-full"
+                  style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
+                >
+                  <div className="p-4">
+                    <div className="rounded-lg overflow-hidden h-48 mb-4">
+                      <img src={oliProfile} alt="Oli profile" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                      <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500" />
+                      <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>
+                        x_oli_luv_x
+                      </span>
+                      <span className="ml-auto text-pink-400 text-xl">♀</span>
+                    </div>
+                    <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Location:
+                        </span>{" "}
+                        Radomir
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Name:
+                        </span>{" "}
+                        Oli
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Status:
+                        </span>{" "}
+                        Single
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Age:
+                        </span>{" "}
+                        21
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Interests:
+                        </span>{" "}
+                        Chatting, music
+                      </p>
+                      <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        Looking for cool people to chat with
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mayor */}
+              <div
+                className="rounded-lg overflow-hidden p-3"
+                style={{ background: "linear-gradient(to bottom, #D1D5DB, #9CA3AF)" }}
+              >
+                <div
+                  className="bg-white rounded-lg overflow-hidden h-full"
+                  style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
+                >
+                  <div className="p-4">
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                      <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                    </div>
+                    <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                      <Circle className="w-2.5 h-2.5 fill-red-500 text-red-500" />
+                      <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>
+                        kmeta_radomir
+                      </span>
+                      <span className="ml-auto text-gray-400 text-xl">♂</span>
+                    </div>
+                    <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Location:
+                        </span>{" "}
+                        Radomir
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Name:
+                        </span>{" "}
+                        The Mayor
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Status:
+                        </span>{" "}
+                        Widower
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Age:
+                        </span>{" "}
+                        50
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Interests:
+                        </span>{" "}
+                        Control, order, authority
+                      </p>
+                      <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        Keeps the computer locked with a key hidden in a piggy bank
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Butcher */}
+              <div
+                className="rounded-lg overflow-hidden p-3"
+                style={{ background: "linear-gradient(to bottom, #E5E7EB, #D1D5DB)" }}
+              >
+                <div
+                  className="bg-white rounded-lg overflow-hidden h-full"
+                  style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
+                >
+                  <div className="p-4">
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center h-48 mb-4">
+                      <User className="w-24 h-24" style={{ color: "#9CA3AF" }} />
+                    </div>
+                    <div className="flex items-center gap-2 mb-3 pb-3" style={{ borderBottom: "1px solid #F3F4F6" }}>
+                      <Circle className="w-2.5 h-2.5 fill-gray-400 text-gray-400" />
+                      <span className="text-base font-semibold" style={{ color: "#2C2D2E" }}>
+                        mesarq
+                      </span>
+                      <span className="ml-auto text-blue-400 text-xl">♂</span>
+                    </div>
+                    <div className="space-y-1.5 text-sm" style={{ color: "#6B7280" }}>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Location:
+                        </span>{" "}
+                        Near Radomir
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Name:
+                        </span>{" "}
+                        The Butcher
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Status:
+                        </span>{" "}
+                        Married
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Age:
+                        </span>{" "}
+                        45
+                      </p>
+                      <p>
+                        <span className="font-medium" style={{ color: "#2C2D2E" }}>
+                          Interests:
+                        </span>{" "}
+                        Business, money
+                      </p>
+                      <p className="mt-3 pt-3 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        Uses the office computer when the employee isn't watching
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Credits */}
+        <section className="mt-16">
+          <h2
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            CREDITS
+          </h2>
           <div className="max-w-2xl mx-auto space-y-3">
             {/* Director/Writer */}
             <div className="grid grid-cols-2 gap-4 items-start">
@@ -470,24 +563,24 @@ const MuhaFilm = () => {
                 <div className="text-right text-gray-500 font-medium">Транспорт мениджър</div>
                 <div style={{ color: "#4169E1", fontWeight: 700 }}>Ахинора Каблешкова</div>
               </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Special Thanks */}
-      <section className="mt-16">
-        <h2
-          className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
-          style={{
-            color: "#000000",
-            fontFamily: '"Public Sans", sans-serif',
-            fontWeight: 900,
-            borderBottom: "3px solid #FFD700",
-          }}
-        >
-          SPECIAL THANKS
-        </h2>
-        <div className="max-w-3xl mx-auto text-gray-700">
+        {/* Special Thanks */}
+        <section className="mt-16">
+          <h2
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            style={{
+              color: "#000000",
+              fontFamily: '"Public Sans", sans-serif',
+              fontWeight: 900,
+              borderBottom: "3px solid #FFD700",
+            }}
+          >
+            SPECIAL THANKS
+          </h2>
+          <div className="max-w-3xl mx-auto text-gray-700">
             К.Е.В.А., Месопродавница, Десислава Веселинова, Димитър Веселинов, Анжелика Симеонова, Антон Симеонов, Able
             Design, Стиван Чолаков, Стоян Лазаров, Чавдар Чушев, Панайот Горанов, Анна Иванова, Иван Иванов, Димитър
             Василев, Гергана Георгиева, Семейство Христови, Стефан Пенев, Любомира Чушева, Маргарита Василева, Валери
@@ -495,65 +588,65 @@ const MuhaFilm = () => {
             Борил Петров, Reality Cam - Георги Гвоздев, "Парти Тент ЕООД" - Асен Кожаров, Лора Йосифова НИМХ, Столична
             община, район Младост, Столичен инспекторат - Ромина Митева, Петя Панайотова, Лидия Димитрова, Румяна
             Серафимова, Зоя Милванова, Магазин "Роден Дар" - Красина Ненкова, Силвана Миткова, Цветан Атанасов
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Footer */}
-      <div
-        className="text-center text-sm text-gray-500 pt-6 -mx-8 px-8 mt-16"
-        style={{
-          borderTop: "3px solid #FFD700",
-        }}
-      >
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-6">
-            <a
-              href="https://www.instagram.com/muha.film/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
-              style={{ color: "#4169E1" }}
-            >
-              <Instagram size={20} />
-              <span>Instagram</span>
-            </a>
-            <a
-              href="mailto:fly.short.25@gmail.com"
-              className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
-              style={{ color: "#4169E1" }}
-            >
-              <Mail size={20} />
-              <span>Contact</span>
-            </a>
+        {/* Footer */}
+        <div
+          className="text-center text-sm text-gray-500 pt-6 -mx-8 px-8 mt-16"
+          style={{
+            borderTop: "3px solid #FFD700",
+          }}
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center justify-center gap-6">
+              <a
+                href="https://www.instagram.com/muha.film/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
+                style={{ color: "#4169E1" }}
+              >
+                <Instagram size={20} />
+                <span>Instagram</span>
+              </a>
+              <a
+                href="mailto:fly.short.25@gmail.com"
+                className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
+                style={{ color: "#4169E1" }}
+              >
+                <Mail size={20} />
+                <span>Contact</span>
+              </a>
+            </div>
+            <div className="mt-6 flex justify-center">
+              <a
+                href="https://ncf.bg/bg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
+              >
+                <img src={ncfLogo} alt="National Culture Fund" className="h-32" />
+              </a>
+            </div>
+            <p className="text-xs leading-relaxed max-w-2xl mx-auto mt-6">
+              © 2025 Muha Film. This project incorporates material from{" "}
+              <a
+                href="https://github.com/ShizukuIchi/winXP"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+                style={{ color: "#4169E1" }}
+              >
+                winXP project
+              </a>{" "}
+              (MIT License) by ShizukuIchi. This site is not affiliated with, endorsed by, or sponsored by Microsoft.
+              All interface elements have been independently created or modified for artistic purposes. mIRC used with
+              permission.
+            </p>
           </div>
-          <div className="mt-6 flex justify-center">
-            <a
-              href="https://ncf.bg/bg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
-            >
-              <img src={ncfLogo} alt="National Culture Fund" className="h-32" />
-            </a>
-          </div>
-          <p className="text-xs leading-relaxed max-w-2xl mx-auto mt-6">
-            © 2025 Muha Film. This project incorporates material from{" "}
-            <a
-              href="https://github.com/ShizukuIchi/winXP"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-              style={{ color: "#4169E1" }}
-            >
-              winXP project
-            </a>{" "}
-            (MIT License) by ShizukuIchi. This site is not affiliated with, endorsed by, or sponsored by Microsoft. All
-            interface elements have been independently created or modified for artistic purposes. mIRC used with
-            permission.
-          </p>
         </div>
       </div>
-    </div>
     </>
   );
 };
