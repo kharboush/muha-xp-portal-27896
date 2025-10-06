@@ -8,6 +8,7 @@ import muhaStill1 from "@/assets/muha-still-1.png";
 import muhaStill2 from "@/assets/muha-still-2.png";
 import muhaStill3 from "@/assets/muha-still-3.png";
 import oliProfile from "@/assets/oli-profile.png";
+import friendsNav from "@/assets/friends-nav.png";
 import { useWinXP } from "../context/WinXPContext";
 import { ProfileNotification } from "../components/ProfileNotification";
 
@@ -146,36 +147,8 @@ const MuhaFilm = () => {
       {/* Friends */}
       <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-6 mb-6 pb-3" style={{ borderBottom: "1px solid #D4D8DD" }}>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
-              <Home className="w-5 h-5" style={{ color: "#6B7280" }} />
-              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Home</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default" style={{ background: "#FFFFFF", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
-              <Users className="w-5 h-5" style={{ color: "#4169E1" }} />
-              <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>Friends</span>
-              <span
-                className="text-xs font-medium px-2 py-0.5 rounded-full ml-1"
-                style={{
-                  background: "#D4D8DD",
-                  color: "#2C2D2E",
-                }}
-              >
-                2 Online
-              </span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
-              <Image className="w-5 h-5" style={{ color: "#6B7280" }} />
-              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Photos</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
-              <MessageCircle className="w-5 h-5" style={{ color: "#6B7280" }} />
-              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Messages</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md cursor-default">
-              <UsersRound className="w-5 h-5" style={{ color: "#6B7280" }} />
-              <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Groups</span>
-            </div>
+          <div className="mb-6">
+            <img src={friendsNav} alt="Navigation" className="w-full" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
