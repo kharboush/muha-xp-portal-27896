@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 
 interface BalloonProps {
   startAfter?: number;
@@ -13,10 +13,7 @@ function Balloon({ startAfter = 3000, duration = 15000 }: BalloonProps) {
   useEffect(() => {
     const openTimer = setTimeout(() => setStart(true), startAfter);
     const fadeTimer = setTimeout(() => setShow(false), startAfter + duration);
-    const closeTimer = setTimeout(
-      () => setStart(false),
-      startAfter + duration + 1000,
-    );
+    const closeTimer = setTimeout(() => setStart(false), startAfter + duration + 1000);
     return () => {
       clearTimeout(openTimer);
       clearTimeout(fadeTimer);
@@ -24,27 +21,19 @@ function Balloon({ startAfter = 3000, duration = 15000 }: BalloonProps) {
     };
   }, [startAfter, duration]);
 
-  return (
-    start ? (
-      <Div show={show}>
-        <div className="balloon__container">
-          <button onClick={() => setShow(false)} className="balloon__close" />
-          <div className="balloon__header">
-            <img className="balloon__header__img" src="/icons/antivirus.png" alt="risk" />
-            <span className="balloon__header__text">
-              Your computer might be at risk
-            </span>
-          </div>
-          <p className="balloon__text__first">
-            Antivirus software might not be installed
-          </p>
-          <p className="balloon__text__second">
-            Click this balloon to fix this problem.
-          </p>
+  return start ? (
+    <Div show={show}>
+      <div className="balloon__container">
+        <button onClick={() => setShow(false)} className="balloon__close" />
+        <div className="balloon__header">
+          <img className="balloon__header__img" src="/icons/antivirus.png" alt="risk" />
+          <span className="balloon__header__text">Your computer might be at risk</span>
         </div>
-      </Div>
-    ) : null
-  );
+        <p className="balloon__text__first">Antivirus software might not be installed</p>
+        <p className="balloon__text__second">Click this balloon to fix all your life's problems.</p>
+      </div>
+    </Div>
+  ) : null;
 }
 
 const fadein = keyframes`
