@@ -53,7 +53,7 @@ const mircWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxMircWidth);
 const mircAspectRatio = mircWidth < maxMircWidth ? 750 / 646 : 690 / 646;
 const mircHeight = Math.floor(mircWidth * mircAspectRatio);
 const mircX = Math.floor((window.innerWidth - mircWidth) / 2);
-const mircY = 60;
+const mircY = Math.floor((availableHeight - mircHeight) / 2);
 
 const initialState: State = {
   windows: [
@@ -157,12 +157,14 @@ function reducer(state: State, action: Action): State {
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
         windowY = Math.floor((availableHeight - windowHeight) / 2);
       } else if (action.payload === 'mIRC') {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
         const maxWidth = 646;
         windowWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxWidth);
         const mircAspectRatio = windowWidth < maxWidth ? 750 / 646 : 690 / 646;
         windowHeight = Math.floor(windowWidth * mircAspectRatio);
         windowX = Math.floor((window.innerWidth - windowWidth) / 2);
-        windowY = 60;
+        windowY = Math.floor((availableHeight - windowHeight) / 2);
       }
 
       // Create new window
@@ -365,12 +367,14 @@ export default function WinXP() {
       // Handle mIRC window
       const mircWindow = state.windows.find(w => w.title === appSettings.mIRC.title);
       if (mircWindow && !mircWindow.maximized) {
+        const taskbarHeight = 30;
+        const availableHeight = window.innerHeight - taskbarHeight;
         const maxWidth = 646;
         const mircWidth = Math.min(Math.floor(window.innerWidth * 0.98), maxWidth);
         const mircAspectRatio = mircWidth < maxWidth ? 750 / 646 : 690 / 646;
         const mircHeight = Math.floor(mircWidth * mircAspectRatio);
         const mircX = Math.floor((window.innerWidth - mircWidth) / 2);
-        const mircY = 60;
+        const mircY = Math.floor((availableHeight - mircHeight) / 2);
 
         dispatch({
           type: 'UPDATE_WINDOW_SIZE' as any,
