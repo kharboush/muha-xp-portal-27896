@@ -64,15 +64,15 @@ const NotificationContainer = styled.div<{ $isVisible: boolean }>`
 const NotificationCard = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
   background: #D4D0C8;
   border-top: 2px solid #FFFFFF;
   border-left: 2px solid #FFFFFF;
   border-right: 2px solid #808080;
   border-bottom: 2px solid #808080;
-  padding: 16px;
+  padding: 12px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
-  min-width: 500px;
+  min-width: 380px;
 `;
 
 const AvatarFrame = styled.div`
@@ -81,14 +81,14 @@ const AvatarFrame = styled.div`
   border-left: 3px solid #FFFFFF;
   border-right: 3px solid #C0C0C0;
   border-bottom: 3px solid #C0C0C0;
-  padding: 8px;
+  padding: 6px;
   flex-shrink: 0;
   box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.1);
 `;
 
 const ProfileImage = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   display: block;
 `;
@@ -118,9 +118,9 @@ const MessageBox = styled.div`
   border-left: 1px solid #808080;
   border-right: 1px solid #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
-  padding: 12px;
+  padding: 10px;
   font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #000000;
-  min-height: 60px;
+  min-height: 50px;
 `;
