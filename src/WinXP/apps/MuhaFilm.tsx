@@ -13,7 +13,7 @@ const MuhaFilm = () => {
 
   return (
     <div className="h-full overflow-auto bg-white p-8">
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-3xl mx-auto space-y-16">
         {/* Watch Trailer Banner */}
         <section>
           <button
@@ -43,7 +43,6 @@ const MuhaFilm = () => {
             style={{
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
-              fontStyle: "italic",
             }}
           >
             (Fly)
@@ -67,7 +66,6 @@ const MuhaFilm = () => {
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
-              fontStyle: "italic",
               borderBottom: "3px solid #FFD700",
             }}
           >
@@ -120,7 +118,6 @@ const MuhaFilm = () => {
                 color: "#000000",
                 fontFamily: '"Public Sans", sans-serif',
                 fontWeight: 900,
-                fontStyle: "italic",
               }}
             >
               FRIENDS
@@ -290,7 +287,6 @@ const MuhaFilm = () => {
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
-              fontStyle: "italic",
               borderBottom: "3px solid #FFD700",
             }}
           >
@@ -466,7 +462,6 @@ const MuhaFilm = () => {
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
               fontWeight: 900,
-              fontStyle: "italic",
               borderBottom: "3px solid #FFD700",
             }}
           >
