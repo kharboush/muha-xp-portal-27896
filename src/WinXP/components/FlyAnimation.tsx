@@ -110,7 +110,7 @@ export default function FlyAnimation() {
       
       if (distance < PROXIMITY_THRESHOLD) {
         // Continue in current direction (current rotation)
-        const angle = rotation * Math.PI / 180;
+        const angle = (rotation - 90) * Math.PI / 180;
         
         const fleeTarget: Position = {
           x: flyPosition.x + Math.cos(angle) * FLEE_DISTANCE,
@@ -157,6 +157,17 @@ export default function FlyAnimation() {
     const interval = setInterval(checkProximity, 50);
     return () => clearInterval(interval);
   }, [flyState, flyPosition]);
+
+  // Update position when target changes (double RAF to ensure transition)
+  useEffect(() => {
+    if (flyState === 'fleeing' || flyState === 'flying-in') {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setFlyPosition(targetPosition);
+        });
+      });
+    }
+  }, [targetPosition, flyState]);
 
   // Initial spawn
   useEffect(() => {
