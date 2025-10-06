@@ -62,7 +62,7 @@ const MuhaFilm = () => {
         {/* Synopsis */}
         <section>
           <h2
-            className="text-2xl font-bold mb-6 pb-2"
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
             style={{
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
@@ -75,7 +75,7 @@ const MuhaFilm = () => {
           </h2>
           
           {/* First section - text left, image right */}
-          <div className="grid md:grid-cols-2 gap-8 mb-8 items-center -mx-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8 items-start -mx-8">
             <div className="space-y-3 text-base leading-relaxed px-8">
               <p>
                 Set in rural Bulgaria in 2005, <em>MUHA</em> is a psychological drama about loneliness and the search for
@@ -90,7 +90,7 @@ const MuhaFilm = () => {
           </div>
           
           {/* Second section - image left, text right */}
-          <div className="grid md:grid-cols-2 gap-8 items-center -mx-8">
+          <div className="grid md:grid-cols-2 gap-8 items-start -mx-8">
             <img src={muhaStill3} alt="Scene from MUHA film" className="w-full h-[400px] object-cover order-2 md:order-1" />
             <div className="space-y-3 text-base leading-relaxed px-8 order-1 md:order-2">
               <p>
@@ -109,7 +109,7 @@ const MuhaFilm = () => {
         {/* Friends */}
         <section>
           <div
-            className="flex items-center justify-between mb-3 pb-2"
+            className="flex items-center justify-between mb-3 pb-2 -mx-8 px-8"
             style={{
               borderBottom: "3px solid #FFD700",
             }}
@@ -285,7 +285,7 @@ const MuhaFilm = () => {
         {/* Credits */}
         <section>
           <h2
-            className="text-2xl font-bold mb-6 pb-2"
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
             style={{
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
@@ -461,7 +461,7 @@ const MuhaFilm = () => {
         {/* Special Thanks */}
         <section>
           <h2
-            className="text-2xl font-bold mb-6 pb-2"
+            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
             style={{
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
