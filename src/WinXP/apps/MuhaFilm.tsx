@@ -26,19 +26,18 @@ const MuhaFilm = () => {
                   className="uppercase tracking-wider"
                   style={{
                     fontSize: '2.5rem',
-                    fontFamily: '"Alfa Slab One", sans-serif',
-                    fontWeight: 400,
-                    color: '#FFFFFF',
-                    textShadow: '3px 3px 0px #000000, -2px -2px 0px #000000, 2px -2px 0px #000000, -2px 2px 0px #000000, 0px 3px 0px #000000, 3px 0px 0px #000000, 0px -2px 0px #000000, -2px 0px 0px #000000',
-                    letterSpacing: '0.1em',
+                    fontFamily: '"Antonio", sans-serif',
+                    fontWeight: 700,
+                    color: '#000000',
+                    letterSpacing: '0.05em',
                   }}
                 >
                   WATCH TRAILER NOW
                 </div>
                 <div 
-                  className="text-black text-lg font-bold"
+                  className="text-black text-sm font-semibold"
                   style={{
-                    fontFamily: '"Alfa Slab One", sans-serif'
+                    fontFamily: '"Antonio", sans-serif'
                   }}
                 >
                   Click to Play
@@ -153,7 +152,7 @@ const MuhaFilm = () => {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
                   <Circle className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  <span className="text-xl font-semibold text-gray-700">ovanes_30</span>
+                  <span className="text-xl font-semibold text-gray-700">Ovanes</span>
                   <span className="ml-auto text-blue-400 text-2xl">♂</span>
                 </div>
                 <div className="space-y-1 text-sm text-gray-600">
