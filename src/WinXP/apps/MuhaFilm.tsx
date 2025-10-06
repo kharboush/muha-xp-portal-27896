@@ -107,7 +107,7 @@ const MuhaFilm = () => {
       <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "#E8EBF0" }}>
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-6 mb-6 pb-3" style={{ borderBottom: "1px solid #D4D8DD" }}>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
               <Home className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Home</span>
             </button>
@@ -124,15 +124,15 @@ const MuhaFilm = () => {
                 2 Online
               </span>
             </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
               <Image className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Photos</span>
             </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
               <MessageCircle className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Messages</span>
             </button>
-            <button className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-white/50">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-md">
               <UsersRound className="w-5 h-5" style={{ color: "#6B7280" }} />
               <span className="text-sm font-medium" style={{ color: "#6B7280" }}>Groups</span>
             </button>
