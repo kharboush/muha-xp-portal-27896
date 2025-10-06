@@ -14,10 +14,10 @@ const MuhaFilm = () => {
   return (
     <div className="h-full overflow-auto bg-white p-8 space-y-16">
       {/* Watch Trailer Banner */}
-      <section className="max-w-3xl mx-auto">
+      <section className="-mx-8">
         <button
             onClick={() => openApp("MediaPlayer")}
-            className="w-full mb-4 cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0"
+            className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0"
           >
             <img 
               src={trailerBanner} 
@@ -28,8 +28,8 @@ const MuhaFilm = () => {
       </section>
 
       {/* Video Player */}
-      <section className="max-w-3xl mx-auto">
-        <img src={muhaStill2} alt="Scene from MUHA film" className="aspect-video w-full object-cover" />
+      <section className="-mx-8 -mt-16">
+        <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[350px] object-cover" />
       </section>
 
       {/* Header */}
