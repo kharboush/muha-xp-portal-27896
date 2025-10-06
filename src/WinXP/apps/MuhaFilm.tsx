@@ -521,8 +521,7 @@ const MuhaFilm = () => {
           }}
         >
           <p className="text-xs leading-relaxed max-w-2xl mx-auto">
-            © 2025 Muha Film. Built with winXP project (MIT License) by ShizukuIchi. 
-            (<a href="https://github.com/ShizukuIchi/winXP" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700" style={{ color: "#FFD700" }}>https://github.com/ShizukuIchi/winXP</a>) 
+            © 2025 Muha Film. Built with <a href="https://github.com/ShizukuIchi/winXP" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "#4169E1" }}>winXP project</a> (MIT License) by ShizukuIchi. 
             This site is not affiliated with, endorsed by, or sponsored by Microsoft. All interface elements have been independently created or modified for artistic purposes. mIRC used with permission.
           </p>
           <div className="mt-4 flex items-center justify-center gap-6">
@@ -530,17 +529,19 @@ const MuhaFilm = () => {
               href="https://www.instagram.com/muha.film/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
-              aria-label="Instagram"
+              className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
+              style={{ color: "#4169E1" }}
             >
-              <Instagram size={24} style={{ color: "#FFD700" }} />
+              <Instagram size={20} />
+              <span>Instagram</span>
             </a>
             <a 
               href="mailto:fly.short.25@gmail.com"
-              className="hover:opacity-70 transition-opacity"
-              aria-label="Contact Email"
+              className="flex items-center gap-2 hover:opacity-70 transition-opacity underline"
+              style={{ color: "#4169E1" }}
             >
-              <Mail size={24} style={{ color: "#FFD700" }} />
+              <Mail size={20} />
+              <span>Contact</span>
             </a>
           </div>
           <div className="mt-6 flex justify-center">
