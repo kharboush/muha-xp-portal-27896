@@ -1,4 +1,5 @@
 import { User } from 'lucide-react';
+import muhaLogo from '@/assets/muha-logo.png';
 
 const FilmContent = () => {
   return (
@@ -40,9 +41,9 @@ const FilmContent = () => {
 
       {/* Header */}
       <div className="text-center border-b-2 border-blue-600 pb-6">
-        <h1 className="text-5xl font-bold text-blue-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>
-          MUHA
-        </h1>
+        <div className="flex justify-center mb-2">
+          <img src={muhaLogo} alt="MUHA" className="h-16" />
+        </div>
         <p className="text-2xl text-gray-600 italic">(Fly)</p>
         <p className="text-lg mt-2 text-gray-700">By Slava Milanova</p>
       </div>
