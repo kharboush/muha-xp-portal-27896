@@ -520,11 +520,7 @@ const MuhaFilm = () => {
             borderTop: "2px solid #FFD700",
           }}
         >
-          <p className="text-xs leading-relaxed max-w-2xl mx-auto">
-            © 2025 Muha Film. Built with <a href="https://github.com/ShizukuIchi/winXP" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "#4169E1" }}>winXP project</a> (MIT License) by ShizukuIchi. 
-            This site is not affiliated with, endorsed by, or sponsored by Microsoft. All interface elements have been independently created or modified for artistic purposes. mIRC used with permission.
-          </p>
-          <div className="mt-4 flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-6">
             <a 
               href="https://www.instagram.com/muha.film/" 
               target="_blank" 
@@ -554,6 +550,10 @@ const MuhaFilm = () => {
               <img src={ncfLogo} alt="National Culture Fund" className="h-32" />
             </a>
           </div>
+          <p className="text-xs leading-relaxed max-w-2xl mx-auto mt-6">
+            © 2025 Muha Film. Built with <a href="https://github.com/ShizukuIchi/winXP" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "#4169E1" }}>winXP project</a> (MIT License) by ShizukuIchi. 
+            This site is not affiliated with, endorsed by, or sponsored by Microsoft. All interface elements have been independently created or modified for artistic purposes. mIRC used with permission.
+          </p>
         </div>
       </div>
     </div>
