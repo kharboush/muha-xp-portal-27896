@@ -302,7 +302,7 @@ const MuhaFilm = () => {
           >
             КРЕДИТИ
           </h2>
-          <div className="space-y-3">
+          <div className="max-w-2xl mx-auto space-y-3">
             {/* Director/Writer */}
             <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
               <div className="text-right text-gray-500 font-medium">Сценарист и режисьор</div>
@@ -329,7 +329,10 @@ const MuhaFilm = () => {
               </div>
               <div className="grid grid-cols-[1fr_2fr] gap-4 items-start">
                 <div className="text-right text-gray-500 font-medium">Масовка</div>
-                <div style={{ color: "#4169E1", fontWeight: 700 }}>Сибела Чинарева, Георги Желев</div>
+                <div style={{ color: "#4169E1", fontWeight: 700 }}>
+                  <div>Сибела Чинарева</div>
+                  <div>Георги Желев</div>
+                </div>
               </div>
             </div>
 
