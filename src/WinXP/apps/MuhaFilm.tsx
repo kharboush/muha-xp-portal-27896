@@ -205,7 +205,7 @@ const MuhaFilm = () => {
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
                             Interests:
                           </span>{" "}
-                          driving cars
+                          driving fast cars
                         </p>
                         <p className="mt-2 pt-2 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                           looking for someone to talk to
