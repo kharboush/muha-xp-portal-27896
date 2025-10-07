@@ -405,7 +405,7 @@ const MuhaFilm = () => {
         {/* Credits */}
         <section className="mt-16">
           <h2
-            className="text-2xl font-bold mb-6 pb-2 -mx-8 px-8"
+            className="text-2xl font-bold mb-12 pb-2 -mx-8 px-8"
             style={{
               color: "#000000",
               fontFamily: '"Public Sans", sans-serif',
@@ -415,7 +415,7 @@ const MuhaFilm = () => {
           >
             CREDITS
           </h2>
-          <div className="max-w-2xl mx-auto space-y-6">
+          <div className="max-w-2xl mx-auto space-y-3">
             {/* Director/Writer */}
             <div className="grid grid-cols-2 gap-4 items-start">
               <div className="text-right text-gray-500 font-medium">Сценарист и режисьор</div>
