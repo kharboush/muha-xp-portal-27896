@@ -176,7 +176,7 @@ const MuhaFilm = () => {
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16">
+                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
                         <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
                       </div>
                     </div>
@@ -241,7 +241,9 @@ const MuhaFilm = () => {
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <img src={oliProfile} alt="Oli profile" className="w-16 h-16 object-cover block" />
+                      <div className="w-16 h-16 overflow-hidden">
+                        <img src={oliProfile} alt="Oli profile" className="w-full h-full object-cover block" />
+                      </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
@@ -303,7 +305,7 @@ const MuhaFilm = () => {
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16">
+                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
                         <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
                       </div>
                     </div>
@@ -367,7 +369,7 @@ const MuhaFilm = () => {
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16">
+                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
                         <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
                       </div>
                     </div>
