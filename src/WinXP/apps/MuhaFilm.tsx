@@ -415,7 +415,7 @@ const MuhaFilm = () => {
           >
             CREDITS
           </h2>
-          <div className="max-w-2xl mx-auto space-y-3">
+          <div className="max-w-2xl mx-auto space-y-6">
             {/* Director/Writer */}
             <div className="grid grid-cols-2 gap-4 items-start">
               <div className="text-right text-gray-500 font-medium">Сценарист и режисьор</div>
