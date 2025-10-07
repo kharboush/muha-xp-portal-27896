@@ -171,6 +171,8 @@ const MuhaFilm = () => {
                         borderBottom: "3px solid #C0C0C0",
                         padding: "4px",
                         flexShrink: 0,
+                        width: "68px",
+                        height: "68px",
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
@@ -181,7 +183,7 @@ const MuhaFilm = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
                         <Circle className="w-2 h-2 fill-yellow-400 text-yellow-400" />
-                        <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>
+                        <span className="text-sm font-semibold" style={{ color: "#3B82F6" }}>
                           Ovanes
                         </span>
                         <span className="ml-auto text-blue-400 text-base">♂</span>
@@ -191,7 +193,7 @@ const MuhaFilm = () => {
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
                             Location:
                           </span>{" "}
-                          Near Radomir
+                          Radomir, BG
                         </p>
                         <p>
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
@@ -205,7 +207,7 @@ const MuhaFilm = () => {
                           </span>{" "}
                           driving cars
                         </p>
-                        <p className="mt-2 pt-2 text-[10px] italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        <p className="mt-2 pt-2 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                           looking for someone to talk to
                         </p>
                       </div>
@@ -234,6 +236,8 @@ const MuhaFilm = () => {
                         borderBottom: "3px solid #C0C0C0",
                         padding: "4px",
                         flexShrink: 0,
+                        width: "68px",
+                        height: "68px",
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
@@ -242,7 +246,7 @@ const MuhaFilm = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
                         <Circle className="w-2 h-2 fill-green-500 text-green-500" />
-                        <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>
+                        <span className="text-sm font-semibold" style={{ color: "#3B82F6" }}>
                           x_oli_luv_x
                         </span>
                         <span className="ml-auto text-pink-400 text-base">♀</span>
@@ -252,7 +256,7 @@ const MuhaFilm = () => {
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
                             Location:
                           </span>{" "}
-                          Radomir
+                          Radomir, BG
                         </p>
                         <p>
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
@@ -266,7 +270,7 @@ const MuhaFilm = () => {
                           </span>{" "}
                           chatting, music
                         </p>
-                        <p className="mt-2 pt-2 text-[10px] italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        <p className="mt-2 pt-2 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                           Looking for cool people to chat, write me if you're not dumb
                         </p>
                       </div>
@@ -294,6 +298,8 @@ const MuhaFilm = () => {
                         borderBottom: "3px solid #C0C0C0",
                         padding: "4px",
                         flexShrink: 0,
+                        width: "68px",
+                        height: "68px",
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
@@ -304,17 +310,17 @@ const MuhaFilm = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
                         <Circle className="w-2 h-2 fill-red-500 text-red-500" />
-                        <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>
+                        <span className="text-sm font-semibold" style={{ color: "#3B82F6" }}>
                           kmeta_radomir
                         </span>
-                        <span className="ml-auto text-gray-400 text-base">♂</span>
+                        <span className="ml-auto text-blue-400 text-base">♂</span>
                       </div>
                       <div className="space-y-1 text-xs" style={{ color: "#6B7280" }}>
                         <p>
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
                             Location:
                           </span>{" "}
-                          Radomir
+                          Radomir, BG
                         </p>
                         <p>
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
@@ -328,7 +334,7 @@ const MuhaFilm = () => {
                           </span>{" "}
                           None
                         </p>
-                        <p className="mt-2 pt-2 text-[10px] italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        <p className="mt-2 pt-2 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                           No bio available
                         </p>
                       </div>
@@ -356,6 +362,8 @@ const MuhaFilm = () => {
                         borderBottom: "3px solid #C0C0C0",
                         padding: "4px",
                         flexShrink: 0,
+                        width: "68px",
+                        height: "68px",
                         boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
@@ -366,7 +374,7 @@ const MuhaFilm = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
                         <Circle className="w-2 h-2 fill-gray-400 text-gray-400" />
-                        <span className="text-sm font-semibold" style={{ color: "#2C2D2E" }}>
+                        <span className="text-sm font-semibold" style={{ color: "#3B82F6" }}>
                           mesarq
                         </span>
                         <span className="ml-auto text-blue-400 text-base">♂</span>
@@ -376,7 +384,7 @@ const MuhaFilm = () => {
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
                             Location:
                           </span>{" "}
-                          Near Radomir
+                          Radomir, BG
                         </p>
                         <p>
                           <span className="font-medium" style={{ color: "#2C2D2E" }}>
@@ -390,7 +398,7 @@ const MuhaFilm = () => {
                           </span>{" "}
                           money, video chats, good times
                         </p>
-                        <p className="mt-2 pt-2 text-[10px] italic" style={{ borderTop: "1px solid #F3F4F6" }}>
+                        <p className="mt-2 pt-2 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
                           Here for fun
                         </p>
                       </div>
