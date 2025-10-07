@@ -162,23 +162,8 @@ const MuhaFilm = () => {
                   style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
                 >
                   <div className="p-3 flex gap-3">
-                    <div
-                      style={{
-                        background: "#FFFFFF",
-                        borderTop: "3px solid #FFFFFF",
-                        borderLeft: "3px solid #FFFFFF",
-                        borderRight: "3px solid #C0C0C0",
-                        borderBottom: "3px solid #C0C0C0",
-                        padding: "4px",
-                        flexShrink: 0,
-                        width: "68px",
-                        height: "68px",
-                        boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
-                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
-                        <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
-                      </div>
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
+                      <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
@@ -291,8 +276,23 @@ const MuhaFilm = () => {
                   style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
                 >
                   <div className="p-3 flex gap-3">
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
-                      <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
+                    <div
+                      style={{
+                        background: "#FFFFFF",
+                        borderTop: "3px solid #FFFFFF",
+                        borderLeft: "3px solid #FFFFFF",
+                        borderRight: "3px solid #C0C0C0",
+                        borderBottom: "3px solid #C0C0C0",
+                        padding: "4px",
+                        flexShrink: 0,
+                        width: "68px",
+                        height: "68px",
+                        boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
+                      }}
+                    >
+                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
+                        <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
+                      </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
@@ -340,8 +340,23 @@ const MuhaFilm = () => {
                   style={{ border: "1px solid #D4D8DD", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
                 >
                   <div className="p-3 flex gap-3">
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
-                      <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
+                    <div
+                      style={{
+                        background: "#FFFFFF",
+                        borderTop: "3px solid #FFFFFF",
+                        borderLeft: "3px solid #FFFFFF",
+                        borderRight: "3px solid #C0C0C0",
+                        borderBottom: "3px solid #C0C0C0",
+                        padding: "4px",
+                        flexShrink: 0,
+                        width: "68px",
+                        height: "68px",
+                        boxShadow: "inset -1px -1px 0px rgba(0, 0, 0, 0.1)",
+                      }}
+                    >
+                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center w-16 h-16 overflow-hidden">
+                        <User className="w-10 h-10" style={{ color: "#9CA3AF" }} />
+                      </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2 pb-2" style={{ borderBottom: "1px solid #F3F4F6" }}>
