@@ -371,7 +371,7 @@ const MuhaFilm = () => {
               style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 700 }}
             >
               <Instagram className="w-6 h-6" />
-              Follow @muha.film
+              FOLLOW @MUHA.FILM
             </a>
           </div>
         </section>
