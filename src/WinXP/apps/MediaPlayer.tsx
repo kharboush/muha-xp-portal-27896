@@ -190,7 +190,7 @@ const Container = styled.div`
     border-radius: 3px;
     padding: 4px 12px;
     font-size: 16px;
-    min-width: 40px;
+    width: 80px;
     
     &:hover {
       background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
