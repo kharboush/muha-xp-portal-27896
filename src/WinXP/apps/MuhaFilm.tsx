@@ -355,19 +355,19 @@ const MuhaFilm = () => {
         </section>
 
         {/* Follow CTA */}
-        <section className="mt-16 -mx-8 px-8 py-12" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}>
+        <section className="mt-16 -mx-8 px-8 py-12 bg-black">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-white" style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 900 }}>
               Follow Us for Updates
             </h2>
-            <p className="text-white/90 mb-6 text-lg">
+            <p className="text-white mb-6 text-lg">
               Stay connected for the latest news, behind-the-scenes content, and trailer release.
             </p>
             <a
               href="https://www.instagram.com/muha.film/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-purple-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300"
               style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 700 }}
             >
               <Instagram className="w-6 h-6" />
