@@ -243,7 +243,7 @@ const MuhaFilm = () => {
                           chatting, music
                         </p>
                         <p className="mt-2 pt-2 text-xs italic" style={{ borderTop: "1px solid #F3F4F6" }}>
-                          Looking for cool people to chat, write me if you're not dumb
+                          Looking for cool people to chat, write me if ur not dumb
                         </p>
                       </div>
                     </div>
