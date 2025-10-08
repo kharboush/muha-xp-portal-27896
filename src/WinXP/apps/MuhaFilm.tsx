@@ -3,7 +3,7 @@ import { User, Circle, Instagram, Mail, Home, Users, Image, MessageCircle, Users
 import muhaScene from "@/assets/muha-scene.png";
 import muhaLogo from "@/assets/muha-logo.png";
 import ncfLogo from "@/assets/ncf-logo.png";
-import trailerBanner from "@/assets/trailer-banner.png";
+import trailerBanner from "@/assets/trailer-coming-soon.png";
 import muhaStill1 from "@/assets/muha-still-1.png";
 import muhaStill2 from "@/assets/muha-still-2.png";
 import muhaStill3 from "@/assets/muha-still-3.png";
@@ -56,12 +56,14 @@ const MuhaFilm = () => {
       <div className="h-full overflow-auto bg-white px-8 pt-8">
         {/* Watch Trailer Banner */}
         <section className="-mx-8 -mt-8">
-          <button
-            onClick={() => openApp("MediaPlayer")}
-            className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 border-0 p-0 block"
+          <a
+            href="https://www.instagram.com/muha.film/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full cursor-pointer overflow-hidden hover:brightness-110 transition-all duration-300 block"
           >
-            <img src={trailerBanner} alt="Trailer Available Now - Click to Watch" className="w-full block" />
-          </button>
+            <img src={trailerBanner} alt="Trailer Coming Soon - Follow us for updates" className="w-full block" />
+          </a>
         </section>
 
         {/* Hero Image */}
