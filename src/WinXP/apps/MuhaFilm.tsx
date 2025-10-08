@@ -367,7 +367,7 @@ const MuhaFilm = () => {
               href="https://www.instagram.com/muha.film/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-5 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-5 py-3 bg-yellow-400 text-black rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300"
               style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 500 }}
             >
               <Instagram className="w-6 h-6" />
