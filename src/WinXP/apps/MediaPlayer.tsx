@@ -65,6 +65,12 @@ function MediaPlayer() {
     }
   };
 
+  const handleClose = () => {
+    if (playerRef.current) {
+      playerRef.current.stopVideo();
+    }
+  };
+
   return (
     <Container>
       {/* Menu bar */}
@@ -96,6 +102,9 @@ function MediaPlayer() {
         <div className="mp__controls">
           <button className="mp__control_btn" onClick={togglePlayPause}>
             {isPlaying ? 'Pause' : 'Play'}
+          </button>
+          <button className="mp__control_btn" onClick={handleClose}>
+            Stop
           </button>
         </div>
       </div>
