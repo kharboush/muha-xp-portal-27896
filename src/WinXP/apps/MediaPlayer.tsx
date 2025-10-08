@@ -9,7 +9,11 @@ declare global {
   }
 }
 
-function MediaPlayer() {
+interface MediaPlayerProps {
+  onClose?: () => void;
+}
+
+function MediaPlayer({ onClose }: MediaPlayerProps) {
   // Default YouTube video - can be changed to any video ID
   const videoId = 'dQw4w9WgXcQ';
   const playerRef = useRef<any>(null);
@@ -105,6 +109,9 @@ function MediaPlayer() {
           </button>
           <button className="mp__control_btn" onClick={handleClose}>
             Stop
+          </button>
+          <button className="mp__control_btn" onClick={onClose}>
+            Close
           </button>
         </div>
       </div>
