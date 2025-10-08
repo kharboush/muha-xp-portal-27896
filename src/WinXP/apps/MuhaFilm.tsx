@@ -359,7 +359,7 @@ const MuhaFilm = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h4
               className="text-3xl font-bold mb-4 text-white"
-              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 500 }}
+              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 900 }}
             >
               FOLLOW US FOR UPDATES
             </h4>
@@ -368,7 +368,7 @@ const MuhaFilm = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300"
-              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 700 }}
+              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 500 }}
             >
               <Instagram className="w-6 h-6" />
               FOLLOW @MUHA.FILM
