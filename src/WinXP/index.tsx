@@ -274,7 +274,7 @@ const Container = styled.div`
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: url(https://i.imgur.com/Zk6TR5k.jpg) no-repeat center center fixed;
+  background: url(/desktop-background.jpg) no-repeat center center fixed;
   background-size: cover;
   
   *:not(input):not(textarea) {
