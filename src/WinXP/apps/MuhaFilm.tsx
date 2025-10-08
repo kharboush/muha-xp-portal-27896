@@ -359,7 +359,7 @@ const MuhaFilm = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h4
               className="text-3xl font-bold mb-4 text-white"
-              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 900 }}
+              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 500 }}
             >
               FOLLOW US FOR UPDATES
             </h4>
