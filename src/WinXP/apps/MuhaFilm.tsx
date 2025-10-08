@@ -368,7 +368,7 @@ const MuhaFilm = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300"
-              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 500 }}
+              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 600 }}
             >
               <Instagram className="w-6 h-6" />
               FOLLOW @MUHA.FILM
