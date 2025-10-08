@@ -357,12 +357,12 @@ const MuhaFilm = () => {
         {/* Follow CTA */}
         <section className="mt-16 -mx-8 px-8 py-12 bg-black">
           <div className="max-w-2xl mx-auto text-center">
-            <h2
+            <h3
               className="text-3xl font-bold mb-4 text-white"
               style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 900 }}
             >
               FOLLOW US FOR UPDATES
-            </h2>
+            </h3>
             <a
               href="https://www.instagram.com/muha.film/"
               target="_blank"
