@@ -1,7 +1,7 @@
-import InternetExplorer from './InternetExplorer';
-import Notepad from './Notepad';
-import MediaPlayer from './MediaPlayer';
-import mIRC from './mIRC';
+import InternetExplorer from "./InternetExplorer";
+import Notepad from "./Notepad";
+import MediaPlayer from "./MediaPlayer";
+import mIRC from "./mIRC";
 
 export interface AppConfig {
   component: React.ComponentType<any>;
@@ -19,9 +19,9 @@ export interface AppConfig {
 export const appSettings: Record<string, AppConfig> = {
   InternetExplorer: {
     component: InternetExplorer,
-    title: 'Internet Browser - Muha - A Short Film by Slava Milanova',
-    icon: '/icons/ie.png',
-    headerIcon: '/icons/ie-paper.png',
+    title: "Muha - A Short Film by Slava Milanova",
+    icon: "/icons/ie.png",
+    headerIcon: "/icons/ie-paper.png",
     width: 800,
     height: 600,
     x: 130,
@@ -30,9 +30,9 @@ export const appSettings: Record<string, AppConfig> = {
   },
   Notepad: {
     component: Notepad,
-    title: 'Notepad',
-    icon: '/icons/notepad-32.png',
-    headerIcon: '/icons/notepad-16.png',
+    title: "Notepad",
+    icon: "/icons/notepad-32.png",
+    headerIcon: "/icons/notepad-16.png",
     width: 600,
     height: 400,
     x: 150,
@@ -42,9 +42,9 @@ export const appSettings: Record<string, AppConfig> = {
   },
   MediaPlayer: {
     component: MediaPlayer,
-    title: 'Media Player - Muha Trailer.mpeg',
-    icon: '/icons/wmp-32.png',
-    headerIcon: '/icons/wmp-16.png',
+    title: "Rick_roll.mpeg",
+    icon: "/icons/wmp-32.png",
+    headerIcon: "/icons/wmp-16.png",
     width: 800,
     height: 500,
     x: 200,
@@ -53,9 +53,9 @@ export const appSettings: Record<string, AppConfig> = {
   },
   mIRC: {
     component: mIRC,
-    title: 'mIRC- x_oli_luv_x',
-    icon: '/icons/mirc-32.png',
-    headerIcon: '/icons/mirc-32.png',
+    title: "mIRC- x_oli_luv_x",
+    icon: "/icons/mirc-32.png",
+    headerIcon: "/icons/mirc-32.png",
     width: 646,
     height: 680,
     x: 180,
@@ -66,33 +66,33 @@ export const appSettings: Record<string, AppConfig> = {
 
 export const desktopIcons = [
   {
-    id: 'computer',
-    title: 'My Computer',
-    icon: '/icons/computer-32.png',
-    appKey: 'MyComputer',
+    id: "computer",
+    title: "My Computer",
+    icon: "/icons/computer-32.png",
+    appKey: "MyComputer",
   },
   {
-    id: 'notepad',
-    title: 'Notepad',
-    icon: '/icons/notepad-32.png',
-    appKey: 'Notepad',
+    id: "notepad",
+    title: "Notepad",
+    icon: "/icons/notepad-32.png",
+    appKey: "Notepad",
   },
   {
-    id: 'mediaplayer',
-    title: 'Media Player',
-    icon: '/icons/wmp-32.png',
-    appKey: 'MediaPlayer',
+    id: "mediaplayer",
+    title: "Media Player",
+    icon: "/icons/wmp-32.png",
+    appKey: "MediaPlayer",
   },
   {
-    id: 'ie',
-    title: 'Internet Browser',
-    icon: '/icons/ie.png',
-    appKey: 'InternetExplorer',
+    id: "ie",
+    title: "Internet Browser",
+    icon: "/icons/ie.png",
+    appKey: "InternetExplorer",
   },
   {
-    id: 'mirc',
-    title: 'mIRC',
-    icon: '/icons/mirc-32.png',
-    appKey: 'mIRC',
+    id: "mirc",
+    title: "mIRC",
+    icon: "/icons/mirc-32.png",
+    appKey: "mIRC",
   },
 ];
