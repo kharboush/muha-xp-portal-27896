@@ -55,10 +55,19 @@ const NotificationContainer = styled.div<{ $isVisible: boolean }>`
   position: fixed;
   bottom: 40px;
   right: 20px;
+  left: 20px;
   z-index: 9999;
   opacity: ${props => props.$isVisible ? 1 : 0};
   transform: translateY(${props => props.$isVisible ? '0' : '20px'});
   transition: all 0.3s ease-out;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  
+  @media (max-width: 640px) {
+    right: 10px;
+    left: 10px;
+  }
 `;
 
 const NotificationCard = styled.div`
@@ -72,7 +81,15 @@ const NotificationCard = styled.div`
   border-bottom: 2px solid #808080;
   padding: 12px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
-  min-width: 380px;
+  max-width: 380px;
+  width: 100%;
+  pointer-events: auto;
+  
+  @media (max-width: 640px) {
+    max-width: 100%;
+    gap: 8px;
+    padding: 10px;
+  }
 `;
 
 const AvatarFrame = styled.div`
@@ -91,6 +108,11 @@ const ProfileImage = styled.img`
   height: 90px;
   object-fit: cover;
   display: block;
+  
+  @media (max-width: 640px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 const ContentArea = styled.div`

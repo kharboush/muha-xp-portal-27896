@@ -426,14 +426,23 @@ export default function WinXP() {
   }, []);
 
   const handleWindowClick = useCallback((id: number) => {
+    const window = state.windows.find(w => w.id === id);
+    if (!window) return;
+    
+    // If window is minimized, always restore it
+    if (window.minimized) {
+      handleFocusWindow(id);
+      return;
+    }
+    
+    // If already focused and not minimized, minimize it
     if (state.focusedWindowId === id) {
-      // If already focused, minimize
       handleMinimizeWindow(id);
     } else {
       // Otherwise focus
       handleFocusWindow(id);
     }
-  }, [state.focusedWindowId, handleMinimizeWindow, handleFocusWindow]);
+  }, [state.windows, state.focusedWindowId, handleMinimizeWindow, handleFocusWindow]);
 
   return (
     <WinXPContext.Provider value={{ openApp: handleOpenApp }}>
