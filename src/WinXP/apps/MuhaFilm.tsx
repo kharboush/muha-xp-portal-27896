@@ -67,8 +67,8 @@ const MuhaFilm = () => {
         </section>
 
         {/* Hero Image */}
-        <section className="-mx-8 flex justify-center bg-black">
-          <img src={muhaStill2} alt="Scene from MUHA film" className="w-full max-h-[350px] object-contain block" />
+        <section className="-mx-8">
+          <img src={muhaStill2} alt="Scene from MUHA film" className="w-full h-[250px] md:h-[350px] object-cover block" />
         </section>
 
         {/* Header */}
